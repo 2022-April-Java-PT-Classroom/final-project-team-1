@@ -13,6 +13,7 @@ const Header = () => {
                     <NavLink to={'/Date-Page'}>Date</NavLink>
                     <NavLink to={'/Discuss-Page'}>Discuss</NavLink>
                     <NavLink to={'/Prompt-Page'}>Prompt</NavLink>
+                    <NavLink to={'/Journal-Page'}>Journal</NavLink>
                 </ul>
             </div>
         </div>
