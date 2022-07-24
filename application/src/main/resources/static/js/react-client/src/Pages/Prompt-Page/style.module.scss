@@ -1,10 +1,25 @@
 .wrapper{
     display:flex;
+    width: fit-content; 
+   flex-direction: column;
+    height: fit-content;
 }
 .promptTitle{
     color: rgb(109, 138, 233)
 }
+.entryForm{
+    display: flex;
+    flex-direction:column;
+   
+}
+.textfield{
+    min-height:800px;
+}
 .prompt{
     color:rgb(243, 149, 73);
+    
 
+}
+.submit{
+    max-width: 80px !important;
 }

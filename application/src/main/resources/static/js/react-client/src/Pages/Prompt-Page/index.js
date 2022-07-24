@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./style.module.scss";
 
+
 const PromptPage =()=>{
 
     // const promptMain=[prompt, setprompt]= useState(null);
@@ -14,13 +15,13 @@ const PromptPage =()=>{
                 <form className={style.entryForm}>
                     <label>
                         Date:
-                        {/* <input type='text' value={this.state.value} onchange={this.handleChange}/> */}
+                        <input type='text'/>  {/*value={this.state.value} onchange={this.handleChange}/> */}
                     </label>
-                    <label classname={style.textField}>
+                    <label className={style.textField}>
                         Entry:
-                        {/* <input type='text' value={this.state.value} onchange={this.handleChange}/> */}
+                         <input type='text'/> {/*value={this.state.value} onchange={this.handleChange}/> */}
                     </label>
-                    {/* <input type='submit'    value='Submit'/> */}
+                    <input className={style.submit} type='submit' width='18px'    value='Submit'/>
                 </form>
             </section>
 
