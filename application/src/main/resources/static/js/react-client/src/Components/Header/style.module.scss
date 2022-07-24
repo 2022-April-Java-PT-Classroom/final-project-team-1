@@ -1,0 +1,29 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 10px;
+    border-bottom: 1px solid gray;
+}
+
+.navList {
+    display: flex;
+    justify-content: space-evenly;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #46C0EA;
+}
+
+.navLink:active {
+    color: #46C0EA;
+}
+
+.navList:hover {
+    color: #46C0EA;
+}
+
+.navLink {
+    margin: 0px 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
