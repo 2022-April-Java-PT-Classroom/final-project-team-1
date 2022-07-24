@@ -6,6 +6,6 @@ const AboutUsPage =()=>{
         <div>
 
         </div>
-    )
+    );
 }
 export default AboutUsPage;

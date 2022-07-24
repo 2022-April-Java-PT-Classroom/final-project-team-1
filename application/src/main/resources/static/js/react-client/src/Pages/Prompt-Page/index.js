@@ -6,6 +6,6 @@ const PromptPage =()=>{
         <div>
 
         </div>
-    )
+    );
 }
 export default PromptPage;
