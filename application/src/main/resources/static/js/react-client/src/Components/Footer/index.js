@@ -3,8 +3,8 @@ import style from "./style.module.scss";
 
 const Footer =()=>{
     return(
-        <div>
-<small class='footer'>&copy;reKindle</small>
+        <div className={style.container}>
+            <small className={style.footer}>&copy;reKindle</small>
         </div>
     )
 }
