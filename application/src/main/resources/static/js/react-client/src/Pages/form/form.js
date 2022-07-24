@@ -53,6 +53,9 @@ const FormPage = (props) => {
                     <label htmlFor='description'>Comments</label>
                     <textarea id='description' required row='5' ref={commentInput}></textarea>
                 </div>
+                <div className={style.actions}>
+                    <button>Submit</button>
+                </div>
             </form>
         </div>
     )

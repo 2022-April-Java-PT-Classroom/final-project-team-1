@@ -13,9 +13,9 @@ function Contact() {
 
     return (
         <div className={style.contactForm}>
-            <section className={style.aboutFormSection}>
-                <div className={style.aboutFormContain}>
-                    <h2 className={style.aboutFormContainH2}>Contact ReKindle</h2>
+            <section className={style.contactFormSection}>
+                <div className={style.contactFormContain}>
+                    <h2 className={style.contactFormContainH2}>Contact ReKindle</h2>
                     <FormPage onEnteringComment={addContactInfo} />
                 </div>
             </section>
