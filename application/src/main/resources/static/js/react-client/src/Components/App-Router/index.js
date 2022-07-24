@@ -4,6 +4,7 @@ import DiscussPage from '../../Pages/Discuss-Page';
 import HomePage from '../../Pages/Home-Page';
 import PromptPage from '../../Pages/Prompt-Page';
 import AboutUsPage from '../../Pages/AboutUs-Page';
+import React from 'react';
 
 const AppRouter = () => {
     return (
