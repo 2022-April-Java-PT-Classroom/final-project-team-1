@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Nunito:wght@400;700;900&display=swap');
+
+
+.contactForm {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    background-color: #FF9838;
+  
+}
+.contactFormSection{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 50%;
+    margin: auto;
+    text-align: center;    
+}
