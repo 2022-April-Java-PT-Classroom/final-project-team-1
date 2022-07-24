@@ -11,19 +11,16 @@
     justify-content: space-evenly;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    color: #46C0EA;
-}
-
-.navLink:active {
-    color: #46C0EA;
-}
-
-.navList:hover {
-    color: #46C0EA;
 }
 
 .navLink {
+    color: #46C0EA;
     margin: 0px 10px;
     text-decoration: none;
     text-transform: uppercase;
+    transition: 0.2s ease;
+}
+
+.navLink:hover {
+    color: #0085b1;
 }
