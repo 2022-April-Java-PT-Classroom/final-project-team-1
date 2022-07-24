@@ -6,6 +6,6 @@ const DiscussPage =()=>{
         <div>
 
         </div>
-    )
+    );
 }
 export default DiscussPage;

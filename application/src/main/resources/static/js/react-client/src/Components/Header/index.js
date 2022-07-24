@@ -6,7 +6,6 @@ const Header = () => {
     return (
         <div className={style.header}>
             <div className={style.nav}>
-                <img src={logo192} className={style.logo192}></img>
                 <ul className={style.navList}>
                     <NavLink to={'/'}>Home</NavLink>
                     <NavLink to={'/AboutUs-Page'}>About</NavLink>
@@ -17,6 +16,6 @@ const Header = () => {
                 </ul>
             </div>
         </div>
-    )
+    );
 }
 export default Header;
