@@ -17,4 +17,6 @@ public class Prompt {
     @Lob
     private String promptAnswer;
 
+
+
 }
