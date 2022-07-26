@@ -9,13 +9,15 @@
 .navList {
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 .navLink {
-    color: #46C0EA;
+    color: #161616;
     margin: 0px 10px;
+    letter-spacing: 1px;
     text-decoration: none;
     text-transform: uppercase;
     transition: 0.2s ease;
@@ -23,4 +25,20 @@
 
 .navLink:hover {
     color: #0085b1;
+}
+
+.navBtn {
+    background-color: #46C0EA;
+    color: #FFF;
+    margin: 0px 10px;
+    padding: 10px 20px;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.2s ease;
+}
+
+.navBtn:hover {
+    background-color: #0085b1;
 }
