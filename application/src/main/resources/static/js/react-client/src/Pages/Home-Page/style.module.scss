@@ -1,9 +1,22 @@
 .homeHero {
     width: 100%;
     height: 100%;
+    text-align: center;
+    background-color: aquamarine;
+}
+
+.homeContainer {
+    height: 100vh;
 }
 
 .homeHeroH1 {
+    margin: 0px 0px !important;
     font-family: 'Playfair Display', serif;
     font-size: 4rem;
+}
+
+.homeHeroH2 {
+    font-family: 'Montserrat', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
 }
