@@ -1,18 +1,60 @@
+.navlist{
+    @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=Pathway+Gothic+One&family=Tangerine:wght@700&display=swap');
+    font-family: 'Pathway Gothic One', sans-serif;
+    
+}
 .wrapper{
     display:flex;
+    background-color: #fec56b;
     width: fit-content; 
    flex-direction: column;
     height: fit-content;
 }
 .promptTitle{
-    color: rgb(109, 138, 233)
+    color:#51abf6;
+    size: xl;
 }
-.entryForm{
+.dateField{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 100px;
+}
+
+.textfield{
     display: flex;
-    flex-direction:column;
+    width:500px;
    
 }
+.userEntry{
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    background-color: #fec56b;
+    max-width:575px;
+}
+
+
+
+
+.entryForm{
+    border-style: solid;
+    border: #feb134;
+    min-height: 500px;
+    display: flex;
+    flex-direction:column;
+    border-radius: 2em;
+    padding: 10px;
+ 
+
+
+
+}
 .textfield{
+    border-radius: 10px;
+   
+   
+  
     min-height:800px;
 }
 .prompt{
@@ -21,5 +63,9 @@
 
 }
 .submit{
+    justify-content: flex-end;
     max-width: 80px !important;
+    background-color: #51abf6;
+    border-radius: 5px;
+
 }

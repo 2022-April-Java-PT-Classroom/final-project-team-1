@@ -13,15 +13,15 @@ const PromptPage =()=>{
             </section> 
             <section className={style.userEntry}>
                 <form className={style.entryForm}>
-                    <label>
+                    <label className={style.date}>
                         Date:
-                        <input type='text'/>  {/*value={this.state.value} onchange={this.handleChange}/> */}
+                        <input className={style.dateField} type='text'/>  {/*value={this.state.value} onchange={this.handleChange}/> */}
                     </label>
-                    <label className={style.textField}>
+                    <label>
                         Entry:
-                         <input type='text'/> {/*value={this.state.value} onchange={this.handleChange}/> */}
+                         <input className={style.textfield} type='text'/> {/*value={this.state.value} onchange={this.handleChange}/> */}
                     </label>
-                    <input className={style.submit} type='submit' width='18px'    value='Submit'/>
+                    <input className={style.submit} type='submit'    value='Submit'/>
                 </form>
             </section>
 
