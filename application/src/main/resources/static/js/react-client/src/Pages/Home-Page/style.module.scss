@@ -32,7 +32,25 @@
 
 .homeHeroImg {
     width: 100%;
+    margin-bottom: -5px;
 }
+
+// FEATURE SECTION ==============================
+
+.homeFeature {
+    width: 100%;
+    height: 150px;
+    color: #161616;
+    background-color: #E1E1E1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.homeFeatureH2 {
+    margin: 0 auto;
+}
+
 
 // SECTION 01 ===================================
 

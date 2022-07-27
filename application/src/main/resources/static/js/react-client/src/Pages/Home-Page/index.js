@@ -16,6 +16,10 @@ const HomePage =() => {
                 </div>
             </section>
 
+            <section className={style.homeFeature}>
+            <h2 className={style.homeFeatureH2}>As Featured In: </h2>
+            </section>
+
             <section className={style.homeSplit}>
                 <div className={style.homeSplitContainer}>
                     <h2 className={style.homeSplitH2}>Fostering Better Relationships</h2>
