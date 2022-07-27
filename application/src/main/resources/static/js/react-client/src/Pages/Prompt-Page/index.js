@@ -25,7 +25,7 @@ const PromptPage =()=>{
                     <input className={style.submit} type='submit'    value='Submit'/>
                 </form>
             </section>
-                <img className={style.filler} src={oJournal}alt='filler'></img>
+                {/* <img className={style.filler} src={oJournal}alt='filler'></img> */}
                 
         </div>
     </div>    
