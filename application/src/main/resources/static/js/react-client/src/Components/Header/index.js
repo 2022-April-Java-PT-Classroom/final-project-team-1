@@ -1,11 +1,14 @@
 import { NavLink } from "react-router-dom";
 import React from "react";
 import style from "./style.module.scss";
+import rekindle from "../../assests/logo.png";
 
 const Header = () => {
     return (
         <div className={style.header}>
             <div className={style.nav}>
+              {/* <img className={style.logo} src={rekindle} alt="logo"/> */}
+
                 <h1 className={style.navHeader}>reKindle</h1>
                 <ul className={style.navList}>
                     <NavLink className={style.navLink} to={'/'}>Home</NavLink>

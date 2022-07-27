@@ -3,16 +3,41 @@
     font-family: 'Pathway Gothic One', sans-serif;
     
 }
+.container{
+    margin:200px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 2px auto;
+    max-width: 80rem;
+    width: 80%;
+    background: linear-gradient(to bottom, #064a81,#51ABF6,white);
+
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    // -webkit-box-shadow: inset 2px 2px 101px 49px rgba(118, 98, 163, 0.6);
+    // -moz-box-shadow: inset 2px 2px 101px 49px rgba(118, 98, 163, 0.6);
+    // box-shadow: inset 2px 2px 101px 49px rgba(118, 98, 163, 0.6);
+
+
+}
+.logo{
+    min-height: 25px;
+    min-width: none;
+}
+
 .wrapper{
     display:flex;
-    background-color: #fec56b;
-    width: fit-content; 
-   flex-direction: column;
+    justify-content: center;
+
+//    flex-direction: column;
     height: fit-content;
 }
 .promptTitle{
-    color:#51abf6;
-    size: xl;
+    color:white;
+    font-size:xxx-large;
 }
 .dateField{
     border-top: none;
@@ -23,6 +48,7 @@
 
 .textfield{
     display: flex;
+    justify-content: flex-start;
     width:500px;
    
 }
@@ -30,7 +56,7 @@
     border-radius: 5px;
     display: flex;
     justify-content: center;
-    background-color: #fec56b;
+    background-color: #fa9e27;
     max-width:575px;
 }
 
@@ -38,8 +64,6 @@
 
 
 .entryForm{
-    border-style: solid;
-    border: #feb134;
     min-height: 500px;
     display: flex;
     flex-direction:column;
