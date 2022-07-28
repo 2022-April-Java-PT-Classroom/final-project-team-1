@@ -17,7 +17,7 @@ public class User {
     private Long id;
     private String username;
     private String password;
-    @OneToMany(mappedBy = "entry")
+    @OneToMany
     private Collection<Journal> journals;
 
     public Long getId() {
