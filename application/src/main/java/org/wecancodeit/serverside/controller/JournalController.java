@@ -33,10 +33,10 @@ public class JournalController {
         JSONObject newJournal = new JSONObject(body);
         String journalDate = newJournal.getString("date");
         String journalEntry = newJournal.getString("entry");
+        User user = userRepository.findByUsername(userName).get();
         Journal journalEntryToAdd = new Journal(journalDate, journalEntry);
         journalRepository.save(journalEntryToAdd);
-        Optional<User> user = userRepository.findByUsername(userName);
-        return user.get().getJournals();
+        return user.getJournals();
     }
 
     @DeleteMapping("/api/user/{userName}/delete-journal-entry")

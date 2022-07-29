@@ -20,12 +20,21 @@ public class Populator implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-
         Journal joeJournal = new Journal("July 27", "this is a test");
+        Journal joeJournal2 = new Journal("July 28", "this is a test2");
+        Journal joeJournal3 = new Journal("July 28", "this is a test3");
         journalRepository.save(joeJournal);
+        journalRepository.save(joeJournal2);
+        journalRepository.save(joeJournal3);
 
-        User joe = new User("joebuck","12345", joeJournal);
+        User joe = new User("joebuck","12345", joeJournal,joeJournal2);
+
         userRepository.save(joe);
+
+        joe.addJournals(joeJournal3);
+        userRepository.save(joe);
+
+
 
 
     }

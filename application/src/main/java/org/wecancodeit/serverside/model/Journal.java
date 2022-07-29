@@ -17,6 +17,8 @@ public class Journal {
     private String date;
     @Lob
     private String entry;
+//    @ManyToOne
+//    private User user;
 
 
     public Long getId() {
@@ -30,6 +32,10 @@ public class Journal {
     public String getEntry() {
         return entry;
     }
+
+//    public User getUser(){
+//        return user;
+//    }
 
     public Journal(){}
 
