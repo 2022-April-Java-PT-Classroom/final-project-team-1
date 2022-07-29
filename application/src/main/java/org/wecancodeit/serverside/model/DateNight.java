@@ -19,6 +19,29 @@ public class DateNight {
     @Lob
     private String dateNotes;
 
+    public Long getId() {
+        return id;
+    }
+
+    public String getDateDate() {
+        return dateDate;
+    }
+
+    public String getDateIdea() {
+        return dateIdea;
+    }
+
+    public String getDateType() {
+        return dateType;
+    }
+
+    public String getDateLevel() {
+        return dateLevel;
+    }
+
+    public String getDateNotes() {
+        return dateNotes;
+    }
 
     // Stretch Variables
     // private Collection<Icons>
