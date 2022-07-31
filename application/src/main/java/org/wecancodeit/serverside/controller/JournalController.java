@@ -39,7 +39,7 @@ public class JournalController {
         return user.getJournals();
     }
 
-    @DeleteMapping("/api/user/{userName}/delete-journal-entry")
+    @DeleteMapping("/api/{userName}/journals/delete-journal-entry")
     public Collection<Journal> deleteJournalEntry(@PathVariable String userName) throws JSONException {
         Optional<Journal> journalEntryToRemoveOpt = journalRepository.findByEntry(userName);
         journalEntryToRemoveOpt.ifPresent(journalEntry -> journalRepository.delete(journalEntry));
@@ -47,4 +47,18 @@ public class JournalController {
         return user.get().getJournals();
 
     }
+
+    @PatchMapping("/api/{userName}/journals/{id}/edit-journal-entry")
+    public Collection<Journal> editJournalEntry(@PathVariable String userName, @PathVariable Long id, @RequestBody String body) throws JSONException {
+        JSONObject editJournal = new JSONObject(body);
+        Long journalId = editJournal.getLong("id");
+        String journalDate = editJournal.getString("date");
+        String journalEntry = editJournal.getString("entry");
+        User user = userRepository.findByUsername(userName).get();
+        journalRepository.findById(id).get();
+        Journal journalEntryToEdit = new Journal(journalDate,journalEntry);
+        journalRepository.save(journalEntryToEdit);
+        return user.getJournals();
+    }
+
 }
