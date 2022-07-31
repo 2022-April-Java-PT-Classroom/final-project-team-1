@@ -2,6 +2,7 @@ package org.wecancodeit.serverside;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+import org.wecancodeit.serverside.model.DateNight;
 import org.wecancodeit.serverside.model.Discuss;
 import org.wecancodeit.serverside.repository.DateRepository;
 import org.wecancodeit.serverside.repository.DiscussRepository;
@@ -86,5 +87,8 @@ public class Populator implements CommandLineRunner {
         discussRepo.save(discuss23);
         discussRepo.save(discuss24);
         discussRepo.save(discuss25);
+
+        DateNight dateNight1 = new DateNight("07-28-2022", "Go hiking together", "Active", "Easy", "This is a test");
+        dateRepo.save(dateNight1);
     }
 }
