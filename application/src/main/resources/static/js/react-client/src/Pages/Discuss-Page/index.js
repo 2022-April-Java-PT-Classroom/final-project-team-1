@@ -30,4 +30,5 @@ const DiscussPage =()=>{
         </div>
     );
 }
+
 export default DiscussPage;

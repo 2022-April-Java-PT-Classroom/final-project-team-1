@@ -19,7 +19,7 @@ public class Discuss {
     private String discussAnswerOne;
     private String discussAnswerTwo;
 
-    // Getters
+    // Getters ======================================================
     public Long getId() {
         return id;
     }
@@ -40,8 +40,12 @@ public class Discuss {
         return discussAnswerTwo;
     }
 
-    // Constructors
+    // Constructors =================================================
     public Discuss() {
+    }
+
+    public Discuss(String discussQuestion) {
+        this.discussQuestion = discussQuestion;
     }
 
     public Discuss(String discussDate, String discussQuestion, String discussAnswerOne, String discussAnswerTwo) {
@@ -51,6 +55,7 @@ public class Discuss {
         this.discussAnswerTwo = discussAnswerTwo;
     }
 
+    // Methods ======================================================
     @Override
     public String toString() {
         return "Discuss{" +

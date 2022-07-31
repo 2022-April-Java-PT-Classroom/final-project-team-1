@@ -24,7 +24,36 @@ public class DateNight {
     // Stretch Variables
     // private Collection<Icons>
 
+    // Getters ======================================================
+    public Long getId() {
+        return id;
+    }
 
+    public String getDateDate() {
+        return dateDate;
+    }
+
+    public String getDateIdea() {
+        return dateIdea;
+    }
+
+    public String getDateType() {
+        return dateType;
+    }
+
+    public String getDateLevel() {
+        return dateLevel;
+    }
+
+    public String getDateNotes() {
+        return dateNotes;
+    }
+
+    public Collection<Photos> getDatePhotos() {
+        return datePhotos;
+    }
+
+    // Constructors =================================================
     public DateNight() {
     }
 
@@ -37,8 +66,7 @@ public class DateNight {
         this.datePhotos = List.of(datePhotos);
     }
 
-    // Methods
-
+    // Methods ======================================================
     @Override
     public String toString() {
         return "DateNight{" +
