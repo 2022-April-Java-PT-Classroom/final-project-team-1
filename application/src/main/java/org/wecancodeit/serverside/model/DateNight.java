@@ -19,32 +19,9 @@ public class DateNight {
     @Lob
     private String dateNotes;
 
-    public Long getId() {
-        return id;
-    }
-
-    public String getDateDate() {
-        return dateDate;
-    }
-
-    public String getDateIdea() {
-        return dateIdea;
-    }
-
-    public String getDateType() {
-        return dateType;
-    }
-
-    public String getDateLevel() {
-        return dateLevel;
-    }
-
-    public String getDateNotes() {
-        return dateNotes;
-    }
-
     // Stretch Variables
-    // private Collection<Icons>
+    // private Collection<Photos> datePhotos;
+    // private Collection<Icons> dateIcons;
 
     // Getters ======================================================
     public Long getId() {
@@ -69,10 +46,6 @@ public class DateNight {
 
     public String getDateNotes() {
         return dateNotes;
-    }
-
-    public Collection<Photos> getDatePhotos() {
-        return datePhotos;
     }
 
     // Constructors =================================================
@@ -112,5 +85,4 @@ public class DateNight {
     public int hashCode() {
         return Objects.hash(id, dateDate, dateIdea, dateType, dateLevel, dateNotes);
     }
-
 }

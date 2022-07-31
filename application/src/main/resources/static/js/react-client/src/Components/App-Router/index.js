@@ -7,6 +7,8 @@ import PromptPage from '../../Pages/Prompt-Page';
 import AboutUsPage from '../../Pages/AboutUs-Page';
 import Contact from '../../Pages/Contact';
 import JournalPage from '../../Pages/Journal-Page';
+import LoginPage from '../../Pages/Login-Page';
+import SignUpPage from '../../Pages/Signup-Page';
 
 const AppRouter = () => {
     return (
@@ -18,6 +20,8 @@ const AppRouter = () => {
             <Route exact path={'/AboutUs-Page'} component={AboutUsPage} />
             <Route exact path={'/Contact'} component={Contact}/>
             <Route exact path={'/Journal-Page'} component={JournalPage} />
+            <Route exact path={'/Login'} component={LoginPage} />
+            <Route exact path={'/Signup'} component={SignUpPage} />
         </Switch>
     )
 }
