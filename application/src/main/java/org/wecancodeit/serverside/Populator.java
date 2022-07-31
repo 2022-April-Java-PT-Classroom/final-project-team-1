@@ -31,22 +31,27 @@ public class Populator implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-
+        // JOURNAL =========================================================================================================
         Journal joeJournal = new Journal("July 27", "this is a test");
         Journal joeJournal2 = new Journal("July 28", "this is a test2");
         Journal joeJournal3 = new Journal("July 28", "this is a test3");
+
         journalRepository.save(joeJournal);
         journalRepository.save(joeJournal2);
         journalRepository.save(joeJournal3);
 
+        // USER ============================================================================================================
         User joe = new User("joebuck","12345", joeJournal,joeJournal2);
-
         userRepository.save(joe);
 
         joe.addJournals(joeJournal3);
         userRepository.save(joe);
 
+        // DATE ============================================================================================================
+        DateNight dateNight1 = new DateNight("07-28-2022", "Go hiking together", "Active", "Easy", "This is a test");
+        dateRepo.save(dateNight1);
 
+        // DISCUSS =========================================================================================================
         Discuss discuss1 = new Discuss("07-24-2022", "How can we improve our relationship?", "Increase communication", "Compliment more");
         discussRepo.save(discuss1);
 
@@ -109,9 +114,5 @@ public class Populator implements CommandLineRunner {
         discussRepo.save(discuss23);
         discussRepo.save(discuss24);
         discussRepo.save(discuss25);
-
-        DateNight dateNight1 = new DateNight("07-28-2022", "Go hiking together", "Active", "Easy", "This is a test");
-        dateRepo.save(dateNight1);
-
     }
 }
