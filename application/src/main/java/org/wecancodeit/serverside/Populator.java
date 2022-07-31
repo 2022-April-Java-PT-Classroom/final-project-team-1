@@ -2,17 +2,23 @@ package org.wecancodeit.serverside;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+import org.wecancodeit.serverside.model.Journal;
+import org.wecancodeit.serverside.model.User;
+import org.wecancodeit.serverside.repository.*;
 import org.wecancodeit.serverside.model.DateNight;
 import org.wecancodeit.serverside.model.Discuss;
-import org.wecancodeit.serverside.repository.DateRepository;
-import org.wecancodeit.serverside.repository.DiscussRepository;
-import org.wecancodeit.serverside.repository.PromptRepository;
 
 import javax.annotation.Resource;
 
 @Component
 public class Populator implements CommandLineRunner {
 
+    @Resource
+    private JournalRepository journalRepository;
+
+    @Resource
+    private UserRepository userRepository;
+    
     @Resource
     private DateRepository dateRepo;
 
@@ -24,6 +30,22 @@ public class Populator implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+
+
+        Journal joeJournal = new Journal("July 27", "this is a test");
+        Journal joeJournal2 = new Journal("July 28", "this is a test2");
+        Journal joeJournal3 = new Journal("July 28", "this is a test3");
+        journalRepository.save(joeJournal);
+        journalRepository.save(joeJournal2);
+        journalRepository.save(joeJournal3);
+
+        User joe = new User("joebuck","12345", joeJournal,joeJournal2);
+
+        userRepository.save(joe);
+
+        joe.addJournals(joeJournal3);
+        userRepository.save(joe);
+
 
         Discuss discuss1 = new Discuss("07-24-2022", "How can we improve our relationship?", "Increase communication", "Compliment more");
         discussRepo.save(discuss1);
@@ -90,5 +112,6 @@ public class Populator implements CommandLineRunner {
 
         DateNight dateNight1 = new DateNight("07-28-2022", "Go hiking together", "Active", "Easy", "This is a test");
         dateRepo.save(dateNight1);
+
     }
 }
