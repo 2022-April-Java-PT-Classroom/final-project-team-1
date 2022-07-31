@@ -13,13 +13,12 @@ import java.util.List;
 @RestController
 @CrossOrigin("*")
 public class DiscussController {
+
     @Resource
     private DiscussRepository discussRepo;
-    @GetMapping("/discuss")
+
+    @GetMapping("/api/discuss")
     public List<Discuss> getAllDiscuss(){
         return (List<Discuss>) discussRepo.findAll();
     }
-
-
-
 }
