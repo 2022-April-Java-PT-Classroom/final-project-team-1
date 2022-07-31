@@ -1,26 +1,21 @@
 package org.wecancodeit.serverside.model;
 
 import javax.persistence.*;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 
 @Entity
 public class Journal {
 
     @Id
     @GeneratedValue
-
-
     private Long id;
     private String date;
     @Lob
     private String entry;
-//    @ManyToOne
-//    private User user;
+    @ManyToOne
+    private User user;
 
-
+    // Getters ======================================================
     public Long getId() {
         return id;
     }
@@ -33,14 +28,39 @@ public class Journal {
         return entry;
     }
 
-//    public User getUser(){
-//        return user;
-//    }
+    public User getUser(){
+        return user;
+    }
 
-    public Journal(){}
+    // Constructors =================================================
+    public Journal() {
+    }
 
     public Journal(String date, String entry) {
         this.date = date;
         this.entry = entry;
+    }
+
+    // Methods ======================================================
+    @Override
+    public String toString() {
+        return "Journal{" +
+                "id=" + id +
+                ", date='" + date + '\'' +
+                ", entry='" + entry + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Journal)) return false;
+        Journal journal = (Journal) o;
+        return getId().equals(journal.getId()) && getDate().equals(journal.getDate()) && getEntry().equals(journal.getEntry());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getDate(), getEntry());
     }
 }

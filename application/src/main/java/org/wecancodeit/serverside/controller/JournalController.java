@@ -60,5 +60,4 @@ public class JournalController {
         journalRepository.save(journalEntryToEdit);
         return user.getJournals();
     }
-
 }

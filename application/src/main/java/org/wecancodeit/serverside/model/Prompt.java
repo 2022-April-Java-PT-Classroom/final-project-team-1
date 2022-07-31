@@ -50,7 +50,6 @@ public class Prompt {
     }
 
     // Methods ======================================================
-
     @Override
     public String toString() {
         return "Prompt{" +
