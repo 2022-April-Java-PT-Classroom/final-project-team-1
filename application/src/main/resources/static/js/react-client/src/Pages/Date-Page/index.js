@@ -35,22 +35,22 @@ const DatePage = () => {
         // eslint-disable-next-line
     }, []);
 
-    // return (
-    //     <div>
-    //         <section className={style.dateMain}>
-    //             <h1 className={style.dateH1}>Date Ideas</h1>
-    //             <p className={style.datePara}></p>
-    //             <form onSubmit={handleSubmit} className={style.dateForm}>
-    //                 <input></input>
-    //                 <input></input>
-    //                 <input></input>
-    //                 <button>Submit</button>
-    //             </form>
-    //         </section>
-    //         <section className={style.dateEntry}>
+    return (
+        <div>
+            <section className={style.dateMain}>
+                <h1 className={style.dateH1}>Date Ideas</h1>
+                <p className={style.datePara}></p>
+                <form onSubmit={handleSubmit} className={style.dateForm}>
+                    <input></input>
+                    <input></input>
+                    <input></input>
+                    <button>Submit</button>
+                </form>
+            </section>
+            <section className={style.dateEntry}>
 
-    //         </section>
-    //     </div>
-    // );
+            </section>
+        </div>
+    );
 }
 export default DatePage;

@@ -4,9 +4,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.web.bind.annotation.*;
 import org.wecancodeit.serverside.model.DateNight;
-import org.wecancodeit.serverside.model.Photos;
 import org.wecancodeit.serverside.repository.DateRepository;
-import org.wecancodeit.serverside.repository.PhotosRepository;
 
 import javax.annotation.Resource;
 import java.util.Collection;
@@ -18,9 +16,6 @@ public class DateController {
 
     @Resource
     private DateRepository dateRepo;
-
-    @Resource
-    private PhotosRepository photosRepo;
 
     @GetMapping("/dateNight")
     public Collection<DateNight> getAllDateNights() {
