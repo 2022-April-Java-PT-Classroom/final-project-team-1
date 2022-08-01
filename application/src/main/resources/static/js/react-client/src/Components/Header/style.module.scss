@@ -1,3 +1,12 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin: auto;
+    background-color: #FFF;
+}
+
 .nav {
     display: flex;
     justify-content: space-between;
