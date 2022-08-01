@@ -1,31 +1,31 @@
 .aboutWrapper{
     display: flex;
     justify-content: center;
-    width:800px ;
+    width:800px;
     height:auto;
-background-image:linear-gradient(#1a70b6, #51ABF6) ;
+    background-image:linear-gradient(#1a70b6, #51ABF6) ;
 }
+
 .logo{
     justify-content: center;
     width: 500px;
     height: auto;
 }
 
-
 .about{
     font-size: xx-large;
     width:500px;
-
 }
+
 .container{ 
     viewport-fit: initial;
     display: flex;
     flex-direction: column;
-
     justify-items: center;
     margin-right: 800px;
-
+    padding-top: 100px;
 }
+
 .missionWrapper{
     width:800px;
     font-size: 2em;

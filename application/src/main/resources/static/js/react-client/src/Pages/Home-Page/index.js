@@ -59,6 +59,7 @@ const HomePage =() => {
                     <Link to={"#"} className={style.homeSplitBtn}>Learn More</Link>
                 </div>
             </section>
+            <div className={style.homeSpacer}></div>
         </div>
     );
 }
