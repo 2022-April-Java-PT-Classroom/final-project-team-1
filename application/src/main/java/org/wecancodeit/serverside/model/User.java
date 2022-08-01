@@ -17,6 +17,10 @@ public class User {
     @ManyToMany
     private Collection<Journal> journals;
 
+    // In order for controllers to properly sort data, the other models will need brought into this model and corresponding getters and
+    // constructor additions. Hashcode and ToString is commented out below to prevent null data displays. That may need repeated in other
+    // models as they get mapped together in order to enable proper displaying
+
     // Getters ======================================================
     public Long getId() {
         return id;
