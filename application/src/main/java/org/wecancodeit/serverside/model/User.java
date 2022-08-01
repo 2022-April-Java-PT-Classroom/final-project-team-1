@@ -1,9 +1,6 @@
 package org.wecancodeit.serverside.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
@@ -17,8 +14,12 @@ public class User {
     private Long id;
     private String username;
     private String password;
-    @OneToMany
+    @ManyToMany
     private Collection<Journal> journals;
+
+    // In order for controllers to properly sort data, the other models will need brought into this model and corresponding getters and
+    // constructor additions. Hashcode and ToString is commented out below to prevent null data displays. That may need repeated in other
+    // models as they get mapped together in order to enable proper displaying
 
     // Getters ======================================================
     public Long getId() {
@@ -52,26 +53,26 @@ public class User {
         journals.add(journalsToAdd);
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", journals=" + journals +
-                '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof User)) return false;
-        User user = (User) o;
-        return getId().equals(user.getId()) && getUsername().equals(user.getUsername()) && getPassword().equals(user.getPassword()) && getJournals().equals(user.getJournals());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getId(), getUsername(), getPassword(), getJournals());
-    }
+//    @Override
+//    public String toString() {
+//        return "User{" +
+//                "id=" + id +
+//                ", username='" + username + '\'' +
+//                ", password='" + password + '\'' +
+//                ", journals=" + journals +
+//                '}';
+//    }
+//
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (!(o instanceof User)) return false;
+//        User user = (User) o;
+//        return getId().equals(user.getId()) && getUsername().equals(user.getUsername()) && getPassword().equals(user.getPassword()) && getJournals().equals(user.getJournals());
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(getId(), getUsername(), getPassword(), getJournals());
+//    }
 }

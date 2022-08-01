@@ -12,8 +12,8 @@ public class Journal {
     private String date;
     @Lob
     private String entry;
-    @ManyToOne
-    private User user;
+    @ManyToMany
+    private Collection<User> users;
 
     // Getters ======================================================
     public Long getId() {
@@ -28,39 +28,44 @@ public class Journal {
         return entry;
     }
 
-    public User getUser(){
-        return user;
+    public Collection<User> getUsers(){
+        return users;
     }
 
     // Constructors =================================================
     public Journal() {
     }
 
-    public Journal(String date, String entry) {
+    public Journal(String date, String entry, User... users) {
         this.date = date;
         this.entry = entry;
+        this.users = new HashSet<>(Arrays.asList(users));
+    }
+
+    public void addUsers(User usersToAdd){
+        users.add(usersToAdd);
     }
 
     // Methods ======================================================
-    @Override
-    public String toString() {
-        return "Journal{" +
-                "id=" + id +
-                ", date='" + date + '\'' +
-                ", entry='" + entry + '\'' +
-                '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Journal)) return false;
-        Journal journal = (Journal) o;
-        return getId().equals(journal.getId()) && getDate().equals(journal.getDate()) && getEntry().equals(journal.getEntry());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getId(), getDate(), getEntry());
-    }
+//    @Override
+//    public String toString() {
+//        return "Journal{" +
+//                "id=" + id +
+//                ", date='" + date + '\'' +
+//                ", entry='" + entry + '\'' +
+//                '}';
+//    }
+//
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (!(o instanceof Journal)) return false;
+//        Journal journal = (Journal) o;
+//        return getId().equals(journal.getId()) && getDate().equals(journal.getDate()) && getEntry().equals(journal.getEntry());
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(getId(), getDate(), getEntry());
+//    }
 }
