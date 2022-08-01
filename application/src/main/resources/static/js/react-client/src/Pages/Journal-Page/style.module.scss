@@ -1,0 +1,119 @@
+.journalPage {
+    width: 85%;
+    margin: 0px auto;
+    border-left: 1px solid rgba(0,0,0,0.1);
+    border-right: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.journalSection {
+    margin: 0 100px;
+}
+
+.journalH1 {
+    margin: 0 auto;
+    padding-top: 50px;
+    font-size: 5rem;
+}
+
+.journalH3 {
+    margin: 30px auto;
+    font-size: 1.5rem;
+    font-family: "Montserrat", sans-serif;
+}
+
+.journalForm {
+    margin: 30px 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.journalDate {
+    margin: 10px 0px;
+    width: 50%;
+    height: 30px;
+    background-color: rgb(247, 247, 247);
+    border: 2px solid rgba(0,0,0,0.1);
+}
+
+.journalDate[type="date"] {
+    padding: 10px 10px;
+    color: #7A7A7A;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+}
+
+.journalEntry {
+    margin: 10px auto;
+    width: 100%;
+    height: 300px;
+    background-color: rgb(247, 247, 247);
+    border: 2px solid rgba(0,0,0,0.1);
+}
+
+.journalEntry[type="text"] {
+    padding: 10px 10px;
+    color: #7A7A7A;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+}
+
+.journalSubmit {
+    width: 40%;
+    margin: 20px auto;
+    background-color: #46C0EA;
+    color: #FFF;
+    font-family: 'Montserrat', serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding: 20px 50px;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    border: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.2s ease;
+}
+
+.journalSubmit:hover {
+    background-color: #0085b1;
+}
+
+.journalH2 {
+    margin: 10px auto;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.journalLinks {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.journalBtn {
+    margin: 20px auto;
+    background-color: #FFF;
+    color: #FEB134;
+    font-family: 'Montserrat', serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: 20px 50px;
+    letter-spacing: 1px;
+    border: 2px solid #FEB134;
+    border-radius: 3px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.2s ease;
+}
+
+.journalBtn:hover {
+    color: #FFF;
+    border: 2px solid #FEC56B;
+    background-color: #FEC56B;
+}
+
+.journalSpacer {
+    margin: 100px auto;
+}

@@ -5,26 +5,30 @@ import { Link } from "react-router-dom";
 const DiscussPage =()=>{
     return (
         <div className={style.discussPage}>
-            <section>
-                <h1>discuss.</h1>
-                <h3>Question Placeholder: Lorem Ipsum??</h3>
+            <section className={style.discussSection}>
+                <h1 className={style.discussH1}>discuss.</h1>
+                <h3 className={style.discussH3}>Question Placeholder: Lorem Ipsum??</h3>
             </section>
 
-            <form>
-                <input type="date"></input>
-                <input type="text" placeholder="Your Answer"></input>
-                <input type="text" placeholder="Your Partner's Answer"></input>
+            <form className={style.discussForm}>
+                <input className={style.discussDate} type="date"></input>
+                <textarea className={style.discussEntry} type="text" placeholder="Your Answer"></textarea>
+                <textarea className={style.discussEntry} type="text" placeholder="Your Partner's Answer"></textarea>
+                <button className={style.discussSubmit}>Submit</button>
             </form>
 
-            <section>
-                <h2>Previous Entries</h2>
-                <div>
-                <Link to={"#"}>Placeholder</Link>
-                <Link to={"#"}>Placeholder</Link>
-                <Link to={"#"}>Placeholder</Link>
-                <Link to={"#"}>Placeholder</Link>
-                <Link to={"#"}>Placeholder</Link>
-                <Link to={"#"}>Placeholder</Link>
+            <section className={style.discussSection}>
+                <h2 className={style.discussH2}>Past Entries</h2>
+                <div className={style.discussLinks}>
+                <Link className={style.discussBtn} to={"#"}>Placeholder</Link>
+                <Link className={style.discussBtn} to={"#"}>Placeholder</Link>
+                <Link className={style.discussBtn} to={"#"}>Placeholder</Link>
+                <Link className={style.discussBtn} to={"#"}>Placeholder</Link>
+                <Link className={style.discussBtn} to={"#"}>Placeholder</Link>
+                <Link className={style.discussBtn} to={"#"}>Placeholder</Link>
+                <Link className={style.discussBtn} to={"#"}>Placeholder</Link>
+                <Link className={style.discussBtn} to={"#"}>Placeholder</Link>
+                <div className={style.discussSpacer}></div>
                 </div>
             </section>
         </div>
