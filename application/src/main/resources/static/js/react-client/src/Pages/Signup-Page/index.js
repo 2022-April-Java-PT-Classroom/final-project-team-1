@@ -3,7 +3,7 @@ import style from "./style.module.scss";
 
 const Signup = () => {
     return (
-        <div>
+        <div className={style.signPage}>
             <h1>This is the signup page</h1>
             <h1>This is the signup page</h1>
             <h1>This is the signup page</h1>

@@ -1,5 +1,4 @@
 import {Route, Switch} from 'react-router-dom';
-
 import DatePage from '../../Pages/Date-Page';
 import DiscussPage from '../../Pages/Discuss-Page';
 import HomePage from '../../Pages/Home-Page';

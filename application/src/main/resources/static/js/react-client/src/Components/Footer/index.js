@@ -1,9 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import style from "./style.module.scss";
 
-const Footer =()=>{
-    return(
+const Footer = () => {
+
+    const { pathname } = useLocation();
+    if (pathname === "/Signup") return null;
+    if (pathname === "/Login") return null;
+
+    return (
         <div className={style.footer}>
             <section className={style.footerNewsletter}>
                 <h2 className={style.footerNewsH2}>Relationship Tips Straight To Your Inbox</h2>
