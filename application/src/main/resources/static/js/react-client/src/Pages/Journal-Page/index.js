@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import Axios from 'axios';
 import Journals from "../../Components/journal-component";
+import Users from "../../Components/user-component";
 import style from "./style.module.scss";
 
 const JournalPage =()=>{
@@ -48,7 +49,7 @@ const JournalPage =()=>{
             <div className={style.form__container}>
                 <section className={style.journalList}>
                     {loadingJournals ? <h3>Loading Journals...</h3> :
-                        <Journals journals={journals} setUserName={user.id} />
+                        <Journals journals={journals} setUserName={Users.userName} />
                     }
                 </section>
             </div>
@@ -57,7 +58,7 @@ const JournalPage =()=>{
                     <h2>Here are your previous entries:</h2>
                     <ul>
                         {editJournals.map(journal => (
-                            <div key={userName.id}>
+                            <div key={Users.userName}>
                                 <p>{journal.date}</p>
                                 <p>{journal.entry}</p>
                             </div>

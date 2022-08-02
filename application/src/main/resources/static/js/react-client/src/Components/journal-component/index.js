@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
 
+import Users from '../user-component';
 import axios from 'axios';
 import style from './style.module.scss';
 
-const Journals = ({user,journals}) => {
+const Journals = ({userName ,journals}) => {
     
     const [journalsState, setJournalsState] = useState(journals);
 
@@ -34,10 +35,11 @@ const Journals = ({user,journals}) => {
 
         const userData = {
             journalDate: journalState.journalDate,
-            journalEntry: journalState.journalEntry
+            journalEntry: journalState.journalEntry,
+            userName: journalState.userName
         };
 
-        axios.post('http://localhost:8080/api/${userName}/journals/add-journal-entry', userData).then((response) => {
+        axios.post(`http://localhost:8080/api/${userName}/journals/add-journal-entry`, userData).then((response) => {
             console.log(response.status);
             console.log('DATA', response.data);
             setJournalsState(response.data);
@@ -89,7 +91,7 @@ const Journals = ({user,journals}) => {
             <div className={style.journalsContainer}>
                 {journalsState.map(journal => (
                     <div className={style.journalContainer} key={journal.id}>
-                        <p className={journal.selected ? style.selected : null} onClick={() => handleEditEntryUpdate(user.name, journal.id, journal.journalDate, journal.journalEntry)}>{journal.journalDate}<button onClick={() => handleDelete(user.name, journal.id)}>x</button></p>
+                        <p className={journal.selected ? style.selected : null} onClick={() => handleEditEntryUpdate(Users.userName, journal.id, journal.journalDate, journal.journalEntry)}>{journal.journalDate}<button onClick={() => handleDelete(Users.userName, journal.id)}>x</button></p>
                     </div>
                 ))}
             </div>
