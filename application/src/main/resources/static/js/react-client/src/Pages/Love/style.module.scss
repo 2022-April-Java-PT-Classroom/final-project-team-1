@@ -1,7 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap');
+
 .lovePage{
-    width: 85%;
+    
     height: 90vh;
     margin: 0px auto;
     padding-top: 100px;
+    background-color: bisque;
+    font-size: 1.6rem;
+    
    
+}
+.header{
+    text-align: center;
+}
+p{
+    text-align: center;
+
+    
+}
+ul{
+    padding-left:0;
+    text-align: center;
+    list-style-position: inside;
+}
+
+    
+
+a{
+    color: coral;
 }
