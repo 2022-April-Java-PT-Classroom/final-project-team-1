@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import { Link, useLocation } from "react-router-dom";
 import style from "./style.module.scss";
 
@@ -39,8 +40,8 @@ const Footer = () => {
                 </div>
                 <div>
                     <h2>Resources</h2>
-                    <Link className={style.footerLinks}>Therapists</Link>
-                    <Link className={style.footerLinks}>Love Languages</Link>
+                    <Link className={style.footerLinks}>Therapists</Link>                    
+                    <Link to={'/Love-page'} className={style.footerLinks}>Love Languages</Link>
                     <Link className={style.footerLinks}>Couples Counseling</Link>
                 </div>
                 <div>

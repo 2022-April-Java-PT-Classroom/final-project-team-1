@@ -18,6 +18,7 @@ const Header = () => {
                     <NavLink className={style.navLink} to={'/Discuss-Page'}>Discuss</NavLink>
                     <NavLink className={style.navLink} to={'/Journal-Page'}>Journal</NavLink>
                     <NavLink className={style.navLink} to={'/Contact'}>Contact</NavLink>
+                    
                 </ul>
                 <ul className={style.navList}>
                     <NavLink className={style.navLink} to={'/Signup'}>Sign Up</NavLink>

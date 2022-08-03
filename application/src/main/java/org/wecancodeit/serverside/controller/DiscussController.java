@@ -30,7 +30,7 @@ public class DiscussController {
         String discussQuestion = newDiscuss.getString("discussQuestion");
         String discussAnswerOne = newDiscuss.getString("discussAnswerOne");
         String discussAnswerTwo = newDiscuss.getString("discussAnswerTwo");
-        Optional<Discuss> discussToAdd = discussRepo.findByQuestion(discussQuestion);
+        Optional<Discuss> discussToAdd = discussRepo.findBydiscussQuestion(discussQuestion);
 
         if (discussToAdd.isPresent()) {
             Discuss discussEntry = new Discuss(discussDate, discussQuestion, discussAnswerOne, discussAnswerTwo);
