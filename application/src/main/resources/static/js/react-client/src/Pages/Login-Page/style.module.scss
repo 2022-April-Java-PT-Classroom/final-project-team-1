@@ -1,0 +1,53 @@
+.signPage {
+    width: 85%;
+    margin: 0px auto;
+    padding-top: 100px;
+    border-left: 1px solid rgba(0,0,0,0.1);
+    border-right: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.signupForm {
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.signupText {
+    margin: 10px 0px;
+    width: 50%;
+    height: 30px;
+    background-color: rgb(247, 247, 247);
+    border: 2px solid rgba(0,0,0,0.1);
+}
+
+.signupText[type="text"] {
+    padding: 10px 10px;
+    color: #7A7A7A;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+}
+
+.signupSubmit {
+    width: 40%;
+    margin: 20px auto;
+    background-color: #46C0EA;
+    color: #FFF;
+    font-family: 'Montserrat', serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding: 20px 50px;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    border: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.2s ease;
+}
+
+.signupSubmit:hover {
+    background-color: #0085b1;
+}
