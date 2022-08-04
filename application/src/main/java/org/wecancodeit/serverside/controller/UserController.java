@@ -35,6 +35,18 @@ public class UserController {
         return (Collection<User>) userRepository.findAll();
     }
 
+    @PutMapping("/api/users/{userName}/select-user")
+    public Collection<User> selectUser(@PathVariable Long id, @RequestBody String body) throws JSONException {
+        JSONObject newUserName = new JSONObject(body);
+        String userName = newUserName.getString("username");
+        Optional<User> userNameToSelectOpt = userRepository.findByUsername(userName);
+        if(userNameToSelectOpt.isPresent()){
+            userNameToSelectOpt.get();
+            userRepository.save(userNameToSelectOpt.get());
+        }
+        return (Collection<User>) userRepository.findAll();
+    }
+
     @DeleteMapping("/api/user/{userName}/delete-user")
     public Collection<User> deleteUsers(@PathVariable String userName) throws JSONException {
         Optional<User> usernamesToRemoveOpt = userRepository.findByUsername(userName);
