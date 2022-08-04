@@ -1,6 +1,29 @@
-import React from "react";
-import style from "./style.module.scss";
+import React, {useEffect, useState} from "react";
+import Axios from "axios";
 import { Link } from "react-router-dom";
+import style from "./style.module.scss";
+
+const [discuss, setDiscuss] = useState(null);
+const [loading, setLoading] = useState(true);
+
+useEffect(() => {
+    const fetchData = async () => {
+
+        const randId = artCollection[Math.floor(Math.random() * artCollection.length)];
+        const result = await Axios(``);
+        setPiece(result.data);
+    };
+
+    if (piece) {
+        setLoading(false);
+    }
+    
+    const timer = setTimeout(() => {
+        !piece && fetchData() ;
+    }, 1000);
+    return () => clearTimeout(timer);
+    
+}, [piece]);
 
 const DiscussPage =()=>{
     return (
