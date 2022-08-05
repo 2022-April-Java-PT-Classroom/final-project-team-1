@@ -52,6 +52,12 @@ public class DateNight {
     public DateNight() {
     }
 
+    public DateNight(String dateIdea, String dateType, String dateLevel) {
+        this.dateIdea = dateIdea;
+        this.dateType = dateType;
+        this.dateLevel = dateLevel;
+    }
+
     public DateNight(String dateDate, String dateIdea, String dateType, String dateLevel, String dateNotes){
         this.dateDate = dateDate;
         this.dateIdea = dateIdea;

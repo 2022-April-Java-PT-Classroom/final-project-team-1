@@ -11,7 +11,7 @@ public class Discuss {
 
     @Id
     @GeneratedValue
-    private Long id;
+    private Long discussId;
     private String discussDate;
     @Lob
     private String discussQuestion;
@@ -20,8 +20,8 @@ public class Discuss {
     private String discussAnswerTwo;
 
     // Getters ======================================================
-    public Long getId() {
-        return id;
+    public Long getDiscussId() {
+        return discussId;
     }
 
     public String getDiscussDate() {
@@ -59,7 +59,7 @@ public class Discuss {
     @Override
     public String toString() {
         return "Discuss{" +
-                "id=" + id +
+                "id=" + discussId +
                 ", discussDate='" + discussDate + '\'' +
                 ", discussQuestion='" + discussQuestion + '\'' +
                 ", discussAnswerOne='" + discussAnswerOne + '\'' +
@@ -72,11 +72,11 @@ public class Discuss {
         if (this == o) return true;
         if (!(o instanceof Discuss)) return false;
         Discuss discuss = (Discuss) o;
-        return getId().equals(discuss.getId()) && getDiscussDate().equals(discuss.getDiscussDate()) && getDiscussQuestion().equals(discuss.getDiscussQuestion()) && getDiscussAnswerOne().equals(discuss.getDiscussAnswerOne()) && getDiscussAnswerTwo().equals(discuss.getDiscussAnswerTwo());
+        return getDiscussId().equals(discuss.getDiscussId()) && getDiscussDate().equals(discuss.getDiscussDate()) && getDiscussQuestion().equals(discuss.getDiscussQuestion()) && getDiscussAnswerOne().equals(discuss.getDiscussAnswerOne()) && getDiscussAnswerTwo().equals(discuss.getDiscussAnswerTwo());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getDiscussDate(), getDiscussQuestion(), getDiscussAnswerOne(), getDiscussAnswerTwo());
+        return Objects.hash(getDiscussId(), getDiscussDate(), getDiscussQuestion(), getDiscussAnswerOne(), getDiscussAnswerTwo());
     }
 }

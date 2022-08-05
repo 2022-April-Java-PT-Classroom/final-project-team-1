@@ -9,6 +9,7 @@ import JournalPage from '../../Pages/Journal-Page';
 import LoginPage from '../../Pages/Login-Page';
 import SignUpPage from '../../Pages/Signup-Page';
 import Resources from '../../Pages/Resources';
+import LoveLanguages from '../../Pages/Love';
 
 const AppRouter = () => {
     return (
@@ -23,6 +24,7 @@ const AppRouter = () => {
             <Route exact path={'/Login'} component={LoginPage} />
             <Route exact path={'/Signup'} component={SignUpPage} />
             <Route exact path={'/Resources'} component={Resources} />
+            <Route exact path={'/Love-page'}   component={LoveLanguages}/>
         </Switch>
     )
 }
