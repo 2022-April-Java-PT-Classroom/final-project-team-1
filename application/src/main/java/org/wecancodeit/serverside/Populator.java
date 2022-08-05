@@ -9,6 +9,7 @@ import org.wecancodeit.serverside.model.DateNight;
 import org.wecancodeit.serverside.model.Discuss;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.List;
 
 @Component
@@ -32,8 +33,6 @@ public class Populator implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-
-
         Journal joeJournal = new Journal("July 27", "this is a test");
         journalRepository.save(joeJournal);
         Journal joeJournal2 = new Journal("July 28", "this is a test2");
@@ -50,8 +49,73 @@ public class Populator implements CommandLineRunner {
 
 
         // DATE ============================================================================================================
-        DateNight dateNight1 = new DateNight("07-28-2022", "Go hiking together", "Active", "Easy", "This is a test");
+        DateNight dateNight1 = new DateNight("07-28-2022", "Go hiking together", "Active", "Easy", "We went to bush kill falls and even though we had to pay for the entrance, it was worth it. We had a great time and my partner really enjoyed the walk.");
+        DateNight dateNight2 = new DateNight("08-01-2022", "Play Board Games", "Home", "Easy", "I love to play board games since I was little so playing board games with my partner brought me back to the good ol' days. I love this, will definitely do it again!");
+        DateNight dateNight3 = new DateNight("Cook dinner together", "Home", "Medium");
+        DateNight dateNight4 = new DateNight("Bake a dessert together", "Home", "Easy");
+
+        DateNight dateNight5 = new DateNight("Watch a movie", "Home", "Easy");
+        DateNight dateNight6 = new DateNight("Karaoke", "Home", "Easy");
+        DateNight dateNight7 = new DateNight("Play Video Games", "Home", "Easy");
+        DateNight dateNight8 = new DateNight("Stargaze", "Home", "Easy");
+
+        DateNight dateNight9 = new DateNight("Binge watch a TV series", "Home", "Easy");
+        DateNight dateNight10 = new DateNight("Go camping in your backyard", "Home", "Medium");
+        DateNight dateNight11 = new DateNight("Do a puzzle", "Home", "Medium");
+        DateNight dateNight12 = new DateNight("Go to a fancy restaurant", "Food", "Medium");
+
+        DateNight dateNight13 = new DateNight("Find food trucks around your area", "Food", "Medium");
+        DateNight dateNight14 = new DateNight("Fast Food Feast", "Food", "Easy");
+        DateNight dateNight15 = new DateNight("Try a new restaurant that both of you have never tried before", "Food", "Easy");
+        DateNight dateNight16 = new DateNight("Workout together", "Active", "Medium");
+
+        DateNight dateNight17 = new DateNight("Play a sport", "Active", "Medium");
+        DateNight dateNight18 = new DateNight("Visit an amusement park", "Active", "Medium");
+        DateNight dateNight19 = new DateNight("Go rock climbing", "Active", "Hard");
+        DateNight dateNight20 = new DateNight("Go bowling", "Active", "Medium");
+
+        DateNight dateNight21 = new DateNight("Do a picnic and bring each other favorite foods", "Active", "Easy");
+        DateNight dateNight22 = new DateNight("Go to the pool", "Active", "Easy");
+        DateNight dateNight23 = new DateNight("Go sky-diving", "Active", "Hard");
+        DateNight dateNight24 = new DateNight("Visit an aquarium", "Active", "Medium");
+
+        DateNight dateNight25 = new DateNight("Visit a museum", "Active", "Medium");
+        DateNight dateNight26 = new DateNight("Go surfing", "Active", "Hard");
+        DateNight dateNight27 = new DateNight("Explore a new state or place", "Active", "Medium");
+
         dateRepo.save(dateNight1);
+        dateRepo.save(dateNight2);
+        dateRepo.save(dateNight3);
+        dateRepo.save(dateNight4);
+
+        dateRepo.save(dateNight5);
+        dateRepo.save(dateNight6);
+        dateRepo.save(dateNight7);
+        dateRepo.save(dateNight8);
+
+        dateRepo.save(dateNight9);
+        dateRepo.save(dateNight10);
+        dateRepo.save(dateNight11);
+        dateRepo.save(dateNight12);
+
+        dateRepo.save(dateNight13);
+        dateRepo.save(dateNight14);
+        dateRepo.save(dateNight15);
+        dateRepo.save(dateNight16);
+
+        dateRepo.save(dateNight17);
+        dateRepo.save(dateNight18);
+        dateRepo.save(dateNight19);
+        dateRepo.save(dateNight20);
+
+        dateRepo.save(dateNight21);
+        dateRepo.save(dateNight22);
+        dateRepo.save(dateNight23);
+        dateRepo.save(dateNight24);
+
+        dateRepo.save(dateNight25);
+        dateRepo.save(dateNight26);
+        dateRepo.save(dateNight27);
 
         // DISCUSS =========================================================================================================
         Discuss discuss1 = new Discuss("07-24-2022", "How can we improve our relationship?", "Increase communication", "Compliment more");

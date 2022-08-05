@@ -1,9 +1,14 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import React from "react";
 import style from "./style.module.scss";
 import rekindle from "../../assests/logo.png";
 
 const Header = () => {
+
+    // const { pathname } = useLocation();
+    // if (pathname === "/Signup") return null;
+    // if (pathname === "/Login") return null;
+    
     return (
         <div className={style.header}>
             <div className={style.nav}>
