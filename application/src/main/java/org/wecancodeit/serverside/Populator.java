@@ -33,8 +33,6 @@ public class Populator implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-
-
         Journal joeJournal = new Journal("July 27", "this is a test");
         journalRepository.save(joeJournal);
         Journal joeJournal2 = new Journal("July 28", "this is a test2");

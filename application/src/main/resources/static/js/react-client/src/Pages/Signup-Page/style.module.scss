@@ -1,8 +1,154 @@
 .signPage {
-    width: 85%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    height: 100%;
     margin: 0px auto;
     padding-top: 100px;
-    border-left: 1px solid rgba(0,0,0,0.1);
-    border-right: 1px solid rgba(0,0,0,0.1);
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.signupOne {
+    width: 100%;
+    height: 100%;
+}
+
+.signupH1 {
+    margin: 10px 40px !important;
+    color: #51ABF6;
+    font-size: 2.8rem;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+}
+
+.signupTwo {
+    width: 100%;
+    height: 100%;
+}
+
+.signupImg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto auto;
+    width: 70%;
+    height: 70%;
+}
+
+.signupForm {
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.signupH2 {
+    text-align: center;
+    font-size: 1.8rem;
+    font-family: "Montserrat", sans-serif;
+}
+
+.signupText {
+    margin: 10px 0px;
+    width: 90%;
+    height: 30px;
+    background-color: rgb(247, 247, 247);
+    border: 2px solid rgba(0,0,0,0.1);
+}
+
+.signupText[type="text"] {
+    padding: 10px 10px;
+    color: #7A7A7A;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+}
+
+.signupSubmit {
+    width: 92%;
+    margin: 20px auto;
+    background-color: #46C0EA;
+    color: #FFF;
+    font-family: 'Montserrat', serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding: 20px 50px;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    border: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.2s ease;
+}
+
+.signupSubmit:hover {
+    background-color: #0085b1;
+}
+
+.signupLine {
+    width: 94%;
+	display: flex;
+	flex-basis: 100%;
+	align-items: center;
+	color: rgba(0, 0, 0, 0.35);
+	margin: 10px auto;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+}
+
+.signupLine::before,
+.signupLine::after {
+	content: "";
+	flex-grow: 1;
+	background: rgba(0, 0, 0, 0.35);
+	height: 1px;
+	font-size: 0px;
+	line-height: 0px;
+	margin: 0px 8px;
+}
+
+.signupFace {
+    width: 92%;
+    display: block;
+    align-items: center;
+    margin: 20px auto;
+    background-color: #4267B2;
+    color: #FFF;
+    font-family: 'Montserrat', serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding: 20px 50px;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    border: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.2s ease;
+}
+
+.signupFace:hover {
+    background-color: #6A89C8;
+}
+
+.signupGoogle {
+    width: 92%;
+    display: block;
+    align-items: center;
+    margin: 20px auto;
+    background-color: #DB4437;
+    color: #FFF;
+    font-family: 'Montserrat', serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding: 20px 50px;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    border: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.2s ease;
+}
+
+.signupGoogle:hover {
+    background-color: #E36E64;
 }
