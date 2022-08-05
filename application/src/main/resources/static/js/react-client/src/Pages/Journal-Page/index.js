@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from "react";
+import { getUsername, setUsernameSession } from "../../utils/common";
 
 import Axios from 'axios';
 import Journals from "../../Components/journal-component";
-import Users from "../../Components/user-component";
 import style from "./style.module.scss";
 
+//import Users from "../../Components/user-component";
+
+
 const JournalPage =()=>{
+
+    const userName = getUsername();
 
     const [loadingJournals, setLoadingJournals] = useState(true),
         [journals, setJournals] = useState(null),
@@ -15,7 +20,8 @@ const JournalPage =()=>{
     useEffect(() => {
         const fetchData = async () => {
             const result = await Axios('http://localhost:8080/api/${userName}/journals/${journalId}/edit-journal-entry');
-            setEditJournals(result.data);
+            setEditJournals(result.data.token, result.data.userName);
+            //setUsernameSession(result.data.token, result.data.userName);
         }
         if (editJournals){
             setLoadingEditJournals(false);
@@ -31,7 +37,8 @@ const JournalPage =()=>{
     useEffect(() => {
         const fetchData = async () => {
             const result = await Axios('http://localhost:8080/api/${userName}/journals');
-            setJournals(result.data);
+            setJournals(result.data.token, result.data.userName);
+            //setUsernameSession(result.data.token, result.data.userName);
         }
         if (journals){
             setLoadingJournals(false);
@@ -49,7 +56,7 @@ const JournalPage =()=>{
             <div className={style.form__container}>
                 <section className={style.journalList}>
                     {loadingJournals ? <h3>Loading Journals...</h3> :
-                        <Journals journals={journals} setUserName={Users.userName} />
+                        <Journals journals={journals} setUsername={userName} />
                     }
                 </section>
             </div>
@@ -58,7 +65,7 @@ const JournalPage =()=>{
                     <h2>Here are your previous entries:</h2>
                     <ul>
                         {editJournals.map(journal => (
-                            <div key={Users.userName}>
+                            <div key={userName}>
                                 <p>{journal.date}</p>
                                 <p>{journal.entry}</p>
                             </div>

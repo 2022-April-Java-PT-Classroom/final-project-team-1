@@ -1,0 +1,154 @@
+.loginPage {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    height: 100%;
+    margin: 0px auto;
+    padding-top: 100px;
+}
+
+.loginOne {
+    width: 100%;
+    height: 100%;
+}
+
+.loginH1 {
+    margin: 10px 40px !important;
+    color: #51ABF6;
+    font-size: 2.8rem;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+}
+
+.loginTwo {
+    width: 100%;
+    height: 100%;
+}
+
+.loginImg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px auto;
+    width: 80%;
+    height: 80%;
+}
+
+.loginForm {
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginH2 {
+    text-align: center;
+    font-size: 1.8rem;
+    font-family: "Montserrat", sans-serif;
+}
+
+.loginText {
+    margin: 10px 0px;
+    width: 90%;
+    height: 30px;
+    background-color: rgb(247, 247, 247);
+    border: 2px solid rgba(0,0,0,0.1);
+}
+
+.loginText[type="text"] {
+    padding: 10px 10px;
+    color: #7A7A7A;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+}
+
+.loginSubmit {
+    width: 92%;
+    margin: 20px auto;
+    background-color: #46C0EA;
+    color: #FFF;
+    font-family: 'Montserrat', serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding: 20px 50px;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    border: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.2s ease;
+}
+
+.loginSubmit:hover {
+    background-color: #0085b1;
+}
+
+.loginLine {
+    width: 94%;
+	display: flex;
+	flex-basis: 100%;
+	align-items: center;
+	color: rgba(0, 0, 0, 0.35);
+	margin: 10px auto;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+}
+
+.loginLine::before,
+.loginLine::after {
+	content: "";
+	flex-grow: 1;
+	background: rgba(0, 0, 0, 0.35);
+	height: 1px;
+	font-size: 0px;
+	line-height: 0px;
+	margin: 0px 8px;
+}
+
+.loginFace {
+    width: 92%;
+    display: block;
+    align-items: center;
+    margin: 20px auto;
+    background-color: #4267B2;
+    color: #FFF;
+    font-family: 'Montserrat', serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding: 20px 50px;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    border: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.2s ease;
+}
+
+.loginFace:hover {
+    background-color: #6A89C8;
+}
+
+.loginGoogle {
+    width: 92%;
+    display: block;
+    align-items: center;
+    margin: 20px auto;
+    background-color: #DB4437;
+    color: #FFF;
+    font-family: 'Montserrat', serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding: 20px 50px;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    border: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.2s ease;
+}
+
+.loginGoogle:hover {
+    background-color: #E36E64;
+}
