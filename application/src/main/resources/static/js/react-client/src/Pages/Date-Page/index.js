@@ -1,49 +1,44 @@
-import React, { useEffect } from 'react';
-import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import Axios from "axios";
 import style from './style.module.scss';
 import { Link } from "react-router-dom";
 
 const DatePage = () => {
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const [loadingDate, setLoadingDate] = useState(true);
+    const [dateNight, setDateNight] = useState(null);
 
-        const userData = {
-            dateDate: "test",
-            dateIdea: "test",
-            dateType: "test",
-            dateLevel: "test",
-            dateNotes: "test"
-        };
-
-        axios.post('http://localhost:8080/dateNight/add-dateNight', userData).then((response) => {
-            console.log(response.status);
-            console.log('DATA', response.data);
-        });
-
-    };
+    const randomDate = Math.floor((Math.random() * 27));
 
     useEffect(() => {
         const fetchData = async () => {
-            const result = await axios('http://localhost:8080/dateNight');
-            console.log(result);
+            const result = await Axios('http://localhost:8080/dateNight/${randomDate}');
+
+            setDateNight(result.data);
+        };
+
+        if (dateNight) {
+            setLoadingDate(false);
         }
 
+        const timer =setTimeout(() => {
+            !dateNight && fetchData();
+        }, 1000);
+        return () => clearTimeout(timer);
+    }, [dateNight, randomDate]);
 
-        fetchData();
-
-        // eslint-disable-next-line
-    }, []);
 
     return (
+
+        
         <div className={style.datePage}>
             <section className={style.dateMain}>
                 <h1 className={style.dateH1}>Date Ideas</h1>
-                <p className={style.datePara}></p>
-                <form onSubmit={handleSubmit} className={style.dateForm}>
-                    <input></input>
-                    <input></input>
-                    <input></input>
+        {loadingDate ? <h3>Creating date night idea just for you...</h3> :       
+                <p className={style.datePara}>{dateNight.dateIdea}</p> }
+                <form className={style.dateForm}>
+                    <input type="date" placeholder='Enter date'></input>
+                    <textarea placeholder='Enter your experience'></textarea>
                     <button>Submit</button>
                 </form>
             </section>
