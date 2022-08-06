@@ -2,11 +2,8 @@ package org.wecancodeit.serverside;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import org.wecancodeit.serverside.model.Journal;
-import org.wecancodeit.serverside.model.User;
+import org.wecancodeit.serverside.model.*;
 import org.wecancodeit.serverside.repository.*;
-import org.wecancodeit.serverside.model.DateNight;
-import org.wecancodeit.serverside.model.Discuss;
 
 import javax.annotation.Resource;
 import java.util.Date;
@@ -29,6 +26,8 @@ public class Populator implements CommandLineRunner {
 
     @Resource
     private PromptRepository promptRepo;
+    @Resource
+    private QuotesRepository quotesRepo;
 
     @Override
     public void run(String... args) throws Exception {
@@ -191,5 +190,13 @@ public class Populator implements CommandLineRunner {
 
         User noelle = new User("noelleizkewl", "password", noelleJournal01, noelleJournal02, noelleJournal03);
         userRepository.save(noelle);
+
+        Quotes quote1 = new Quotes("Act as if what you do makes a diffrence. It does.",
+                "http://localhost:8080/images/quote1.png", "William James");
+        quotesRepo.save(quote1);
+        Quotes quote2 = new Quotes("It always seems impossible until it is done",
+                "http://localhost:8080/images/quote2.png","Nelson Mandela");
+        quotesRepo.save(quote2);
+
     }
 }
