@@ -28,7 +28,7 @@ const Login = () => {
                 placeholder="Password" value={password} 
                 onChange={(event) => setPassword(event.target.value)}>
                 </input>
-                <button className={style.loginSubmit} type="submit">Login With Email</button>
+                <button className={style.loginSubmit} type="submit">Login With Username</button>
             </form>
 
             <div className={style.loginLine}>OR</div>

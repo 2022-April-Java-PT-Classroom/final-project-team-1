@@ -31,7 +31,7 @@ const Signup = () => {
                 placeholder="Password" value={password} 
                 onChange={(event) => setPassword(event.target.value)}>
                 </input>
-                <button className={style.signupSubmit} type="submit">Sign Up With Email</button>
+                <button className={style.signupSubmit} type="submit">Sign Up To Rekindle</button>
             </form>
 
             <div className={style.signupLine}>OR</div>
