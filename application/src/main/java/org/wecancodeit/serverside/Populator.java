@@ -32,18 +32,24 @@ public class Populator implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        Journal joeJournal = new Journal("July 27", "this is a test");
+        User joe = new User("JOEBUCK","12345");
+        userRepository.save(joe);
+
+        User noelle = new User("noelleizkewl", "password");
+        userRepository.save(noelle);
+
+        Journal joeJournal = new Journal("July 27", "this is a test",joe);
         journalRepository.save(joeJournal);
-        Journal joeJournal2 = new Journal("July 28", "this is a test2");
+        Journal joeJournal2 = new Journal("July 28", "this is a test2",joe);
         journalRepository.save(joeJournal2);
-        Journal joeJournal3 = new Journal("July 28", "this is a test3");
+        Journal joeJournal3 = new Journal("July 28", "this is a test3",joe);
         journalRepository.save(joeJournal3);
 
-        Journal noelleJournal01 = new Journal("July 27", "Hi");
+        Journal noelleJournal01 = new Journal("July 27", "Hi",noelle);
         journalRepository.save(noelleJournal01);
-        Journal noelleJournal02 = new Journal("July 28", "How are you");
+        Journal noelleJournal02 = new Journal("July 28", "How are you",noelle);
         journalRepository.save(noelleJournal02);
-        Journal noelleJournal03 = new Journal("July 28", "Good and you?");
+        Journal noelleJournal03 = new Journal("July 28", "Good and you?",noelle);
         journalRepository.save(noelleJournal03);
 
 
@@ -180,23 +186,11 @@ public class Populator implements CommandLineRunner {
         discussRepo.save(discuss24);
         discussRepo.save(discuss25);
 
-        // User constructors need to be saved last down here AND incorporate the entries saved in the repos above into the constructor,
-        // at least for now. That will enable proper JSON displaying so long as the controllers pull in the collection of users properly.
-        // Will be verifying this week with instructors to see if there's a more efficient way for this to happen.
-
-
-        User joe = new User("joebuck","12345", joeJournal, joeJournal2, joeJournal3);
-        userRepository.save(joe);
-
-        User noelle = new User("noelleizkewl", "password", noelleJournal01, noelleJournal02, noelleJournal03);
-        userRepository.save(noelle);
-
         Quotes quote1 = new Quotes("Act as if what you do makes a diffrence. It does.",
                 "http://localhost:8080/images/quote1.png", "William James");
         quotesRepo.save(quote1);
         Quotes quote2 = new Quotes("It always seems impossible until it is done",
                 "http://localhost:8080/images/quote2.png","Nelson Mandela");
         quotesRepo.save(quote2);
-
     }
 }
