@@ -40,12 +40,16 @@ const Signup = (props) => {
                 <input className={style.signupText} 
                 type="text" placeholder="Username" 
                 value={username} 
-                onChange={(event) => setUsername(event.target.value)}>
+                onChange={(event) => setUsername(event.target.value)}
+                onFocus={(e) => e.target.placeholder = ""} 
+                onBlur={(e) => e.target.placeholder = "Username"}>
                 </input>
                 <input className={style.signupText} 
                 type="text" 
                 placeholder="Password" value={password} 
-                onChange={(event) => setPassword(event.target.value)}>
+                onChange={(event) => setPassword(event.target.value)}
+                onFocus={(e) => e.target.placeholder = ""} 
+                onBlur={(e) => e.target.placeholder = "Password"}>
                 </input>
                 <button className={style.signupSubmit} type="submit" onClick={handleLogin}>Sign Up To Rekindle</button>
             </form>
