@@ -33,11 +33,12 @@ const DatePage = () => {
         
         <div className={style.datePage}>
             <section className={style.dateMain}>
-                <h1 className={style.dateH1}>Date Ideas</h1>
-        {loadingDate ? <h3>Creating date night idea just for you...</h3> :       
+                <h1 className={style.dateH1}>Date Night Inspo</h1>
+        {loadingDate ? <h3 className={style.dateLoad}>Creating date night idea just for you...</h3> :       
                 <p className={style.datePara}>{dateNight.dateIdea}</p> }
+                <h3 className={style.dateTitle}>Tell us your experience</h3>
                 <form className={style.dateForm}>
-                    <input type="date" placeholder='Enter date'></input>
+                    <input className={style.dateInput} type="date" placeholder='Enter date'></input>
                     <textarea placeholder='Enter your experience'></textarea>
                     <button>Submit</button>
                 </form>
