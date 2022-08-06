@@ -2,10 +2,8 @@ import React, { useEffect, useState } from "react";
 import { getUsername, setUsernameSession } from "../../utils/common";
 
 import Axios from 'axios';
+import Girls from "../../Assets/Images/girls-drinks.svg";
 import style from "./style.module.scss";
-
-//import Girls from "../../Assets/Images/girls-drinks.svg";
-
 
 const Login = (props) => {
 
@@ -57,7 +55,7 @@ const Login = (props) => {
 
             <section className={style.loginOne}>
                 <h1 className={style.loginH1}>Welcome Back {getUsername()} We're Glad You're Here.</h1>
-                <img className={style.loginImg} ></img>
+                <img className={style.loginImg} src={Girls}></img>
             </section>
         </div>
     );

@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 
+import Indian from "../../Assets/Images/indian-wedding.svg";
 import axios from 'axios';
 import { setUsernameSession } from "../../utils/common";
 import style from "./style.module.scss";
-
-//import Indian from "../../Assets/Images/indian-wedding.svg";
-
-
 
 const Signup = (props) => {
     const [username, setUsername] = useState('');
@@ -35,7 +32,7 @@ const Signup = (props) => {
         <div className={style.signPage}>
         <section className={style.signupOne}>
             <h1 className={style.signupH1}>A Better Relationship Just A Few Clicks Away.</h1>
-            <img className={style.signupImg} ></img>
+            <img className={style.signupImg} src={Indian}></img>
         </section>
 
         <section className={style.signupTwo}>
