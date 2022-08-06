@@ -24,7 +24,7 @@ public class DiscussController {
         return (Collection<Discuss>) discussRepo.findAll();
     }
 
-    @RequestMapping("/api/discuss/{id}")
+    @RequestMapping("/api/discuss/{discussId}")
     public Optional<Discuss> getDiscussById(@PathVariable Long discussId) {
         return discussRepo.findById(discussId);
     }

@@ -61,6 +61,7 @@ const JournalPage = () => {
                     }
                 </section>
             </div>
+
             {/* {loadingEditJournals ? <h3>Loading Journals to Edit...</h3> :
                 <>
                     <h2>Here are your previous entries:</h2>
@@ -100,6 +101,7 @@ const JournalPage = () => {
         <div className={style.journalSpacer}></div>
         </div>
     </section>
+    </div>
     </div>
     );
 }

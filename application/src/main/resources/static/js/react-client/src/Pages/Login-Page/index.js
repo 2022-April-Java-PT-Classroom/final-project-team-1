@@ -65,7 +65,7 @@ const Login = (props) => {
             <form className={style.loginForm} onSubmit={handleSubmit}>
                 <input className={style.loginText} 
                 type="text" placeholder="Username" 
-                value={username} 
+                value={userName} 
                 onChange={(event) => setUsername(event.target.value)}>
                 </input>
                 <input className={style.loginText} 
@@ -85,6 +85,7 @@ const Login = (props) => {
             <h1 className={style.loginH1}>Welcome Back. We're Glad You're Here.</h1>
             <img className={style.loginImg} src={Girls}></img>
         </section>
+        </div>
         </div>
     );
 }

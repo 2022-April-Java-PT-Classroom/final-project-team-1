@@ -19,6 +19,14 @@ const Signup = (props) => {
         });
     }
 
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log(username, password);
+    }
+
     return (
         <div className={style.signPage}>
         <section className={style.signupOne}>
