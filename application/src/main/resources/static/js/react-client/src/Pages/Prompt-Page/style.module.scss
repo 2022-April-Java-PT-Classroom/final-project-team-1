@@ -3,9 +3,10 @@
     font-family: 'Pathway Gothic One', sans-serif;
     
 }
-.container{
-    margin:200px;
 
+.container {
+    margin:200px;
+    padding-top: 100px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -13,16 +14,14 @@
     max-width: 80rem;
     width: 80%;
     background: linear-gradient(to bottom, #064a81,#51ABF6,white);
-
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
     // -webkit-box-shadow: inset 2px 2px 101px 49px rgba(118, 98, 163, 0.6);
     // -moz-box-shadow: inset 2px 2px 101px 49px rgba(118, 98, 163, 0.6);
     // box-shadow: inset 2px 2px 101px 49px rgba(118, 98, 163, 0.6);
-
-
 }
+
+
 .logo{
     min-height: 25px;
     min-width: none;
@@ -83,13 +82,11 @@
 }
 .prompt{
     color:rgb(243, 149, 73);
-    
-
 }
+
 .submit{
     justify-content: flex-end;
     max-width: 80px !important;
     background-color: #51abf6;
     border-radius: 5px;
-
 }

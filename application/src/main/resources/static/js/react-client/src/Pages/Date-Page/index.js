@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-
 import axios from 'axios';
 import style from './style.module.scss';
+import { Link } from "react-router-dom";
 
 const DatePage = () => {
 
@@ -36,7 +36,7 @@ const DatePage = () => {
     }, []);
 
     return (
-        <div>
+        <div className={style.datePage}>
             <section className={style.dateMain}>
                 <h1 className={style.dateH1}>Date Ideas</h1>
                 <p className={style.datePara}></p>
@@ -50,6 +50,7 @@ const DatePage = () => {
             <section className={style.dateEntry}>
 
             </section>
+            <div className={style.dateSpacer}></div>
         </div>
     );
 }

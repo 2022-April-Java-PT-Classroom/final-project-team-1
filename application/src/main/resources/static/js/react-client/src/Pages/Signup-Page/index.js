@@ -1,18 +1,10 @@
 import React, { useState } from "react";
-
 import Indian from "../../Assets/Images/indian-wedding.svg";
 import axios from 'axios';
 import { setUsernameSession } from "../../utils/common";
 import style from "./style.module.scss";
 
 const Signup = (props) => {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    
-    const handleSubmit = (event) => {
-        event.preventDefault();
-          
-    }
 
     const handleLogin = () => {
 
@@ -25,7 +17,6 @@ const Signup = (props) => {
             setUsernameSession(username);
             props.history.push('/Journal-Page');
         });
-
     }
 
     return (
