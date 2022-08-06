@@ -52,3 +52,30 @@
 .navBtn:hover {
     background-color: #0085b1;
 }
+
+.navTopBtn {
+    position: fixed;
+    z-index: 1;
+    right: 1%;
+    bottom: 5%;
+    margin: 0px 10px;
+    border: none;
+    border-radius: 100px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s ease;
+    background-color: #FEB134;
+}
+
+.navTopBtn:hover {
+    background-color: #FEC56B;
+}
+
+.navTopP {
+    padding: 5px 10px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #FFF;
+    letter-spacing: 1px;
+}
+

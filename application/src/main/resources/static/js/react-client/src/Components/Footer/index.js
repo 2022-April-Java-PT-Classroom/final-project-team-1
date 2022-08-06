@@ -26,18 +26,18 @@ const Footer = () => {
                     <h2>Rekindle</h2>
                 </div>
                 <div>
-                    <Link className={style.footerBtn}>Sign Up</Link>
-                    <Link className={style.footerBtn}>Login</Link>
+                    <Link to={'/Signup'} className={style.footerBtn}>Sign Up</Link>
+                    <Link to={'/Login'} className={style.footerBtn}>Login</Link>
                 </div>
             </section>
 
             <section className={style.footerLinksSection}>
                 <div className={style.footerLinksList}>
                     <h2>Features</h2>
-                    <Link className={style.footerLinks}>Prompts</Link>
-                    <Link className={style.footerLinks}>Dates</Link>
-                    <Link className={style.footerLinks}>Discussions</Link>
-                    <Link className={style.footerLinks}>Journal</Link>
+                    <Link to={'/Prompt-Page'} className={style.footerLinks}>Prompts</Link>
+                    <Link to={'/Date-Page'} className={style.footerLinks}>Dates</Link>
+                    <Link to={'/Discuss-Page'} className={style.footerLinks}>Discussions</Link>
+                    <Link to={'/Journal-Page'} className={style.footerLinks}>Journal</Link>
                 </div>
                 <div>
                     <h2>Resources</h2>
@@ -47,8 +47,8 @@ const Footer = () => {
                 </div>
                 <div>
                     <h2>Company</h2>
-                    <Link className={style.footerLinks}>Contact</Link>
-                    <Link className={style.footerLinks}>About Us</Link>
+                    <Link to={'/Contact'} className={style.footerLinks}>Contact</Link>
+                    <Link to={'/AboutUs-Page'} className={style.footerLinks}>About Us</Link>
                     <Link className={style.footerLinks}>The Project</Link>
                 </div>
             </section>

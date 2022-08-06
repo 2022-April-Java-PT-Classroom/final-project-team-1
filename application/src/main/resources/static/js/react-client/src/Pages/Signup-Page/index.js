@@ -31,7 +31,7 @@ const Signup = (props) => {
         <div className={style.signPage}>
         <section className={style.signupOne}>
             <h1 className={style.signupH1}>A Better Relationship Just A Few Clicks Away.</h1>
-            <img className={style.signupImg} src={Indian}></img>
+            <img className={style.signupImg} src={Indian} alt="indian-couple"></img>
         </section>
 
         <section className={style.signupTwo}>
@@ -47,7 +47,7 @@ const Signup = (props) => {
                 placeholder="Password" value={password} 
                 onChange={(event) => setPassword(event.target.value)}>
                 </input>
-                <button className={style.signupSubmit} type="submit" onClick={handleLogin}>Sign Up With Email</button>
+                <button className={style.signupSubmit} type="submit" onClick={handleLogin}>Sign Up To Rekindle</button>
             </form>
 
             <div className={style.signupLine}>OR</div>

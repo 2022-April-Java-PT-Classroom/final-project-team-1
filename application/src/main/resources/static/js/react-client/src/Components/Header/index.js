@@ -3,12 +3,29 @@ import React from "react";
 import style from "./style.module.scss";
 import rekindle from "../../assests/logo.png";
 
+const mybutton = document.getElementById("myBtn");
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40 ) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
 const Header = () => {
 
     // const { pathname } = useLocation();
     // if (pathname === "/Signup") return null;
     // if (pathname === "/Login") return null;
-    
+
     return (
         <div className={style.header}>
             <div className={style.nav}>
@@ -31,6 +48,7 @@ const Header = () => {
                     <NavLink className={style.navBtn} to={'/Login'}>Login</NavLink>
                 </ul>
             </div>
+            <button className={style.navTopBtn} id="myBtn" onClick={topFunction}><p className={style.navTopP}>top</p></button>
         </div>
     );
 }

@@ -73,7 +73,7 @@ const Login = (props) => {
                 placeholder="Password" value={password} 
                 onChange={(event) => setPassword(event.target.value)}>
                 </input>
-                <button className={style.loginSubmit} type="submit">Login With Email</button>
+                <button className={style.loginSubmit} type="submit">Login With Username</button>
             </form>
 
             <div className={style.loginLine}>OR</div>
@@ -83,7 +83,7 @@ const Login = (props) => {
 
         <section className={style.loginOne}>
             <h1 className={style.loginH1}>Welcome Back. We're Glad You're Here.</h1>
-            <img className={style.loginImg} src={Girls}></img>
+            <img className={style.loginImg} src={Girls} alt="girls-drinks"></img>
         </section>
         </div>
         </div>
