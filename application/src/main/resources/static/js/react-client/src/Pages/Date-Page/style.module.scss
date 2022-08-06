@@ -7,3 +7,46 @@
 .dateSpacer {
     margin: 300px auto;
 }
+
+.dateH1 {
+    display: flex;
+    justify-content: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 4rem;
+}
+
+.dateLoad {
+    display: flex;
+    justify-content: center;
+}
+
+.dateInput {
+    width: 150px;
+    border-radius: 15px;
+    font-family: sans-serif;
+}
+
+.dateForm {
+    display: flex;
+    justify-content: center;
+}
+
+.dateTitle {
+    display: flex;
+    justify-content: center;
+    font-size: 300%;
+    font-family: 'Lato', sans-serif;
+}
+
+.dateBtn {
+    background-color: #FEB134;
+    border-radius: 15px;
+    font-family: sans-serif;
+}
+
+textarea {
+    min-height: 8em;
+    min-width: 50%;
+    border-radius: 15px;
+    font-family: sans-serif;
+}
