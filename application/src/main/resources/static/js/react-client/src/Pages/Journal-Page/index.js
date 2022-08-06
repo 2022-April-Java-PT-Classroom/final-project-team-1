@@ -83,7 +83,9 @@ const JournalPage = () => {
 
     <form className={style.journalForm}>
         <input className={style.journalDate} type="date"></input>
-        <textarea className={style.journalEntry} type="text" placeholder="Thoughts"></textarea>
+        <textarea className={style.journalEntry} type="text" placeholder="Your Thoughts"
+        onFocus={(e) => e.target.placeholder = ""} 
+        onBlur={(e) => e.target.placeholder = "Your Thoughts"}></textarea>
         <button className={style.journalSubmit}>Submit</button>
     </form>
 

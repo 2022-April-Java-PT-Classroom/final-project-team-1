@@ -32,7 +32,7 @@ const DiscussPage = () => {
     
     const timer = setTimeout(() => {
         !discuss && fetchData() ;
-    }, 2000);
+    }, 1000);
     return () => clearTimeout(timer);
 
 }, [discuss]);
@@ -47,8 +47,12 @@ const DiscussPage = () => {
 
             <form className={style.discussForm}>
                 <input className={style.discussDate} type="date"></input>
-                <textarea className={style.discussEntry} type="text" placeholder="Your Answer"></textarea>
-                <textarea className={style.discussEntry} type="text" placeholder="Your Partner's Answer"></textarea>
+                <textarea className={style.discussEntry} type="text" placeholder="Your Answer" 
+                onFocus={(e) => e.target.placeholder = ""} 
+                onBlur={(e) => e.target.placeholder = "Your Answer"}></textarea>
+                <textarea className={style.discussEntry} type="text" placeholder="Your Partner's Answer"
+                onFocus={(e) => e.target.placeholder = ""} 
+                onBlur={(e) => e.target.placeholder = "Your Partner's Answer"}></textarea>
                 <button className={style.discussSubmit}>Submit</button>
             </form>
 

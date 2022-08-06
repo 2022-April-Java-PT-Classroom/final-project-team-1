@@ -38,12 +38,16 @@ const Login = (props) => {
                     <input className={style.loginText}
                         type="text" placeholder="Username"
                         value={userName}
-                        onChange={(event) => setUsername(event.target.value)}>
+                        onChange={(event) => setUsername(event.target.value)}
+                        onFocus={(e) => e.target.placeholder = ""} 
+                        onBlur={(e) => e.target.placeholder = "Username"}>
                     </input>
                     <input className={style.loginText}
                         type="text"
                         placeholder="Password" value={password}
-                        onChange={(event) => setPassword(event.target.value)}>
+                        onChange={(event) => setPassword(event.target.value)}
+                        onFocus={(e) => e.target.placeholder = ""} 
+                        onBlur={(e) => e.target.placeholder = "Password"}>
                     </input>
                     <button className={style.loginSubmit} type="submit" >Login With Username</button>
                 </form>
