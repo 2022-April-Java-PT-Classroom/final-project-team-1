@@ -81,6 +81,7 @@ function Contact() {
                     </div>
                 </section>
             </div></>
+      
     );
 }
 export default Contact;
