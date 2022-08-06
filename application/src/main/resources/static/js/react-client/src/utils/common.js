@@ -4,8 +4,8 @@ export const getUsername = () => {
     else return null;
 }
 
-export const setUsernameSession = (token, username) => {
-    sessionStorage.getItem("username", JSON.stringify(username))
+export const setUsernameSession = (username) => {
+    sessionStorage.setItem("username", JSON.stringify(username))
 }
 
 export const removeUsernameSession = () => {

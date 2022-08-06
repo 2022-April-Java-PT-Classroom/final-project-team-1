@@ -8,7 +8,7 @@ import style from "./style.module.scss";
 //import Users from "../../Components/user-component";
 
 
-const JournalPage =()=>{
+const JournalPage = () => {
 
     const userName = getUsername();
 
@@ -17,30 +17,30 @@ const JournalPage =()=>{
         [loadingEditJournals, setLoadingEditJournals] = useState(true),
         [editJournals, setEditJournals] = useState(null);
 
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         const result = await Axios('http://localhost:8080/api/${userName}/journals/${journalId}/edit-journal-entry');
+    //         setEditJournals(result.data.userName);
+    //         //setUsernameSession(result.data.token, result.data.userName);
+    //     }
+    //     if (editJournals){
+    //         setLoadingEditJournals(false);
+    //     }
+
+    //     const timer = setTimeout(() => {
+    //         !editJournals && fetchData();
+    //     }, 1000);
+    //     return () => clearTimeout(timer);
+
+    // }, [editJournals]);
+
     useEffect(() => {
         const fetchData = async () => {
-            const result = await Axios('http://localhost:8080/api/${userName}/journals/${journalId}/edit-journal-entry');
-            setEditJournals(result.data.userName);
-            //setUsernameSession(result.data.token, result.data.userName);
-        }
-        if (editJournals){
-            setLoadingEditJournals(false);
-        }
-
-        const timer = setTimeout(() => {
-            !editJournals && fetchData();
-        }, 1000);
-        return () => clearTimeout(timer);
-        
-    }, [editJournals]);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            const result = await Axios('http://localhost:8080/api/${userName}/journals');
-            setJournals(result.data.userName);
+            const result = await Axios(`http://localhost:8080/api/${userName}/journals`);
+            setJournals(result.data);
             //setUsernameSession(result.data.userName);
         }
-        if (journals){
+        if (journals) {
             setLoadingJournals(false);
         }
 
@@ -48,10 +48,10 @@ const JournalPage =()=>{
             !journals && fetchData();
         }, 1000);
         return () => clearTimeout(timer);
-        
-    }, [journals]);
-    
-    return(
+
+    }, [journals, userName]);
+
+    return (
         <div>
             <div className={style.form__container}>
                 <section className={style.journalList}>
@@ -60,7 +60,7 @@ const JournalPage =()=>{
                     }
                 </section>
             </div>
-            {loadingEditJournals ? <h3>Loading Journals to Edit...</h3> :
+            {/* {loadingEditJournals ? <h3>Loading Journals to Edit...</h3> :
                 <>
                     <h2>Here are your previous entries:</h2>
                     <ul>
@@ -72,7 +72,7 @@ const JournalPage =()=>{
                         ))}
                     </ul>
                 </>
-            }
+            } */}
         </div>
     );
 }

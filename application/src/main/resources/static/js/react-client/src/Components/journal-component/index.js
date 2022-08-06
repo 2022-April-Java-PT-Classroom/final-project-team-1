@@ -91,7 +91,8 @@ const Journals = ({userName ,journals}) => {
             <div className={style.journalsContainer}>
                 {journalsState.map(journal => (
                     <div className={style.journalContainer} key={journal.id}>
-                        <p className={journal.selected ? style.selected : null} onClick={() => handleEditEntryUpdate(Users.userName, journal.id, journal.journalDate, journal.journalEntry)}>{journal.journalDate}<button onClick={() => handleDelete(Users.userName, journal.id)}>x</button></p>
+                        <p className={journal.selected ? style.selected : null} onClick={() => handleEditEntryUpdate(journal.id, journal.journalDate, journal.journalEntry)}>{journal.date}<button onClick={() => handleDelete(journal.id)}>x</button></p>
+                        <p>{journal.entry}</p>
                     </div>
                 ))}
             </div>

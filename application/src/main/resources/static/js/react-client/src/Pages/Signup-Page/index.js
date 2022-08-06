@@ -23,14 +23,12 @@ const Signup = (props) => {
             username: username,
             password: password
         };
-        
+
         axios.post('http://localhost:8080/api/user/add-user', userData).then((response) => {
-            console.log(response.status);
-            console.log('DATA', response.data);
-            setUsernameSession(response.data.username, response.data.password);
+            setUsernameSession(username);
             props.history.push('/Journal-Page');
         });
-        
+
     }
 
     return (
