@@ -122,9 +122,7 @@ public class Populator implements CommandLineRunner {
         discussRepo.save(discuss24);
         discussRepo.save(discuss25);
 
-        // User constructors need to be saved last down here AND incorporate the entries saved in the repos above into the constructor,
-        // at least for now. That will enable proper JSON displaying so long as the controllers pull in the collection of users properly.
-        // Will be verifying this week with instructors to see if there's a more efficient way for this to happen.
+        
 
 
 
