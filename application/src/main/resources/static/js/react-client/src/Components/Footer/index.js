@@ -34,10 +34,14 @@ const Footer = () => {
             <section className={style.footerLinksSection}>
                 <div className={style.footerLinksList}>
                     <h2>Features</h2>
+
+                    
+                    <Link to={'/Quotes'} className={style.footerLinks}>Inspirational Quotes</Link>
                     <Link to={'/Prompt-Page'} className={style.footerLinks}>Prompts</Link>
                     <Link to={'/Date-Page'} className={style.footerLinks}>Dates</Link>
                     <Link to={'/Discuss-Page'} className={style.footerLinks}>Discussions</Link>
                     <Link to={'/Journal-Page'} className={style.footerLinks}>Journal</Link>
+
                 </div>
                 <div>
                     <h2>Resources</h2>

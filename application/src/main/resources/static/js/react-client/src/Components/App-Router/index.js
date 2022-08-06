@@ -10,6 +10,7 @@ import LoginPage from '../../Pages/Login-Page';
 import SignUpPage from '../../Pages/Signup-Page';
 import Resources from '../../Pages/Resources';
 import LoveLanguages from '../../Pages/Love';
+import Quotes from '../../Pages/Quotes';
 
 const AppRouter = () => {
     return (
@@ -25,6 +26,7 @@ const AppRouter = () => {
             <Route exact path={'/Signup'} component={SignUpPage} />
             <Route exact path={'/Resources'} component={Resources} />
             <Route exact path={'/Love-page'}   component={LoveLanguages}/>
+            <Route exact path={'/Quotes'}      component={Quotes} />
         </Switch>
     )
 }
