@@ -32,7 +32,7 @@ const DiscussPage = () => {
     
     const timer = setTimeout(() => {
         !discuss && fetchData() ;
-    }, 1000);
+    }, 2000);
     return () => clearTimeout(timer);
 
 }, [discuss]);

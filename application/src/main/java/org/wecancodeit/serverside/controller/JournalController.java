@@ -24,7 +24,7 @@ public class JournalController {
 
     @GetMapping("/api/{userName}/journals")
     public Collection<Journal> getJournal(@PathVariable String userName){
-        Optional<User> user = userRepository.findByUsername(userName);
+        Optional<User> user = userRepository.findByUsernameIgnoreCase(userName);
         return user.get().getJournals();
     }
 
@@ -33,17 +33,18 @@ public class JournalController {
         JSONObject newJournal = new JSONObject(body);
         String journalDate = newJournal.getString("date");
         String journalEntry = newJournal.getString("entry");
-        User user = userRepository.findByUsername(userName).get();
-        Journal journalEntryToAdd = new Journal(journalDate, journalEntry);
+        User user = userRepository.findByUsernameIgnoreCase(userName).get();
+        Journal journalEntryToAdd = new Journal(journalDate, journalEntry,user);
         journalRepository.save(journalEntryToAdd);
         return user.getJournals();
     }
 
-    @DeleteMapping("/api/{userName}/journals/delete-journal-entry")
-    public Collection<Journal> deleteJournalEntry(@PathVariable String userName) throws JSONException {
+    @DeleteMapping("/api/{userName}/journals/{id}/delete-journal-entry")
+    public Collection<Journal> deleteJournalEntry(@PathVariable String userName, @PathVariable Long id) throws JSONException {
         Optional<Journal> journalEntryToRemoveOpt = journalRepository.findByEntry(userName);
+        journalRepository.findById(id);
         journalEntryToRemoveOpt.ifPresent(journalEntry -> journalRepository.delete(journalEntry));
-        Optional<User> user = userRepository.findByUsername(userName);
+        Optional<User> user = userRepository.findByUsernameIgnoreCase(userName);
         return user.get().getJournals();
 
     }
@@ -54,9 +55,9 @@ public class JournalController {
         Long journalId = editJournal.getLong("id");
         String journalDate = editJournal.getString("date");
         String journalEntry = editJournal.getString("entry");
-        User user = userRepository.findByUsername(userName).get();
+        User user = userRepository.findByUsernameIgnoreCase(userName).get();
         journalRepository.findById(id).get();
-        Journal journalEntryToEdit = new Journal(journalDate,journalEntry);
+        Journal journalEntryToEdit = new Journal(journalDate,journalEntry,user);
         journalRepository.save(journalEntryToEdit);
         return user.getJournals();
     }
