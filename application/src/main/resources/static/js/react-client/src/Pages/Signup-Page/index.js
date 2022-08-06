@@ -27,7 +27,7 @@ const Signup = (props) => {
         axios.post('http://localhost:8080/api/user/add-user', userData).then((response) => {
             console.log(response.status);
             console.log('DATA', response.data);
-            setUsernameSession(response.data.token, response.data.username, response.data.password);
+            setUsernameSession(response.data.username, response.data.password);
             props.history.push('/Journal-Page');
         });
         

@@ -20,7 +20,7 @@ const JournalPage =()=>{
     useEffect(() => {
         const fetchData = async () => {
             const result = await Axios('http://localhost:8080/api/${userName}/journals/${journalId}/edit-journal-entry');
-            setEditJournals(result.data.token, result.data.userName);
+            setEditJournals(result.data.userName);
             //setUsernameSession(result.data.token, result.data.userName);
         }
         if (editJournals){
@@ -37,8 +37,8 @@ const JournalPage =()=>{
     useEffect(() => {
         const fetchData = async () => {
             const result = await Axios('http://localhost:8080/api/${userName}/journals');
-            setJournals(result.data.token, result.data.userName);
-            //setUsernameSession(result.data.token, result.data.userName);
+            setJournals(result.data.userName);
+            //setUsernameSession(result.data.userName);
         }
         if (journals){
             setLoadingJournals(false);

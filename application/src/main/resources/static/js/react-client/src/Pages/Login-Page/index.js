@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-import axios from 'axios';
+import Axios from 'axios';
 import { setUsernameSession } from "../../utils/common";
 import style from "./style.module.scss";
 
@@ -11,6 +11,8 @@ const Login = (props) => {
 
     const [userName, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [usernameSession, setUsernameSession] = useState(true);
+    const [loadingUsernameSession, setLoadingUsernameSession] = useState(null);
     
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -24,14 +26,23 @@ const Login = (props) => {
             password: password
         }
         
-        axios.put(`http://localhost:8080/api/user/${userName}`, userData).then((response) => {
-            console.log('Update Successful');
-            console.log('DATA', response.data);
-            setUsernameSession(response.data.token, response.data.userName, response.data.password);
-            props.history.push('/Journal-Page');
-        });
-        
     }
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const result = await Axios(`http://localhost:8080/api/user/${userName}`);
+            setUsernameSession(result.data.userName);
+        }
+        if (usernameSession){
+            setUsernameSession(false);
+        }
+
+        const timer = setTimeout(() => {
+            !userName && fetchData();
+        }, 1000);
+        return () => clearTimeout(timer);
+        
+    }, [usernameSession]);
 
     return (
         <div className={style.loginPage}>
