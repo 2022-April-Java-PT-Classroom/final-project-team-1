@@ -48,7 +48,7 @@ const Header = () => {
                     <NavLink className={style.navBtn} to={'/Login'}>Login</NavLink>
                 </ul>
             </div>
-            <button className={style.navTopBtn} id="myBtn" onClick={topFunction}><p className={style.navTopP}>top</p></button>
+            <button className={style.navTopBtn} id={"myBtn"} onClick={topFunction}><p className={style.navTopP}>top</p></button>
         </div>
     );
 }
