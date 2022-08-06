@@ -9,5 +9,5 @@ import java.util.Optional;
 public interface JournalRepository extends CrudRepository<Journal, Long> {
     Optional<Journal> findByEntry(String entry);
     Optional<Journal> findByDate(String date);
-    Optional<User> findByUsers(String username);
+    Optional<User> findByUser(String username);
 }

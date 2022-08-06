@@ -1,11 +1,27 @@
 import React, { useState } from "react";
 import Indian from "../../Assets/Images/indian-wedding.svg";
+import axios from 'axios';
+import { setUsernameSession } from "../../utils/common";
 import style from "./style.module.scss";
 
-const Signup = () => {
+const Signup = (props) => {
+
+    const handleLogin = () => {
+
+        const userData = {
+            username: username,
+            password: password
+        };
+
+        axios.post('http://localhost:8080/api/user/add-user', userData).then((response) => {
+            setUsernameSession(username);
+            props.history.push('/Journal-Page');
+        });
+    }
+
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    
+
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(username, password);
@@ -31,7 +47,7 @@ const Signup = () => {
                 placeholder="Password" value={password} 
                 onChange={(event) => setPassword(event.target.value)}>
                 </input>
-                <button className={style.signupSubmit} type="submit">Sign Up To Rekindle</button>
+                <button className={style.signupSubmit} type="submit" onClick={handleLogin}>Sign Up To Rekindle</button>
             </form>
 
             <div className={style.signupLine}>OR</div>

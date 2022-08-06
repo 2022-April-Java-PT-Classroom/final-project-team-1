@@ -12,8 +12,8 @@ public class Journal {
     private String date;
     @Lob
     private String entry;
-    @ManyToMany
-    private Collection<User> users;
+    @ManyToOne
+    private User user;
 
     // Getters ======================================================
     public Long getId() {
@@ -28,23 +28,20 @@ public class Journal {
         return entry;
     }
 
-    public Collection<User> getUsers(){
-        return users;
+    public User getUser(){
+        return user;
     }
 
     // Constructors =================================================
     public Journal() {
     }
 
-    public Journal(String date, String entry, User... users) {
+    public Journal(String date, String entry, User user) {
         this.date = date;
         this.entry = entry;
-        this.users = new HashSet<>(Arrays.asList(users));
+        this.user = user;
     }
 
-    public void addUsers(User usersToAdd){
-        users.add(usersToAdd);
-    }
 
     // Methods ======================================================
 //    @Override
