@@ -37,6 +37,7 @@ const Footer = () => {
                     <Link className={style.footerLinks}>Dates</Link>
                     <Link className={style.footerLinks}>Discussions</Link>
                     <Link className={style.footerLinks}>Journal</Link>
+                    <Link to={'/Quotes'} className={style.footerLinks}>Inspirational Quotes</Link>
                 </div>
                 <div>
                     <h2>Resources</h2>
