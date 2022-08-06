@@ -1,8 +1,3 @@
-@font-face {
-    font-family: ;
-    src: url();
-}
-
 .datePage {
     width: 100%;
     height: 100%;
@@ -16,7 +11,7 @@
 .dateH1 {
     display: flex;
     justify-content: center;
-    font-family: 'Belinda';
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 4rem;
 }
 
@@ -27,6 +22,8 @@
 
 .dateInput {
     width: 150px;
+    border-radius: 15px;
+    font-family: sans-serif;
 }
 
 .dateForm {
@@ -38,4 +35,18 @@
     display: flex;
     justify-content: center;
     font-size: 300%;
+    font-family: 'Lato', sans-serif;
+}
+
+.dateBtn {
+    background-color: #FEB134;
+    border-radius: 15px;
+    font-family: sans-serif;
+}
+
+textarea {
+    min-height: 8em;
+    min-width: 50%;
+    border-radius: 15px;
+    font-family: sans-serif;
 }

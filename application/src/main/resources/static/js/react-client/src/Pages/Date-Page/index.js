@@ -39,8 +39,8 @@ const DatePage = () => {
                 <h3 className={style.dateTitle}>Tell us your experience</h3>
                 <form className={style.dateForm}>
                     <input className={style.dateInput} type="date" placeholder='Enter date'></input>
-                    <textarea placeholder='Enter your experience'></textarea>
-                    <button>Submit</button>
+                    <textarea className={style.userExperience} placeholder='Enter your experience'></textarea>
+                    <button className={style.dateBtn}>Submit</button>
                 </form>
             </section>
             <section className={style.dateEntry}>
