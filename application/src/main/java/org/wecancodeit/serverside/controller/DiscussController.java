@@ -24,7 +24,7 @@ public class DiscussController {
         return (Collection<Discuss>) discussRepo.findAll();
     }
 
-    @RequestMapping("/api/discuss/{id}")
+    @RequestMapping("/api/discuss/{discussId}")
     public Optional<Discuss> getDiscussById(@PathVariable Long discussId) {
         return discussRepo.findById(discussId);
     }
@@ -37,11 +37,8 @@ public class DiscussController {
         String discussAnswerOne = newDiscuss.getString("discussAnswerOne");
         String discussAnswerTwo = newDiscuss.getString("discussAnswerTwo");
 
-        
 
         Optional<Discuss> discussToAdd = discussRepo.findByDiscussQuestion(discussQuestion);
-
-
         if (discussToAdd.isPresent()) {
             Discuss discussEntry = new Discuss(discussDate, discussQuestion, discussAnswerOne, discussAnswerTwo);
             discussRepo.save(discussEntry);

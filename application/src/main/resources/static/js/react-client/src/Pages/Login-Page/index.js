@@ -38,7 +38,7 @@ const Login = () => {
 
         <section className={style.loginOne}>
             <h1 className={style.loginH1}>Welcome Back. We're Glad You're Here.</h1>
-            <img className={style.loginImg} src={Girls}></img>
+            <img className={style.loginImg} src={Girls} alt="girls-drinks"></img>
         </section>
         </div>
     );
