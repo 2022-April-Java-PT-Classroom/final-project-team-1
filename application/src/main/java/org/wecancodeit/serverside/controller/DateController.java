@@ -8,18 +8,23 @@ import org.wecancodeit.serverside.repository.DateRepository;
 
 import javax.annotation.Resource;
 import java.util.Collection;
-import java.util.Date;
+import java.util.Optional;
 
 @RestController
-@CrossOrigin
+@CrossOrigin("*")
 public class DateController {
 
     @Resource
     private DateRepository dateRepo;
 
     @GetMapping("/dateNight")
-    public Collection<DateNight> getAllDateNights() {
+    public Collection<DateNight> getAllDateNight() {
         return (Collection<DateNight>) dateRepo.findAll();
+    }
+
+    @RequestMapping("/dateNight/{dateNightId}")
+    public Optional<DateNight> getDateNightById(@PathVariable Long dateNightId) {
+        return dateRepo.findById(dateNightId);
     }
 
     @PostMapping ("/dateNight/add-dateNight")
@@ -31,8 +36,11 @@ public class DateController {
         String dateLevel = newDateNight.getString("dateLevel");
         String dateNotes = newDateNight.getString("dateNotes");
 
-        DateNight dateNightToAdd = new DateNight(dateDate, dateIdea, dateType, dateLevel, dateNotes);
-        dateRepo.save(dateNightToAdd);
+        Optional<DateNight> dateNightToAdd = dateRepo.findByDateNight(dateIdea);
+        if (dateNightToAdd.isPresent()) {
+            DateNight dateNightIdea = new DateNight(dateDate, dateIdea, dateType, dateLevel, dateNotes);
+            dateRepo.save(dateNightIdea);
+        }
         return (Collection<DateNight>) dateRepo.findAll();
     }
 
