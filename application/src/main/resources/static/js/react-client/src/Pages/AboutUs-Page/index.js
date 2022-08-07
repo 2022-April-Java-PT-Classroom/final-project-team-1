@@ -4,10 +4,15 @@ import rekindle from "../../assests/logo.png";
 import Paper from "@material-ui/core/Paper";
 import Tab from "@material-ui/core/Tab";
 import Tabs from "@material-ui/core/Tabs";
+import Box from "@material-ui/core/Box";
 
 
 const AboutUsPage =()=>{
 const [value, setValue] = React.useState(4);
+function TabPanel(props) {
+  const { children, value, index, ...other } = props;
+  return <div {...other}>{value === index && <Box p={3}>{children}</Box>}</div>;
+}
 
 
     return(
@@ -42,7 +47,20 @@ const [value, setValue] = React.useState(4);
           <Tab label="Discuss"  />
           <Tab label="Journal" />
         </Tabs>
-        <h3>TAB NO: {value} clicked!</h3>
+
+        {/* <h3>TAB NO: {value} clicked!</h3> */}
+        <TabPanel value={value} index={0}>
+        prompt explanation
+      </TabPanel>
+      <TabPanel value={value} index={1}>
+        date instructions
+      </TabPanel>
+      <TabPanel value={value} index={2}>
+       dicuss how to's
+      </TabPanel>
+      <TabPanel value={value} index={3}>
+       penny for your thoughts
+      </TabPanel>
       </Paper>
     </div>
 
