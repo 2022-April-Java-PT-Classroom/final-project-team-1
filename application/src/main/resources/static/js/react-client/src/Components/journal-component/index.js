@@ -1,19 +1,21 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import style from './style.module.scss';
 
-const Journals = ({userName, journals}) => {
-    
+const Journals = ({ userName, journals }) => {
+
     const [journalsState, setJournalsState] = useState(journals);
 
     const [journalState, setJournalState] = useState({
-        journalDate:"",
-        journalEntry:"",
+        journalDate: "",
+        journalEntry: "",
         userName: ""
     });
-    
+
+    console.log(journalState);
+
     const handleJournalDateChange = (e) => {
         const value = e.target.value;
         setJournalState({
@@ -31,7 +33,9 @@ const Journals = ({userName, journals}) => {
     };
 
     const handleSubmit = (e) => {
-        e.preventdefault();
+        e.preventDefault();
+
+        console.log('FIRING')
 
         const userData = {
             journalDate: journalState.journalDate,
@@ -63,16 +67,16 @@ const Journals = ({userName, journals}) => {
         axios.put(`http://localhost:8080/api/${userName}/journals/${journalId}/edit-journal-entry`, userData).then((response) => {
             console.log('Edit successful');
             console.log('DATA', response.data);
-            setJournalsState(response.data);
+            setJournalsState(response.data.userName);
         });
     }
 
     return (
 
         <div className={style.journalPage}>
-    <section className={style.journalSection}>
-        <h1 className={style.journalH1}>journal.</h1>
-    </section>
+            <section className={style.journalSection}>
+                <h1 className={style.journalH1}>journal.</h1>
+            </section>
 
             <form className={style.journalForm} onSubmit={handleSubmit}>
                 <input className={style.journalDate}
@@ -87,27 +91,27 @@ const Journals = ({userName, journals}) => {
                     value={journalState.journalEntry}
                     onChange={handleJournalEntryChange}
                     placeholder='Your Thoughts'
-                    // onFocus={(e) => e.target.placeholder = ""} 
-                    // onBlur={(e) => e.target.placeholder = "Your Thoughts"}
+                // onFocus={(e) => e.target.placeholder = ""} 
+                // onBlur={(e) => e.target.placeholder = "Your Thoughts"}
                 />
                 <button className={style.journalSubmit} type="submit">Submit</button>
             </form>
             <section className={style.journalSection}>
-            {/* <h3 className={style.h3}>Previous Journal Entries</h3>
+                {/* <h3 className={style.h3}>Previous Journal Entries</h3>
             <div className={style.journalsContainer}> */}
                 {journalsState.map(journal => (
                     <div className={style.journalLinks} key={journal.id}>
-                        <p className={journal.selected ? style.selected : null} onClick={() => handleEditEntryUpdate(journal.id, journal.journalDate, journal.journalEntry)}>{journal.date}<button onClick={() => handleDelete(journal.id)}>x</button></p>
-                        <Link className={style.journalBtn} to={"#"}>{journal.entry}</Link>
-                    <div className={style.journalSpacer}></div>    
+                        <p className={journal.selected ? style.selected : null} onClick={() => handleEditEntryUpdate(journal.id, journal.journalDate, journal.journalEntry)}>{journal.journalDate}<button onClick={() => handleDelete(journal.id)}>x</button></p>
+                        <Link className={style.journalBtn} to={"#"}>{journal.journalEntry}</Link>
+                        <div className={style.journalSpacer}></div>
                     </div>
                 ))}
-            {/* </div> */}
+                {/* </div> */}
             </section>
         </div>
 
     );
-    
+
 }
 
 export default Journals;

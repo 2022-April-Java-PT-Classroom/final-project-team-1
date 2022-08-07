@@ -7,7 +7,7 @@ import org.wecancodeit.serverside.model.User;
 import java.util.Optional;
 
 public interface JournalRepository extends CrudRepository<Journal, Long> {
-    Optional<Journal> findByEntry(String entry);
-    Optional<Journal> findByDate(String date);
+    Optional<Journal> findByJournalEntry(String journalEntry);
+    Optional<Journal> findByJournalDate(String journalDate);
     Optional<User> findByUser(String username);
 }

@@ -9,9 +9,9 @@ public class Journal {
     @Id
     @GeneratedValue
     private Long id;
-    private String date;
+    private String journalDate;
     @Lob
-    private String entry;
+    private String journalEntry;
     @ManyToOne
     private User user;
 
@@ -20,12 +20,12 @@ public class Journal {
         return id;
     }
 
-    public String getDate() {
-        return date;
+    public String getJournalDate() {
+        return journalDate;
     }
 
-    public String getEntry() {
-        return entry;
+    public String getJournalEntry() {
+        return journalEntry;
     }
 
     public User getUser(){
@@ -36,9 +36,9 @@ public class Journal {
     public Journal() {
     }
 
-    public Journal(String date, String entry, User user) {
-        this.date = date;
-        this.entry = entry;
+    public Journal(String journalDate, String journalEntry, User user) {
+        this.journalDate = journalDate;
+        this.journalEntry = journalEntry;
         this.user = user;
     }
 
