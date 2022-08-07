@@ -1,9 +1,13 @@
 import React from "react";
 import style from "./style.module.scss";
 import rekindle from "../../assests/logo.png";
+import Paper from "@material-ui/core/Paper";
+import Tab from "@material-ui/core/Tab";
+import Tabs from "@material-ui/core/Tabs";
 
 
 const AboutUsPage =()=>{
+const [value, setValue] = React.useState(4);
 
 
     return(
@@ -19,11 +23,30 @@ const AboutUsPage =()=>{
                 <h2 className={style.aboutTitle}/>
                 <p className={style.about}>
                     Dating sites abound, but what do you do <em>after</em> you have found that spark? that is where reKindle comes in. If your goal is to have a vibrant healthy relationship that will endure (you have found the right [place]). ReKindle was created to help couples stay connected or reconnect. The resources and tools are all designed to spark conversation or offer inspiration for creative date nights. No fire will keep burning without fuel and attention. Allow us to help you achieve your relationship goals; we will help you focus your efforts and by providing daily insights and conversation starters as well as weekly date night ideas. Don't let you flames of love be extinguished by negect, rekindle those flames and have a relationhip that others will envy. 
-
                 </p> 
-
             </div>
-        </div>
+            <div className={style.Tabs} style={{
+        marginLeft: "20%", width:"800px"
+      }}>
+        <Paper >
+        <Tabs
+          value={value}
+          textColor="primary"
+          indicatorColor="primary"
+          onChange={(event, newValue) => {
+            setValue(newValue);
+          }}
+        >
+          <Tab label="Prompt" />
+          <Tab label="Date" />
+          <Tab label="Discuss"  />
+          <Tab label="Journal" />
+        </Tabs>
+        <h3>TAB NO: {value} clicked!</h3>
+      </Paper>
+    </div>
+
+    </div>
     );
 }
 export default AboutUsPage;
