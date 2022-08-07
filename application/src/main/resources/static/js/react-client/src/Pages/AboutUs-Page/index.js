@@ -1,9 +1,9 @@
-import React,{useState, component} from "react";
+import React from "react";
+import Tabs from "./Components/Tabs";
 import style from "./style.module.scss";
 import rekindle from "../../assests/logo.png";
-import Tabs from '../Components/Tabs';
 
-function AboutUsPage(){
+function AboutUsPage() {
 
 
   return(
@@ -25,19 +25,24 @@ function AboutUsPage(){
             </div>
             <div className={style.tabSection}>
             <Tabs>
-        <div label="Gator">
-          See ya later, <em>Alligator</em>!
+        <div label="prompt">
+        insert instructions
         </div>
-        <div label="Croc">
-          After 'while, <em>Crocodile</em>!
+        <div label="discuss">
+         how to use 
         </div>
-        <div label="Sarcosuchus">
-          Nothing to see here, this tab is <em>extinct</em>!
+        <div label="datenight">
+         inspriation
+        </div>
+        <div label='jounal'>
+          penny for your thoughts
         </div>
       </Tabs>
            
             </div>
         </div>
     );
+    
 }
+
 export default AboutUsPage;
