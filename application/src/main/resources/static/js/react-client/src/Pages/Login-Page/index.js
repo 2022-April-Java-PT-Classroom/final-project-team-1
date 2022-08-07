@@ -10,7 +10,7 @@ const Login = (props) => {
     const [userName, setUsername] = useState('');
     const [password, setPassword] = useState('');
     // const [usernameSession, setUsernameSession] = useState(true);
-    const [loadingUsernameSession, setLoadingUsernameSession] = useState(null);
+    //const [loadingUsernameSession, setLoadingUsernameSession] = useState(null);
 
     const handleSubmit = (event) => {
         event.preventDefault();

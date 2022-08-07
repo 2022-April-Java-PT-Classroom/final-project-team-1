@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 
-import Users from '../user-component';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import style from './style.module.scss';
 
-const Journals = ({userName ,journals}) => {
+const Journals = ({userName, journals}) => {
     
     const [journalsState, setJournalsState] = useState(journals);
 
@@ -42,7 +42,7 @@ const Journals = ({userName ,journals}) => {
         axios.post(`http://localhost:8080/api/${userName}/journals/add-journal-entry`, userData).then((response) => {
             console.log(response.status);
             console.log('DATA', response.data);
-            setJournalsState(response.data);
+            setJournalsState(response.data.userName);
         });
     };
 
@@ -50,13 +50,13 @@ const Journals = ({userName ,journals}) => {
         axios.delete(`http://localhost:8080/api/${userName}/journals/${journalId}/delete-journal-entry`).then((response) => {
             console.log('Delete Successful');
             console.log('DATA', response.data);
-            setJournalsState(response.data);
+            setJournalsState(response.data.userName);
         });
     }
 
     const handleEditEntryUpdate = (userName, journalId, journalDate, journalEntry) => {
         const userData = {
-            user: userName,
+            userName: userName,
             journalDate: journalDate,
             journalEntry: journalEntry
         }
@@ -69,33 +69,41 @@ const Journals = ({userName ,journals}) => {
 
     return (
 
-        <div className={style.journalForm}>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
+        <div className={style.journalPage}>
+    <section className={style.journalSection}>
+        <h1 className={style.journalH1}>journal.</h1>
+    </section>
+
+            <form className={style.journalForm} onSubmit={handleSubmit}>
+                <input className={style.journalDate}
+                    type="date"
                     name="journalDate"
                     value={journalState.journalDate}
                     onChange={handleJournalDateChange}
-                    placeholder='Please enter todays date'
                 />
-                <input
+                <textarea className={style.journalEntry}
                     type="text"
                     name="journalEntry"
                     value={journalState.journalEntry}
                     onChange={handleJournalEntryChange}
-                    placeholder='What is on your mind today?'
+                    placeholder='Your Thoughts'
+                    // onFocus={(e) => e.target.placeholder = ""} 
+                    // onBlur={(e) => e.target.placeholder = "Your Thoughts"}
                 />
-                <button type="submit">Submit Journal Entry</button>
+                <button className={style.journalSubmit} type="submit">Submit</button>
             </form>
-            <h3 className={style.h3}>Previous Journal Entries</h3>
-            <div className={style.journalsContainer}>
+            <section className={style.journalSection}>
+            {/* <h3 className={style.h3}>Previous Journal Entries</h3>
+            <div className={style.journalsContainer}> */}
                 {journalsState.map(journal => (
-                    <div className={style.journalContainer} key={journal.id}>
+                    <div className={style.journalLinks} key={journal.id}>
                         <p className={journal.selected ? style.selected : null} onClick={() => handleEditEntryUpdate(journal.id, journal.journalDate, journal.journalEntry)}>{journal.date}<button onClick={() => handleDelete(journal.id)}>x</button></p>
-                        <p>{journal.entry}</p>
+                        <Link className={style.journalBtn} to={"#"}>{journal.entry}</Link>
+                    <div className={style.journalSpacer}></div>    
                     </div>
                 ))}
-            </div>
+            {/* </div> */}
+            </section>
         </div>
 
     );
