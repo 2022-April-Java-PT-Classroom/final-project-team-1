@@ -1,12 +1,12 @@
-import React from "react";
+import React,{useState, component} from "react";
 import style from "./style.module.scss";
 import rekindle from "../../assests/logo.png";
+import Tabs from '../Components/Tabs';
+
+function AboutUsPage(){
 
 
-const AboutUsPage =()=>{
-
-
-    return(
+  return(
         <div className={style.container}>
             <img className={style.logo} src={rekindle} alt="logo"/>
             <div className={style.missionWrapper}>
@@ -22,6 +22,20 @@ const AboutUsPage =()=>{
 
                 </p> 
 
+            </div>
+            <div className={style.tabSection}>
+            <Tabs>
+        <div label="Gator">
+          See ya later, <em>Alligator</em>!
+        </div>
+        <div label="Croc">
+          After 'while, <em>Crocodile</em>!
+        </div>
+        <div label="Sarcosuchus">
+          Nothing to see here, this tab is <em>extinct</em>!
+        </div>
+      </Tabs>
+           
             </div>
         </div>
     );

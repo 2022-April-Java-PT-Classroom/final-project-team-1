@@ -24,9 +24,50 @@
     justify-items: center;
     margin-right: 800px;
     padding-top: 100px;
+    margin-bottom: 500px;
 }
 
 .missionWrapper{
     width:800px;
     font-size: 2em;
 }
+.tabs{
+    display:flex;
+    align-items:center;
+    flex-direction: column;
+    width:100%;
+    min-height: 100vh;
+}
+.sidebar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+}
+.tab-button{
+    background-color: #fff;
+    border:none;
+    border-bottom:1px orange;
+    padding:10px 0;
+    margin: 10px 0;
+    outline:none;
+    width:15%;
+}.active-tab-button{
+    border-bottom: 2px solid darkgrey;
+    font-weight:bold;
+}
+.panels{
+width:100%;
+}
+panel{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position:absolute;
+  display:none;
+}
+.active-panel{
+    display:block;
+}
+
