@@ -79,9 +79,9 @@ const JournalPage = () => {
             } */}
 
             <div className={style.journalPage}>
-                <section className={style.journalSection}>
+                {/* <section className={style.journalSection}>
                     <h1 className={style.journalH1}>journal.</h1>
-                </section>
+                </section> */}
 
                 {/* <form className={style.journalForm}>
                     <input className={style.journalDate} type="date"></input>

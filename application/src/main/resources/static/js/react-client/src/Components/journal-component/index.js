@@ -2,16 +2,19 @@ import React, { useState } from 'react';
 
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { getUsername } from '../../utils/common';
 import style from './style.module.scss';
 
 const Journals = ({ userName, journals }) => {
+    
+    //const userName = getUsername();
 
     const [journalsState, setJournalsState] = useState(journals);
 
     const [journalState, setJournalState] = useState({
         journalDate: "",
         journalEntry: "",
-        userName: ""
+        userName: {userName}
     });
 
     console.log(journalState);
@@ -39,8 +42,8 @@ const Journals = ({ userName, journals }) => {
 
         const userData = {
             journalDate: journalState.journalDate,
-            journalEntry: journalState.journalEntry,
-            userName: journalState.userName
+            journalEntry: journalState.journalEntry
+            //userName: journalState.userName
         };
 
         axios.post(`http://localhost:8080/api/${userName}/journals/add-journal-entry`, userData).then((response) => {
@@ -60,7 +63,7 @@ const Journals = ({ userName, journals }) => {
 
     const handleEditEntryUpdate = (userName, journalId, journalDate, journalEntry) => {
         const userData = {
-            userName: userName,
+            //userName: {userName},
             journalDate: journalDate,
             journalEntry: journalEntry
         }
@@ -101,7 +104,7 @@ const Journals = ({ userName, journals }) => {
             <div className={style.journalsContainer}> */}
                 {journalsState.map(journal => (
                     <div className={style.journalLinks} key={journal.id}>
-                        <p className={journal.selected ? style.selected : null} onClick={() => handleEditEntryUpdate(journal.id, journal.journalDate, journal.journalEntry)}>{journal.journalDate}<button onClick={() => handleDelete(journal.id)}>x</button></p>
+                        <p className={journal.selected ? style.selected : null} onClick={() => handleEditEntryUpdate(userName, journal.id, journal.journalDate, journal.journalEntry)}>{journal.journalDate}<button onClick={() => handleDelete(userName, journal.id)}>x</button></p>
                         <Link className={style.journalBtn} to={"#"}>{journal.journalEntry}</Link>
                         <div className={style.journalSpacer}></div>
                     </div>
