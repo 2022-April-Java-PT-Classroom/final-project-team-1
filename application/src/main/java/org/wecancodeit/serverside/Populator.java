@@ -26,6 +26,7 @@ public class Populator implements CommandLineRunner {
 
     @Resource
     private PromptRepository promptRepo;
+
     @Resource
     private QuotesRepository quotesRepo;
 
@@ -37,6 +38,9 @@ public class Populator implements CommandLineRunner {
 
         User noelle = new User("noelleizkewl", "password");
         userRepository.save(noelle);
+
+        User basic = new User("admin", "admin");
+        userRepository.save(basic);
 
         Journal joeJournal = new Journal("July 27", "this is a test",joe);
         journalRepository.save(joeJournal);

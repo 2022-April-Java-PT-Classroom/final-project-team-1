@@ -11,11 +11,10 @@ import SignUpPage from '../../Pages/Signup-Page';
 import Resources from '../../Pages/Resources';
 import LoveLanguages from '../../Pages/Love';
 import Quotes from '../../Pages/Quotes';
-import PortalHome from '../../Portal/Port-Pages/Port-Home';
-import PortalProfile from '../../Portal/Port-Pages/Port-Profile';
 import Portal from '../../Portal/Portal';
 
 const AppRouter = () => {
+
     return (
         <Switch>
             <Route exact path={'/'} component={HomePage} />
@@ -30,10 +29,6 @@ const AppRouter = () => {
             <Route exact path={'/Resources'} component={Resources} />
             <Route exact path={'/Love-page'} component={LoveLanguages}/>
             <Route exact path={'/Quotes'} component={Quotes} />
-
-
-            <Route exact path={'/Portal'} component={Portal} />
-            <Route exact path={'/Portal/Profile'} component={Portal} />
         </Switch>
     );
 }
