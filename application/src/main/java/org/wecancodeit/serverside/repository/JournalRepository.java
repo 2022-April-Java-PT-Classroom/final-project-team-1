@@ -10,4 +10,5 @@ public interface JournalRepository extends CrudRepository<Journal, Long> {
     Optional<Journal> findByJournalEntry(String journalEntry);
     Optional<Journal> findByJournalDate(String journalDate);
     Optional<User> findByUser(String username);
+    Optional<Journal> findById(Long id);
 }

@@ -64,7 +64,7 @@ const Journals = ({ userName, journals, setJournals }) => {
             userName: userName
         };
         
-        if(userEdit === journalDate && userEdit !== journalEntry && userEdit === userName && userEdit === journalId){
+        if((userEdit.journalDate === journalDate) && (userEdit.journalEntry !== journalEntry) && (userEdit.userName === userName) && (userEdit.journalId === journalId)){
         axios.put(`http://localhost:8080/api/${userName}/journals/${journalId}/edit-journal-entry`, userEdit).then((response) => {
             console.log('Edit successful');
             console.log('DATA', response.data);
@@ -93,18 +93,19 @@ const Journals = ({ userName, journals, setJournals }) => {
                     name="journalEntry"
                     value={journalState.journalEntry}
                     onChange={handleJournalEntryChange}
-                    placeholder='Your Thoughts'
+                    //placeholder='Your Thoughts'
                     onFocus={(e) => e.target.placeholder = ""} 
                     onBlur={(e) => e.target.placeholder = "Your Thoughts"}
                 />
                 <button className={style.journalSubmit} type="submit">Submit</button>
             </form>
-            <h3 className={style.journalH2}>Edit Previous Entries:</h3>
+            <h3 className={style.journalH2}>View or Edit Previous Entries:</h3>
             <section className={style.journalSection}>
                 {journals && journals.map(journal => (
                     <div className={style.journalLinks} key={journal.id}>
                         <p className={style.previousJournalDate}>{journal.journalDate}<button onClick={() => handleDelete(userName, journal.id)}>x</button></p>
                         <Link className={style.journalBtn}
+                        onChange={handleJournalEntryChange}
                         onClick={() => handleEditEntryUpdate(userName, journal.id, journal.journalDate, journal.journalEntry)}>{journal.journalEntry}</Link>
                         <div className={style.journalSpacer}></div>
                     </div>
