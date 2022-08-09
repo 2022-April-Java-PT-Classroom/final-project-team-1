@@ -1,0 +1,23 @@
+.quizCont {
+    background-color: pink;
+    width: 500px;
+    height: 300px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.quizAns {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+}
+
+.quizBtn {
+    margin-bottom: 5px;
+}
