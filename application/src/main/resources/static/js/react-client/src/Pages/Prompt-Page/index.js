@@ -1,6 +1,6 @@
 import React from "react";
-import style from "./style.module.scss";
 import oJournal from '../../assests/orangejournal.png'
+import style from "./style.module.scss";
 
 const PromptPage =()=>{
 
