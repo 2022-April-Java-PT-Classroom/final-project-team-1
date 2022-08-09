@@ -22,9 +22,8 @@ function topFunction() {
 
 const Header = () => {
 
-    // const { pathname } = useLocation();
-    // if (pathname === "/Signup") return null;
-    // if (pathname === "/Login") return null;
+    const { pathname } = useLocation();
+    if (pathname === "/portal") return null;
 
     return (
         <div className={style.header}>
