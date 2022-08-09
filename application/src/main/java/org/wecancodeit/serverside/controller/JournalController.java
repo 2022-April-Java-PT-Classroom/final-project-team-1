@@ -41,8 +41,7 @@ public class JournalController {
 
     @DeleteMapping("/api/{userName}/journals/{id}/delete-journal-entry")
     public Collection<Journal> deleteJournalEntry(@PathVariable String userName, @PathVariable Long id) throws JSONException {
-        Optional<Journal> journalEntryToRemoveOpt = journalRepository.findByJournalEntry(userName);
-        journalRepository.findById(id);
+        Optional<Journal> journalEntryToRemoveOpt = journalRepository.findById(id);
         journalEntryToRemoveOpt.ifPresent(Journal -> journalRepository.deleteById(id));
         Optional<User> user = userRepository.findByUsernameIgnoreCase(userName);
         return user.get().getJournals();

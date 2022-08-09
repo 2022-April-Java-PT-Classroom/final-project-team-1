@@ -83,9 +83,12 @@
 }
 
 .journalH2 {
-    margin: 10px auto;
+    // margin: 10px auto;
     font-size: 3rem;
     text-align: center;
+    margin: 30px auto;
+    //font-size: 1.5rem;
+    //font-family: "Montserrat", sans-serif;
 }
 
 .journalLinks {
@@ -119,6 +122,19 @@
     margin: 100px auto;
 }
 
-.journalDate {
+.previousJournalDate {
+    margin: 20px auto;
+    background-color: #FFF;
+    color: #FEB134;
+    font-family: 'Montserrat', serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: 20px 50px;
+    letter-spacing: 1px;
+    border: 2px solid #FEB134;
+    border-radius: 3px;
+}
+
+.previousJournalDate:hover {
     text-decoration: line-through;
 }

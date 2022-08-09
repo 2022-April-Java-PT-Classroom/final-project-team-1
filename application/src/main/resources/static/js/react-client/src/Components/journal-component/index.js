@@ -2,22 +2,16 @@ import React, { useState } from 'react';
 
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import { getUsername } from '../../utils/common';
 import style from './style.module.scss';
 
-const Journals = ({ userName, journals }) => {
-    
-    //const userName = getUsername();
+const Journals = ({ userName, journals, setJournals }) => {
 
-    const [journalsState, setJournalsState] = useState(journals);
 
     const [journalState, setJournalState] = useState({
         journalDate: "",
         journalEntry: "",
-        userName: {userName}
+        userName: userName
     });
-
-    console.log(journalState);
 
     const handleJournalDateChange = (e) => {
         const value = e.target.value;
@@ -35,21 +29,21 @@ const Journals = ({ userName, journals }) => {
         });
     };
 
+    
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        console.log('FIRING')
-
         const userData = {
             journalDate: journalState.journalDate,
-            journalEntry: journalState.journalEntry
-            //userName: journalState.userName
+            journalEntry: journalState.journalEntry,
+            userName: journalState.userName
         };
 
         axios.post(`http://localhost:8080/api/${userName}/journals/add-journal-entry`, userData).then((response) => {
             console.log(response.status);
             console.log('DATA', response.data);
-            setJournalsState(response.data.userName);
+            setJournals(response.data);
         });
     };
 
@@ -57,22 +51,28 @@ const Journals = ({ userName, journals }) => {
         axios.delete(`http://localhost:8080/api/${userName}/journals/${journalId}/delete-journal-entry`).then((response) => {
             console.log('Delete Successful');
             console.log('DATA', response.data);
-            setJournalsState(response.data.userName);
+            setJournals(response.data);
         });
-    }
-
+    };
+    
+    
     const handleEditEntryUpdate = (userName, journalId, journalDate, journalEntry) => {
-        const userData = {
-            //userName: {userName},
+
+        const userEdit = {
             journalDate: journalDate,
-            journalEntry: journalEntry
-        }
-        axios.put(`http://localhost:8080/api/${userName}/journals/${journalId}/edit-journal-entry`, userData).then((response) => {
+            journalEntry: journalState.journalEntry,
+            userName: userName
+        };
+        
+        if(userEdit === journalDate && userEdit !== journalEntry && userEdit === userName && userEdit === journalId){
+        axios.put(`http://localhost:8080/api/${userName}/journals/${journalId}/edit-journal-entry`, userEdit).then((response) => {
             console.log('Edit successful');
             console.log('DATA', response.data);
-            setJournalsState(response.data.userName);
+            setJournals(response.data);
         });
+        };
     }
+    
 
     return (
 
@@ -94,22 +94,21 @@ const Journals = ({ userName, journals }) => {
                     value={journalState.journalEntry}
                     onChange={handleJournalEntryChange}
                     placeholder='Your Thoughts'
-                // onFocus={(e) => e.target.placeholder = ""} 
-                // onBlur={(e) => e.target.placeholder = "Your Thoughts"}
+                    onFocus={(e) => e.target.placeholder = ""} 
+                    onBlur={(e) => e.target.placeholder = "Your Thoughts"}
                 />
                 <button className={style.journalSubmit} type="submit">Submit</button>
             </form>
+            <h3 className={style.journalH2}>Edit Previous Entries:</h3>
             <section className={style.journalSection}>
-                {/* <h3 className={style.h3}>Previous Journal Entries</h3>
-            <div className={style.journalsContainer}> */}
-                {journalsState.map(journal => (
+                {journals && journals.map(journal => (
                     <div className={style.journalLinks} key={journal.id}>
-                        <p className={journal.selected ? style.selected : null} onClick={() => handleEditEntryUpdate(userName, journal.id, journal.journalDate, journal.journalEntry)}>{journal.journalDate}<button onClick={() => handleDelete(userName, journal.id)}>x</button></p>
-                        <Link className={style.journalBtn} to={"#"}>{journal.journalEntry}</Link>
+                        <p className={style.previousJournalDate}>{journal.journalDate}<button onClick={() => handleDelete(userName, journal.id)}>x</button></p>
+                        <Link className={style.journalBtn}
+                        onClick={() => handleEditEntryUpdate(userName, journal.id, journal.journalDate, journal.journalEntry)}>{journal.journalEntry}</Link>
                         <div className={style.journalSpacer}></div>
                     </div>
                 ))}
-                {/* </div> */}
             </section>
         </div>
 
