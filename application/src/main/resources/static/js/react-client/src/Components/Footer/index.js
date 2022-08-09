@@ -8,8 +8,7 @@ const Footer = () => {
     const { pathname } = useLocation();
     if (pathname === "/Signup") return null;
     if (pathname === "/Login") return null;
-    if (pathname === "/Resources") return null;
-    if (pathname === "/portal") return null;
+    // if (pathname === "/Resources") return null;
 
     return (
         <div className={style.footer}>
