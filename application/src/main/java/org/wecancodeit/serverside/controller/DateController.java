@@ -27,7 +27,7 @@ public class DateController {
         return dateRepo.findById(dateNightId);
     }
 
-    @PatchMapping ("/dateNight/add-dateNight")
+    @PostMapping ("/dateNight/add-dateNight")
     public Collection<DateNight> addDateNight(@RequestBody String body) throws JSONException {
         JSONObject newDateNight = new JSONObject(body);
         String dateDate = newDateNight.getString("dateDate");
