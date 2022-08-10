@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import style from './style.module.scss';
 
 const PortHeader = () => {
@@ -10,7 +10,7 @@ const PortHeader = () => {
             <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
             <h1>Rekindle</h1>
             <div  className={style.portOut}>
-            <i class="uil uil-sign-out-alt"></i>
+            <i className="uil uil-sign-out-alt"></i>
             <p>Sign Out</p>
             </div>
             </div>
@@ -20,6 +20,7 @@ const PortHeader = () => {
             <div className={style.portSide}>
                 <h4 className={style.portH4}><Link to={'/portal'}>Dashboard</Link></h4>
                 <h4 className={style.portH4}><Link to={'/portal/profile'}>Profile</Link></h4>
+                <NavLink to={'/portal/entry'}>Entries</NavLink>
                 <h4 className={style.portH4}>Prompts</h4>
                 <h4 className={style.portH4}>Dates</h4>
                 <h4 className={style.portH4}>Discuss</h4>

@@ -4,6 +4,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.web.bind.annotation.*;
 import org.wecancodeit.serverside.model.User;
+import org.wecancodeit.serverside.repository.DiscussRepository;
+import org.wecancodeit.serverside.repository.JournalRepository;
 import org.wecancodeit.serverside.repository.UserRepository;
 
 import javax.annotation.Resource;
@@ -16,6 +18,12 @@ public class UserController {
 
     @Resource
     private UserRepository userRepository;
+
+    @Resource
+    private JournalRepository journalRepository;
+
+    @Resource
+    private DiscussRepository discussRepository;
 
     @GetMapping("/api/user/{userName}")
     public Optional<User> getUser(@PathVariable String userName) {

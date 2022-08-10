@@ -59,7 +59,7 @@ const Login = (props) => {
 
             <section className={style.loginOne}>
                 <h1 className={style.loginH1}>Welcome Back {getUsername()} We're Glad You're Here.</h1>
-                <img className={style.loginImg} src={Girls}></img>
+                <img className={style.loginImg} src={Girls} alt="girls-with-drinks"></img>
             </section>
         </div>
     );
