@@ -36,8 +36,8 @@ public class DateController {
         String dateLevel = newDateNight.getString("dateLevel");
         String dateNotes = newDateNight.getString("dateNotes");
 
-        Optional<DateNight> dateNightToAdd = dateRepo.findByDateNight(dateIdea);
-        if (dateNightToAdd.isPresent()) {
+        Optional<DateNight> dateNightToAdd = dateRepo.findByDateIdea(dateIdea);
+        if (dateNightToAdd.isEmpty()) {
             DateNight dateNightIdea = new DateNight(dateDate, dateIdea, dateType, dateLevel, dateNotes);
             dateRepo.save(dateNightIdea);
         }
