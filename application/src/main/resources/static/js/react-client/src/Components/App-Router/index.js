@@ -1,4 +1,4 @@
-import {Route, Switch} from 'react-router-dom';
+import {Routes, Route, Switch} from 'react-router-dom';
 import DatePage from '../../Pages/Date-Page';
 import DiscussPage from '../../Pages/Discuss-Page';
 import HomePage from '../../Pages/Home-Page';
@@ -12,8 +12,10 @@ import Resources from '../../Pages/Resources';
 import LoveLanguages from '../../Pages/Love';
 import Quotes from '../../Pages/Quotes';
 import FormSubmission from '../../Pages/Date-Page/FormSubmission';
+import Portal from '../../Portal/Portal';
 
 const AppRouter = () => {
+
     return (
         <Switch>
             <Route exact path={'/'} component={HomePage} />
@@ -30,7 +32,7 @@ const AppRouter = () => {
             <Route path={'/Date-Page'} component={DatePage} />
             <Route path={'/add-DateNight'} component={FormSubmission} />
         </Switch>
-    )
+    );
 }
 
 export default AppRouter;

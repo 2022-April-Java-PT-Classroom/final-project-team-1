@@ -39,6 +39,9 @@ public class Populator implements CommandLineRunner {
         User noelle = new User("noelleizkewl", "password");
         userRepository.save(noelle);
 
+        User basic = new User("admin", "admin");
+        userRepository.save(basic);
+
         Journal joeJournal = new Journal("July 27", "this is a test",joe);
         journalRepository.save(joeJournal);
         Journal joeJournal2 = new Journal("July 28", "this is a test2",joe);

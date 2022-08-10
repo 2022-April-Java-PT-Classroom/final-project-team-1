@@ -1,0 +1,25 @@
+.portHead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid rgb(238, 238, 238);
+}
+
+.portSide {
+    position: absolute;
+    width: 15%;
+    height: 100vh;
+    z-index: 1;
+}
+
+.portOut {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.portH4Top {
+    padding-top: 20px;
+}

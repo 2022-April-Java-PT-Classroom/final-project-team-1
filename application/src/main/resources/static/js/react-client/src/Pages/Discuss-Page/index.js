@@ -6,12 +6,6 @@ import style from "./style.module.scss";
 var discussCollection;
 
 const DiscussPage = () => {
-    // FETCH ID ==========================================================
-
-        fetch("http://localhost:8080/api/discuss")
-            .then(response => response.json())
-            .then(jsonData => discussCollection = jsonData)
-            .catch(err => console.log(err));
             
     // AXIOS ==============================================================
     
