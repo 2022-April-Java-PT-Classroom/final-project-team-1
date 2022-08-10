@@ -10,7 +10,7 @@ const Login = (props) => {
     const [userName, setUsername] = useState('');
     const [password, setPassword] = useState('');
     // const [usernameSession, setUsernameSession] = useState(true);
-    const [loadingUsernameSession, setLoadingUsernameSession] = useState(null);
+    //const [loadingUsernameSession, setLoadingUsernameSession] = useState(null);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -19,7 +19,7 @@ const Login = (props) => {
             const result = await Axios(`http://localhost:8080/api/user/${userName}`);
             console.log(result.data);
             setUsernameSession(result.data.username);
-             props.history.push('/Journal-Page');
+             props.history.push('/Portal');
         }
 
         fetchData();

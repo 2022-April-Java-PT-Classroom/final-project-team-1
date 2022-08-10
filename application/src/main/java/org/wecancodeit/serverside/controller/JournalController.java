@@ -31,8 +31,8 @@ public class JournalController {
     @PostMapping("/api/{userName}/journals/add-journal-entry")
     public Collection<Journal> addJournalEntry(@PathVariable String userName, @RequestBody String body) {
         JSONObject newJournal = new JSONObject(body);
-        String journalDate = newJournal.getString("date");
-        String journalEntry = newJournal.getString("entry");
+        String journalDate = newJournal.getString("journalDate");
+        String journalEntry = newJournal.getString("journalEntry");
         User user = userRepository.findByUsernameIgnoreCase(userName).get();
         Journal journalEntryToAdd = new Journal(journalDate, journalEntry,user);
         journalRepository.save(journalEntryToAdd);
@@ -41,9 +41,8 @@ public class JournalController {
 
     @DeleteMapping("/api/{userName}/journals/{id}/delete-journal-entry")
     public Collection<Journal> deleteJournalEntry(@PathVariable String userName, @PathVariable Long id) throws JSONException {
-        Optional<Journal> journalEntryToRemoveOpt = journalRepository.findByEntry(userName);
-        journalRepository.findById(id);
-        journalEntryToRemoveOpt.ifPresent(journalEntry -> journalRepository.delete(journalEntry));
+        Optional<Journal> journalEntryToRemoveOpt = journalRepository.findById(id);
+        journalEntryToRemoveOpt.ifPresent(Journal -> journalRepository.deleteById(id));
         Optional<User> user = userRepository.findByUsernameIgnoreCase(userName);
         return user.get().getJournals();
 
@@ -52,11 +51,11 @@ public class JournalController {
     @PatchMapping("/api/{userName}/journals/{id}/edit-journal-entry")
     public Collection<Journal> editJournalEntry(@PathVariable String userName, @PathVariable Long id, @RequestBody String body) throws JSONException {
         JSONObject editJournal = new JSONObject(body);
-        Long journalId = editJournal.getLong("id");
-        String journalDate = editJournal.getString("date");
-        String journalEntry = editJournal.getString("entry");
+        //Long journalId = editJournal.getLong("id");
+        String journalDate = editJournal.getString("journalDate");
+        String journalEntry = editJournal.getString("journalEntry");
         User user = userRepository.findByUsernameIgnoreCase(userName).get();
-        journalRepository.findById(id).get();
+        journalRepository.findById(id);
         Journal journalEntryToEdit = new Journal(journalDate,journalEntry,user);
         journalRepository.save(journalEntryToEdit);
         return user.getJournals();
