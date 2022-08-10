@@ -12,8 +12,8 @@ const PortalEntry = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const journalData = await Axios("http://localhost:8080/api/admin/journals");
-            const discussData = await Axios("http://localhost:8080/api/admin/discuss");
+            const journalData = await Axios(`http://localhost:8080/api/${userName}/journals`);
+            const discussData = await Axios(`http://localhost:8080/api/${userName}/discuss`);
 
             setJournals(journalData.data);
             console.log(journalData.data);

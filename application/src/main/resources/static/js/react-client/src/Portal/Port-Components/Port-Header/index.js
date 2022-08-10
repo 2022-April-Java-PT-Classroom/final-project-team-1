@@ -1,6 +1,12 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
+import { getUsername, removeUsernameSession } from "../../../utils/common";
 import style from './style.module.scss';
+
+const logout = () => {
+    removeUsernameSession()
+    window.location.href='/login'
+}
 
 const PortHeader = () => {
     return (
@@ -9,9 +15,9 @@ const PortHeader = () => {
             <div className={style.portHead}>
             <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
             <h1>Rekindle</h1>
-            <div  className={style.portOut}>
-            <i className="uil uil-sign-out-alt"></i>
-            <p>Sign Out</p>
+            <div className={style.portOut}>
+                <p>Welcome {getUsername()}</p>
+                <button className={style.portLog} onClick={() => logout()}><i className="uil uil-sign-out-alt"></i><p>Sign Out</p></button>
             </div>
             </div>
             </section>    

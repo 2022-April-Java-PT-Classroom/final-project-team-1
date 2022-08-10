@@ -46,9 +46,6 @@ const UserSubmmited = ({userSubmmited}) => {
                 <form className={style.dateForm} onSubmit={handleSubmit}>
 
                     <input className={style.dateInput} type="date" name="dateDate" value={userExpState.dateDate} onChange={handleChange} />
-
-                    <input className={style.dateInput} type="date" name="dateDate" value={userExpState.dateDate} onChange={handleChange}/>
-
                     <textarea className={style.userExperience} name="dateNotes" value={userExpState.dateNotes} onChange={handleChange} placeholder='Enter your experience'></textarea>
                     <button className={style.dateBtn}>Submit</button>
                 </form>

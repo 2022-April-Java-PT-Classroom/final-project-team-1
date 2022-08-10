@@ -15,8 +15,10 @@ const Signup = (props) => {
 
         axios.post('http://localhost:8080/api/user/add-user', userData).then((response) => {
             setUsernameSession(username);
-            props.history.push('/Portal');
+            props.history.push('/portal');
         });
+
+        window.location.href='/portal';
     }
 
     const [username, setUsername] = useState('');
