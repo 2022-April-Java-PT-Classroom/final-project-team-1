@@ -26,6 +26,7 @@ public class Populator implements CommandLineRunner {
 
     @Resource
     private PromptRepository promptRepo;
+
     @Resource
     private QuotesRepository quotesRepo;
 

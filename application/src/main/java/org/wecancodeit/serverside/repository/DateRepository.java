@@ -9,6 +9,6 @@ import java.util.Optional;
 @Repository
 public interface DateRepository extends CrudRepository<DateNight, Long> {
 
-    Optional<DateNight> findByDateNight(String dateIdea);
+    Optional<DateNight> findByDateIdea(String dateIdea);
 
 }

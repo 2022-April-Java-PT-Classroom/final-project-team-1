@@ -27,7 +27,7 @@ public class DateController {
         return dateRepo.findById(dateNightId);
     }
 
-    @PostMapping ("/dateNight/add-dateNight")
+    @PatchMapping ("/dateNight/add-dateNight")
     public Collection<DateNight> addDateNight(@RequestBody String body) throws JSONException {
         JSONObject newDateNight = new JSONObject(body);
         String dateDate = newDateNight.getString("dateDate");
@@ -36,13 +36,11 @@ public class DateController {
         String dateLevel = newDateNight.getString("dateLevel");
         String dateNotes = newDateNight.getString("dateNotes");
 
-        Optional<DateNight> dateNightToAdd = dateRepo.findByDateNight(dateIdea);
+        Optional<DateNight> dateNightToAdd = dateRepo.findByDateIdea(dateIdea);
         if (dateNightToAdd.isPresent()) {
             DateNight dateNightIdea = new DateNight(dateDate, dateIdea, dateType, dateLevel, dateNotes);
             dateRepo.save(dateNightIdea);
         }
         return (Collection<DateNight>) dateRepo.findAll();
     }
-
-
 }

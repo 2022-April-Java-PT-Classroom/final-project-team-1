@@ -19,6 +19,7 @@ const DatePage = () => {
             const result = await Axios(`http://localhost:8080/dateNight/${randomDate}`);
 
             setDateNight(result.data);
+            console.log(result.data);
         };
 
         if (dateNight) {
@@ -44,9 +45,9 @@ const DatePage = () => {
                         <p>{dateNight.dateLevel}</p>
                     </>}
 
-                    {/* <div>
+                    <div>
                         <UserSubmmited/>
-                    </div> */}
+                    </div>
 
                 </div>
             </section>
