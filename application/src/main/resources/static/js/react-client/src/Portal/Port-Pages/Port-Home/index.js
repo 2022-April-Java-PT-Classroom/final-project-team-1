@@ -5,7 +5,7 @@ import style from './style.module.scss'
 
 const PortalHome = () => {
 
-    const [showQuiz, setShowQuiz] = useState(true);
+    const [showQuiz, setShowQuiz] = useState(false);
 
     return (
         <div className={style.portHomeMain}>

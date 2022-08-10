@@ -1,9 +1,6 @@
 package org.wecancodeit.serverside.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Lob;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
@@ -17,7 +14,10 @@ public class Discuss {
     private String discussQuestion;
     @Lob
     private String discussAnswerOne;
+    @Lob
     private String discussAnswerTwo;
+    @ManyToOne
+    private User discussUser;
 
     // Getters ======================================================
     public Long getDiscussId() {
@@ -40,6 +40,10 @@ public class Discuss {
         return discussAnswerTwo;
     }
 
+    public User getDiscussUser() {
+        return discussUser;
+    }
+
     // Constructors =================================================
     public Discuss() {
     }
@@ -53,6 +57,14 @@ public class Discuss {
         this.discussQuestion = discussQuestion;
         this.discussAnswerOne = discussAnswerOne;
         this.discussAnswerTwo = discussAnswerTwo;
+    }
+
+    public Discuss(String discussDate, String discussQuestion, String discussAnswerOne, String discussAnswerTwo, User discussUser) {
+        this.discussDate = discussDate;
+        this.discussQuestion = discussQuestion;
+        this.discussAnswerOne = discussAnswerOne;
+        this.discussAnswerTwo = discussAnswerTwo;
+        this.discussUser = discussUser;
     }
 
     // Methods ======================================================
