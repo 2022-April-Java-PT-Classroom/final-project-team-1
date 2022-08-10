@@ -12,23 +12,24 @@ const PortalEntry = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const result = await Axios("http://localhost:8080/api/admin/journals");
+            const journalData = await Axios("http://localhost:8080/api/admin/journals");
+            const discussData = await Axios("http://localhost:8080/api/admin/discuss");
 
-            setJournals(result.data);
-            console.log(result.data);
-            // setDiscuss(discussData.data);
+            setJournals(journalData.data);
+            console.log(journalData.data);
+            setDiscuss(discussData.data);
         }
 
-        if (journals) {
+        if (journals && discuss) {
             setLoading(false);
         }
 
         const timer = setTimeout(() => {
-        !journals && fetchData() ;
+        !journals && !discuss && fetchData() ;
         }, 1000);
         return () => clearTimeout(timer);
 
-    }, [journals]);
+    }, [journals, discuss]);
 
 
     return (
@@ -39,10 +40,9 @@ const PortalEntry = () => {
             <h1 className={style.portH1d}>This is the portal entry page</h1>
             {loading ? <h3>Loading...</h3> :
             <div>
-                {/* {journals.mapp(journal => (
-                <p>{journal.journalEntry}</p> */}
-                {/* <p>{discuss.discussAnswerOne}</p> */}
-            </div> }
+                {journals.map(journal => (<p>Journal Entry: {journal.journalDate}</p>))}
+                {discuss.map(discuss => (<p>Discuss Entry: {discuss.discussDate}</p>))}
+            </div>}
             </section>            
         </div>
     )
