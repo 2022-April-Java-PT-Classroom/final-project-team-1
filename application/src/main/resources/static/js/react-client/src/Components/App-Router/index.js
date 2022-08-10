@@ -11,6 +11,7 @@ import SignUpPage from '../../Pages/Signup-Page';
 import Resources from '../../Pages/Resources';
 import LoveLanguages from '../../Pages/Love';
 import Quotes from '../../Pages/Quotes';
+import FormSubmission from '../../Pages/Date-Page/FormSubmission';
 import Portal from '../../Portal/Portal';
 
 const AppRouter = () => {
@@ -18,7 +19,6 @@ const AppRouter = () => {
     return (
         <Switch>
             <Route exact path={'/'} component={HomePage} />
-            <Route exact path={'/Date-Page'} component={DatePage} />
             <Route exact path={'/Discuss-Page'} component={DiscussPage} />
             <Route exact path={'/Prompt-Page'} component={PromptPage} />
             <Route exact path={'/AboutUs-Page'} component={AboutUsPage} />
@@ -29,6 +29,8 @@ const AppRouter = () => {
             <Route exact path={'/Resources'} component={Resources} />
             <Route exact path={'/Love-page'} component={LoveLanguages}/>
             <Route exact path={'/Quotes'} component={Quotes} />
+            <Route path={'/Date-Page'} component={DatePage} />
+            <Route path={'/add-DateNight'} component={FormSubmission} />
         </Switch>
     );
 }
