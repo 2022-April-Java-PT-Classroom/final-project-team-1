@@ -17,9 +17,9 @@ function TabPanel(props) {
 
     return(
         <div className={style.container}>
-            <img className={style.logo} src={rekindle} alt="logo"/>
+          <h1 className={style.rekindleH1}>about REKINLDE.</h1>
             <div className={style.missionWrapper}>
-                 <h1 className={style.missionTitle}>Our Mission</h1>
+                 <h2 className={style.missionTitle}>mission.</h2>
                  <p className={style.mission}>
                     Helping couples reKindle their love by providing impactful and engaging resources to build strong relationships.
                  </p>   

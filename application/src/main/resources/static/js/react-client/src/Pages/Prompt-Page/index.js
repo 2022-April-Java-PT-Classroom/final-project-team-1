@@ -8,7 +8,7 @@ const PromptPage =()=>{
     return(
     <div className={style.container}>
         <div classname={style.wrapper} >
-            <h1 className={style.promptTitle}>'Question of the Day'tbd'</h1>
+            <h1 className={style.promptTitle}>prompts.</h1>
             <section classNAme={style.promptMain}>
                 <h4 className={style.prompt}>Today's Prompt</h4>
             </section> 

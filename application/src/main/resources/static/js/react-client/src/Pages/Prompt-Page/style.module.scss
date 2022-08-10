@@ -5,17 +5,16 @@
 }
 
 .container {
-    margin:200px;
+    margin-top:20px;
     padding-top: 100px;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin: 2px auto;
     max-width: 80rem;
     width: 80%;
-    background: linear-gradient(to bottom, #064a81,#51ABF6,white);
+    // background: linear-gradient(to bottom, #064a81,#51ABF6,white);
     box-sizing: border-box;
-    margin: 0;
+    margin-bottom: 1200;
     // -webkit-box-shadow: inset 2px 2px 101px 49px rgba(118, 98, 163, 0.6);
     // -moz-box-shadow: inset 2px 2px 101px 49px rgba(118, 98, 163, 0.6);
     // box-shadow: inset 2px 2px 101px 49px rgba(118, 98, 163, 0.6);
@@ -30,13 +29,11 @@
 .wrapper{
     display:flex;
     justify-content: center;
+margin-bottom: 500px;
 
-//    flex-direction: column;
-    height: fit-content;
 }
 .promptTitle{
-    color:white;
-    font-size:xxx-large;
+    font-size:5rem;
 }
 .dateField{
     border-top: none;
@@ -55,7 +52,7 @@
     border-radius: 5px;
     display: flex;
     justify-content: center;
-    background-color: #fa9e27;
+    background: linear-gradient(to right, #90CAF9,#51ABF6);
     max-width:575px;
 }
 
