@@ -28,6 +28,13 @@ public class JournalController {
         return user.get().getJournals();
     }
 
+    @GetMapping("/api/{userName}/journals/{id}")
+    public Collection<Journal> getSingleEntry(@PathVariable String userName, @PathVariable Long id){
+        Optional<User> user = userRepository.findByUsernameIgnoreCase(userName);
+        Optional<Journal> journal = journalRepository.findById(id);
+        return user.get().getJournals();
+    }
+
     @PostMapping("/api/{userName}/journals/add-journal-entry")
     public Collection<Journal> addJournalEntry(@PathVariable String userName, @RequestBody String body) {
         JSONObject newJournal = new JSONObject(body);
@@ -48,16 +55,14 @@ public class JournalController {
 
     }
 
-    @PatchMapping("/api/{userName}/journals/{id}/edit-journal-entry")
+    @PutMapping("/api/{userName}/journals/{id}/edit-journal-entry")
     public Collection<Journal> editJournalEntry(@PathVariable String userName, @PathVariable Long id, @RequestBody String body) throws JSONException {
         JSONObject editJournal = new JSONObject(body);
-        //Long journalId = editJournal.getLong("id");
-        String journalDate = editJournal.getString("journalDate");
         String journalEntry = editJournal.getString("journalEntry");
         User user = userRepository.findByUsernameIgnoreCase(userName).get();
-        journalRepository.findById(id);
-        Journal journalEntryToEdit = new Journal(journalDate,journalEntry,user);
-        journalRepository.save(journalEntryToEdit);
+        Optional<Journal> journalEntryToEdit  = journalRepository.findById(id);
+        journalEntryToEdit.get().changeJournalEntry(journalEntry);
+        journalRepository.save(journalEntryToEdit.get());
         return user.getJournals();
     }
 }

@@ -56,22 +56,22 @@ const Journals = ({ userName, journals, setJournals }) => {
     };
     
     
-    const handleEditEntryUpdate = (userName, journalId, journalDate, journalEntry) => {
+    // const handleEditEntryUpdate = (userName, journalId, journalDate, journalEntry) => {
 
-        const userEdit = {
-            journalDate: journalDate,
-            journalEntry: journalState.journalEntry,
-            userName: userName
-        };
+    //     const userEdit = {
+    //         journalDate: journalDate,
+    //         journalEntry: journalState.journalEntry,
+    //         userName: userName
+    //     };
         
-        if((userEdit.journalDate === journalDate) && (userEdit.journalEntry !== journalEntry) && (userEdit.userName === userName) && (userEdit.journalId === journalId)){
-        axios.put(`http://localhost:8080/api/${userName}/journals/${journalId}/edit-journal-entry`, userEdit).then((response) => {
-            console.log('Edit successful');
-            console.log('DATA', response.data);
-            setJournals(response.data);
-        });
-        };
-    }
+    //     if((userEdit.journalDate === journalDate) && (userEdit.journalEntry !== journalEntry) && (userEdit.userName === userName) && (userEdit.journalId === journalId)){
+    //     axios.put(`http://localhost:8080/api/${userName}/journals/${journalId}/edit-journal-entry`, userEdit).then((response) => {
+    //         console.log('Edit successful');
+    //         console.log('DATA', response.data);
+    //         setJournals(response.data);
+    //     });
+    //     };
+    // }
     
 
     return (
@@ -104,9 +104,10 @@ const Journals = ({ userName, journals, setJournals }) => {
                 {journals && journals.map(journal => (
                     <div className={style.journalLinks} key={journal.id}>
                         <p className={style.previousJournalDate}>{journal.journalDate}<button onClick={() => handleDelete(userName, journal.id)}>x</button></p>
-                        <Link className={style.journalBtn}
-                        onChange={handleJournalEntryChange}
-                        onClick={() => handleEditEntryUpdate(userName, journal.id, journal.journalDate, journal.journalEntry)}>{journal.journalEntry}</Link>
+                        <div className={style.journalBtn}
+                            //onChange={handleJournalEntryChange}
+                        >{journal.journalEntry}</div>
+                        <Link to={`/Journal-Page/${journal.id}`}>Edit entry</Link>
                         <div className={style.journalSpacer}></div>
                     </div>
                 ))}
