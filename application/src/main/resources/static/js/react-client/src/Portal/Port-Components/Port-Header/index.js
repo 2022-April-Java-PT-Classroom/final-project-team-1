@@ -10,7 +10,7 @@ const PortHeader = () => {
             <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
             <h1>Rekindle</h1>
             <div  className={style.portOut}>
-            <i class="uil uil-sign-out-alt"></i>
+            <i className="uil uil-sign-out-alt"></i>
             <p>Sign Out</p>
             </div>
             </div>
