@@ -75,14 +75,4 @@ public class DiscussController {
         discussRepo.save(discussToAdd);
         return user.getDiscuss();
     }
-
-//    private String discussDate;
-//    @Lob
-//    private String discussQuestion;
-//    @Lob
-//    private String discussAnswerOne;
-//    @Lob
-//    private String discussAnswerTwo;
-//    @ManyToOne
-//    private User discussUser;
 }
