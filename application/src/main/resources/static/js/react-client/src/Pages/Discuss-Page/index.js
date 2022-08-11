@@ -1,35 +1,42 @@
 import React, {useEffect, useState} from "react";
 import Axios from "axios";
 import { Link } from "react-router-dom";
+import { getUsername } from "../../utils/common";
 import style from "./style.module.scss";
 
 var discussCollection;
+const username = getUsername();
 
 const DiscussPage = () => {
             
-    // AXIOS ==============================================================
-    
+    // AXIOS FETCH QUESTIONS ======================================================================
     const [discuss, setDiscuss] = useState(null);
+    const [entry, setEntry] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [entryLoad, setEntryLoad] = useState(true);
+
     
     useEffect(() => {
         const fetchData = async () => {
 
         const randId = [Math.floor(Math.random() * 25) + 34];
-        const result = await Axios(`http://localhost:8080/api/discuss/${randId}`);
-        setDiscuss(result.data);
+        const discussData = await Axios(`http://localhost:8080/api/discuss/${randId}`);
+        setDiscuss(discussData.data);
+
+        const discussEntry = await Axios(`http://localhost:8080/api/${username}/discuss`);
+        setEntry(discussEntry.data);
     };
 
-    if (discuss) {
+    if (discuss && entry) {
         setLoading(false);
     }
     
     const timer = setTimeout(() => {
-        !discuss && fetchData() ;
+        !discuss && !entry && fetchData() ;
     }, 1000);
     return () => clearTimeout(timer);
 
-}, [discuss]);
+}, [discuss, entry]);
 
     return (
         
@@ -53,14 +60,15 @@ const DiscussPage = () => {
             <section className={style.discussSection}>
                 <h2 className={style.discussH2}>Past Entries</h2>
                 <div className={style.discussLinks}>
-                <Link className={style.discussBtn} to={"/#"}>Placeholder</Link>
-                <Link className={style.discussBtn} to={"/#"}>Placeholder</Link>
-                <Link className={style.discussBtn} to={"/#"}>Placeholder</Link>
-                <Link className={style.discussBtn} to={"/#"}>Placeholder</Link>
-                <Link className={style.discussBtn} to={"/#"}>Placeholder</Link>
-                <Link className={style.discussBtn} to={"/#"}>Placeholder</Link>
-                <Link className={style.discussBtn} to={"/#"}>Placeholder</Link>
-                <Link className={style.discussBtn} to={"/#"}>Placeholder</Link>
+                    {loading ? <h3>Loading...</h3> : 
+                    <ul>
+                        {entry.map((singleEntry) => {
+                            return (
+                                <Link key={singleEntry.discussId} className={style.discussBtn} to={`/api/${singleEntry.username}/discuss/${singleEntry.discussId}`}>Entry: {singleEntry.discussDate}</Link>
+                            );
+                        })}
+                    </ul>
+                    }
                 <div className={style.discussSpacer}></div>
                 </div>
             </section>

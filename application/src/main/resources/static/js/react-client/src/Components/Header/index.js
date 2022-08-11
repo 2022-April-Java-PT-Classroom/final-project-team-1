@@ -2,22 +2,19 @@ import { NavLink, useLocation } from "react-router-dom";
 import React from "react";
 import style from "./style.module.scss";
 import logo from "../../Assets/Images/rek-new.svg";
+import { getUsername, removeUsernameSession } from "../../utils/common";
 
+const isUser = getUsername();
 const mybutton = document.getElementById("myBtn");
-
-// window.onscroll = function() {scrollFunction()};
-
-// function scrollFunction() {
-//   if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40 ) {
-//     mybutton.style.display = "block";
-//   } else {
-//     mybutton.style.display = "none";
-//   }
-// }
 
 function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
+}
+
+function logout() {
+    removeUsernameSession();
+    window.location.href='/';
 }
 
 const Header = () => {
@@ -37,10 +34,17 @@ const Header = () => {
                     <NavLink className={style.navLink} to={'/Resources'}>Resources</NavLink>
                     
                 </ul>
+
+                {!isUser ?
                 <ul className={style.navList}>
                     <NavLink className={style.navLink} to={'/Signup'}>Sign Up</NavLink>
                     <NavLink className={style.navBtn} to={'/Login'}>Login</NavLink>
                 </ul>
+                :
+                <ul className={style.navList}>
+                <p className={style.navLink} to={'/Signup'}>Welcome {isUser}</p>
+                <button className={style.navBtn} onClick={() => {logout()}}><i className="uil uil-sign-out-alt" /> Signout</button>
+                </ul>}
             </div>
             <button className={style.navTopBtn} id={"myBtn"} onClick={topFunction}><p className={style.navTopP}>top</p></button>
         </div>
