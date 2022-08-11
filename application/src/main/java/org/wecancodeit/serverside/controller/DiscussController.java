@@ -61,12 +61,6 @@ public class DiscussController {
         return user.get().getDiscuss();
     }
 
-//    @GetMapping("/api/{userName}/discuss/{discussId}")
-//    public Optional<Discuss> getUserSingleDiscuss(@PathVariable String userName, @PathVariable Long discussId) {
-//        Optional<User> user = userRepo.findByUsernameIgnoreCase(userName);
-//        return null;
-//    }
-
     @PostMapping("/api/{userName}/add-discuss")
     public Collection<Discuss> addDiscussWithUser(@PathVariable String userName, @RequestBody String body) {
         JSONObject newDiscuss = new JSONObject(body);

@@ -22,6 +22,7 @@ const DiscussPage = () => {
 
         const discussEntry = await Axios(`http://localhost:8080/api/${username}/discuss`);
         setEntry(discussEntry.data);
+        console.log(discussEntry.data);
     };
 
     // FETCH USER CHECK ===========================================================================
@@ -46,11 +47,9 @@ const DiscussPage = () => {
         return () => clearTimeout(timer);
     }
 
-
 }, [discuss, entry]);
 
     return (
-        
         <div className={style.discussPage}>
             <section className={style.discussSection}>
                 <h1 className={style.discussH1}>discuss.</h1>
@@ -70,7 +69,7 @@ const DiscussPage = () => {
 
             <section className={style.discussSection}>
                 <h2 className={style.discussH2}>Past Entries</h2>
-                <div className={style.discussLinks}>
+                <div>
                 { !username ? 
                 <div>
                     <h3>NO ENTRIES - PLEASE LOG IN</h3>
@@ -78,10 +77,10 @@ const DiscussPage = () => {
                 :
                 <div>
                     {loading ? <h3>Loading...</h3> : 
-                    <ul>
+                    <ul className={style.discussLinks}>
                         {entry.map((singleEntry) => {
                             return (
-                                <Link key={singleEntry.discussId} className={style.discussBtn} to={`/api/${singleEntry.username}/discuss/${singleEntry.discussId}`}>Entry: {singleEntry.discussDate}</Link>
+                                <li><Link key={singleEntry.discussId} className={style.discussBtn} to={`/api/discuss/${singleEntry.discussId}`}>Entry: {singleEntry.discussDate}</Link></li>
                             );
                         })}
                     </ul>
