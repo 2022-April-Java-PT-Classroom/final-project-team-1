@@ -1,6 +1,7 @@
 import {Routes, Route, Switch} from 'react-router-dom';
 import DatePage from '../../Pages/Date-Page';
 import DiscussPage from '../../Pages/Discuss-Page';
+import DiscussSingle from '../../Pages/Discuss-Single';
 import HomePage from '../../Pages/Home-Page';
 import PromptPage from '../../Pages/Prompt-Page';
 import AboutUsPage from '../../Pages/AboutUs-Page';
@@ -12,7 +13,6 @@ import Resources from '../../Pages/Resources';
 import LoveLanguages from '../../Pages/Love';
 import Quotes from '../../Pages/Quotes';
 import FormSubmission from '../../Pages/Date-Page/FormSubmission';
-import Portal from '../../Portal/Portal';
 
 const AppRouter = () => {
 
@@ -31,6 +31,7 @@ const AppRouter = () => {
             <Route exact path={'/Quotes'} component={Quotes} />
             <Route path={'/Date-Page'} component={DatePage} />
             <Route path={'/add-DateNight'} component={FormSubmission} />
+            <Route path={'/api/discuss/:id'} component={DiscussSingle} />
         </Switch>
     );
 }

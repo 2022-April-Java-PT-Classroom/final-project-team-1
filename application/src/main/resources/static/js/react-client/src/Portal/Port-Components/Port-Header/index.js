@@ -4,8 +4,8 @@ import { getUsername, removeUsernameSession } from "../../../utils/common";
 import style from './style.module.scss';
 
 const logout = () => {
-    removeUsernameSession()
-    window.location.href='/login'
+    removeUsernameSession();
+    window.location.href='/login';
 }
 
 const PortHeader = () => {
@@ -13,7 +13,6 @@ const PortHeader = () => {
         <div>
             <section>
             <div className={style.portHead}>
-            <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
             <h1>Rekindle</h1>
             <div className={style.portOut}>
                 <p>Welcome {getUsername()}</p>
