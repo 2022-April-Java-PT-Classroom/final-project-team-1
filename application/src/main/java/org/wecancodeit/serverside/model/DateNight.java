@@ -10,7 +10,7 @@ public class DateNight {
 
     @Id
     @GeneratedValue
-    private Long id;
+    private Long dateNightId;
     private String dateDate;
     @Lob
     private String dateIdea;
@@ -24,8 +24,8 @@ public class DateNight {
     // private Collection<Icons> dateIcons;
 
     // Getters ======================================================
-    public Long getId() {
-        return id;
+    public Long getDateNightId() {
+        return dateNightId;
     }
 
     public String getDateDate() {
@@ -70,7 +70,7 @@ public class DateNight {
     @Override
     public String toString() {
         return "DateNight{" +
-                "id=" + id +
+                "id=" + dateNightId +
                 ", dateDate='" + dateDate + '\'' +
                 ", dateIdea='" + dateIdea + '\'' +
                 ", dateType='" + dateType + '\'' +
@@ -84,11 +84,11 @@ public class DateNight {
         if (this == o) return true;
         if (!(o instanceof DateNight)) return false;
         DateNight dateNight = (DateNight) o;
-        return id.equals(dateNight.id) && dateDate.equals(dateNight.dateDate) && dateIdea.equals(dateNight.dateIdea) && dateType.equals(dateNight.dateType) && dateLevel.equals(dateNight.dateLevel) && dateNotes.equals(dateNight.dateNotes);
+        return dateNightId.equals(dateNight.dateNightId) && dateDate.equals(dateNight.dateDate) && dateIdea.equals(dateNight.dateIdea) && dateType.equals(dateNight.dateType) && dateLevel.equals(dateNight.dateLevel) && dateNotes.equals(dateNight.dateNotes);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, dateDate, dateIdea, dateType, dateLevel, dateNotes);
+        return Objects.hash(dateNightId, dateDate, dateIdea, dateType, dateLevel, dateNotes);
     }
 }

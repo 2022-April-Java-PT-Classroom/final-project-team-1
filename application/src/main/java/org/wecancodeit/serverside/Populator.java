@@ -26,6 +26,7 @@ public class Populator implements CommandLineRunner {
 
     @Resource
     private PromptRepository promptRepo;
+
     @Resource
     private QuotesRepository quotesRepo;
 
@@ -51,7 +52,6 @@ public class Populator implements CommandLineRunner {
         journalRepository.save(noelleJournal02);
         Journal noelleJournal03 = new Journal("July 28", "Good and you?",noelle);
         journalRepository.save(noelleJournal03);
-
 
         // DATE ============================================================================================================
         DateNight dateNight1 = new DateNight("07-28-2022", "Go hiking together", "Active", "Easy", "We went to bush kill falls and even though we had to pay for the entrance, it was worth it. We had a great time and my partner really enjoyed the walk.");
@@ -218,6 +218,23 @@ public class Populator implements CommandLineRunner {
         quotesRepo.save(quote10);
 
 
+
+
+
+        // ADMIN ===========================================================================================================
+        User admin = new User("admin", "admin");
+        userRepository.save(admin);
+
+        Journal adminJournal = new Journal("01/02/03", "This is my awesome journal entry", admin);
+        Discuss adminDiscuss01 = new Discuss("01/02/03", "This is the discussion question 01", "This is answer one 01", "This is answer two 01", admin);
+        Discuss adminDiscuss02 = new Discuss("04/05/06", "This is the discussion question 02", "This is answer one 02", "This is answer two 02", admin);
+        Discuss adminDiscuss03 = new Discuss("07/08/09", "This is the discussion question 03", "This is answer one 03", "This is answer two 03", admin);
+
+
+        journalRepository.save(adminJournal);
+        discussRepo.save(adminDiscuss01);
+        discussRepo.save(adminDiscuss02);
+        discussRepo.save(adminDiscuss03);
 
 
     }

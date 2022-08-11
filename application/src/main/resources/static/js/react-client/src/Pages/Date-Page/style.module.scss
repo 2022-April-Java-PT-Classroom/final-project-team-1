@@ -11,7 +11,7 @@
 .dateH1 {
     display: flex;
     justify-content: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Playfair Display';
     font-size: 4rem;
 }
 
@@ -22,13 +22,15 @@
 
 .dateInput {
     width: 150px;
-    border-radius: 15px;
+    border-radius: 10px;
     font-family: sans-serif;
+    font-size: medium;
 }
 
 .dateForm {
-    display: flex;
+    display: grid;
     justify-content: center;
+
 }
 
 .dateTitle {
@@ -40,13 +42,28 @@
 
 .dateBtn {
     background-color: #FEB134;
-    border-radius: 15px;
+    border-radius: 10px;
+    border: none;
+    font-family: sans-serif;
+    font-size: medium;
+    color: #fff;
+    width: 75px;
+    display: flex;
+    justify-content: center;
+}
+
+.dateBtn:hover {
+    background-color: #FEC56B;
+}
+
+.userExperience {
+    min-height: 8em;
+    min-width: 50%;
+    border-radius: 10px;
     font-family: sans-serif;
 }
 
-textarea {
-    min-height: 8em;
-    min-width: 50%;
-    border-radius: 15px;
-    font-family: sans-serif;
+.userExperience {
+    width: 700px;
+    height: 100px;
 }
