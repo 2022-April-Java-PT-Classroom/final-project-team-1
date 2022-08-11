@@ -24,6 +24,7 @@ const DiscussPage = () => {
         const randId = [Math.floor(Math.random() * 25) + 34];
         const result = await Axios(`http://localhost:8080/api/discuss/${randId}`);
         setDiscuss(result.data);
+        
     };
 
     if (discuss) {
