@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { getUsername } from "../../utils/common";
 import style from "./style.module.scss";
 
-var discussCollection;
 const username = getUsername();
 
 const DiscussPage = () => {
@@ -13,8 +12,6 @@ const DiscussPage = () => {
     const [discuss, setDiscuss] = useState(null);
     const [entry, setEntry] = useState(null);
     const [loading, setLoading] = useState(true);
-    const [entryLoad, setEntryLoad] = useState(true);
-
     
     useEffect(() => {
         const fetchData = async () => {
@@ -27,14 +24,28 @@ const DiscussPage = () => {
         setEntry(discussEntry.data);
     };
 
-    if (discuss && entry) {
-        setLoading(false);
+    // FETCH USER CHECK ===========================================================================
+    if(!username) {
+        if (discuss) {
+            setLoading(false);
+        }
+        
+        const timer = setTimeout(() => {
+            !discuss && fetchData() ;
+        }, 1000);
+        return () => clearTimeout(timer);
+
+    } else {
+        if (discuss && entry) {
+            setLoading(false);
+        }
+        
+        const timer = setTimeout(() => {
+            !discuss && !entry && fetchData() ;
+        }, 1000);
+        return () => clearTimeout(timer);
     }
-    
-    const timer = setTimeout(() => {
-        !discuss && !entry && fetchData() ;
-    }, 1000);
-    return () => clearTimeout(timer);
+
 
 }, [discuss, entry]);
 
@@ -60,6 +71,12 @@ const DiscussPage = () => {
             <section className={style.discussSection}>
                 <h2 className={style.discussH2}>Past Entries</h2>
                 <div className={style.discussLinks}>
+                { !username ? 
+                <div>
+                    <h3>NO ENTRIES - PLEASE LOG IN</h3>
+                </div>
+                :
+                <div>
                     {loading ? <h3>Loading...</h3> : 
                     <ul>
                         {entry.map((singleEntry) => {
@@ -69,6 +86,8 @@ const DiscussPage = () => {
                         })}
                     </ul>
                     }
+                </div>
+                }
                 <div className={style.discussSpacer}></div>
                 </div>
             </section>

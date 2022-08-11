@@ -1,4 +1,4 @@
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import React from "react";
 import style from "./style.module.scss";
 import logo from "../../Assets/Images/rek-new.svg";
@@ -42,7 +42,7 @@ const Header = () => {
                 </ul>
                 :
                 <ul className={style.navList}>
-                <p className={style.navLink} to={'/Signup'}>Welcome {isUser}</p>
+                <a className={style.navLink} href={'/portal'}>Welcome {isUser}</a>
                 <button className={style.navBtn} onClick={() => {logout()}}><i className="uil uil-sign-out-alt" /> Signout</button>
                 </ul>}
             </div>
