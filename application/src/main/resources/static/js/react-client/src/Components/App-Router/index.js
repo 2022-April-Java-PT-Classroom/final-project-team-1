@@ -13,6 +13,9 @@ import Resources from '../../Pages/Resources';
 import LoveLanguages from '../../Pages/Love';
 import Quotes from '../../Pages/Quotes';
 import FormSubmission from '../../Pages/Date-Page/FormSubmission';
+import { getUsername } from '../../utils/common';
+
+const isUser = getUsername();
 
 const AppRouter = () => {
 

@@ -1,17 +1,20 @@
 .portHead {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     height: 50px;
     border-bottom: 1px solid rgb(238, 238, 238);
+    z-index: 1;
+
 }
 
 .portSide {
     position: absolute;
     width: 15%;
-    height: 100vh;
-    z-index: 1;
+    height: 100%;
+    z-index: 2;
 }
 
 .portOut {
