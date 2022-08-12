@@ -10,26 +10,21 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    max-width: 80rem;
+    max-width: 800rem;
     width: 80%;
-    // background: linear-gradient(to bottom, #064a81,#51ABF6,white);
+    // background: linear-gradient( #064a81,#51ABF6,white);
     box-sizing: border-box;
-    margin-bottom: 1200;
+    margin-bottom: 0;
     // -webkit-box-shadow: inset 2px 2px 101px 49px rgba(118, 98, 163, 0.6);
     // -moz-box-shadow: inset 2px 2px 101px 49px rgba(118, 98, 163, 0.6);
     // box-shadow: inset 2px 2px 101px 49px rgba(118, 98, 163, 0.6);
 }
 
 
-.logo{
-    min-height: 25px;
-    min-width: none;
-}
-
 .wrapper{
     display:flex;
     justify-content: center;
-margin-bottom: 500px;
+    margin-bottom: 8000px;
 
 }
 .promptTitle{
@@ -60,7 +55,7 @@ margin-bottom: 500px;
 
 
 .entryForm{
-    min-height: 500px;
+    min-height: 50px;
     display: flex;
     flex-direction:column;
     border-radius: 2em;
