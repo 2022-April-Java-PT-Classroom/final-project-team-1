@@ -92,8 +92,12 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     width: 100%;
-    margin: 80px auto !important;
+    height: 100%;
     list-style: none;
+}
+
+.discussEntryList {
+    margin: 50px auto !important;
 }
 
 .discussBtn {
@@ -103,7 +107,7 @@
     font-family: 'Montserrat', serif;
     font-weight: 700;
     font-size: 1.2rem;
-    padding: 20px 50px;
+    padding: 20px 30px;
     letter-spacing: 1px;
     border: 2px solid #FEB134;
     border-radius: 3px;
