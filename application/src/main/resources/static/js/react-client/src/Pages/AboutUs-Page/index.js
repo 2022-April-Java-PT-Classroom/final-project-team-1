@@ -26,7 +26,14 @@ function TabPanel(props) {
             <div className={style.aboutWrapper}>
                 <h2 className={style.aboutTitle}/>
                 <p className={style.about}>
-                    Dating sites abound, but what do you do <em>after</em> you have found that spark? that is where reKindle comes in. If your goal is to have a vibrant healthy relationship that will endure (you have found the right [place]). ReKindle was created to help couples stay connected or reconnect. The resources and tools are all designed to spark conversation or offer inspiration for creative date nights. No fire will keep burning without fuel and attention. Allow us to help you achieve your relationship goals; we will help you focus your efforts and by providing daily insights and conversation starters as well as weekly date night ideas. Don't let you flames of love be extinguished by negect, rekindle those flames and have a relationhip that others will envy. we have even included instructions for how to use this site
+                   There is an abundance of sites dedicated to Helping you fing that 'spark'. 
+                  ReKindle was created to nurture that spark into a flame; to help couples stay connected or reconnect. 
+                       No fire will keep burning without fuel and attention.
+                         Allow us to help you achieve your relationship goals; 
+                         We will help you focus your efforts and by providing daily insights and 
+                         conversation starters as well as weekly date night ideas.
+                          Don't let you flames of your love be extinguished by negect, rekindle those flames and have a relationhip that others will envy. 
+                          We have even included instructions for how to use this site.
                 </p> 
             </div>
             <div className={style.Tabs} >
@@ -56,7 +63,7 @@ function TabPanel(props) {
        [ possible screenshot?]
       </TabPanel>
       <TabPanel value={value} index={2}>
-       This page is for you to use as a couple. The questions are meant to spark a dialougue that will lead you deeper into the hear and mind of your partner. 
+       This page is for you to use as a couple. The questions are meant to spark a dialougue that will lead you deeper into the heart and mind of your partner. 
        [ possible screenshot?]
       </TabPanel>
       <TabPanel value={value} index={3}>
