@@ -2,7 +2,6 @@ import { React, useState } from "react";
 import axios from 'axios';
 import style from './style.module.scss';
 import { getUsername } from "../../utils/common";
-import DiscussData from "./index";
 
 const username = getUsername();
 
@@ -47,7 +46,12 @@ const DiscussForm = () => {
                 name="discussDate"
                 value={discussFormEntry.discussDate}
                 onChange={handleChange}></input>
-                
+
+                {/* <input className={style.discussDate} type="hidden"
+                name="discussQuestion"
+                value={discussFormEntry.discussQuestion}
+                onChange={handleChange}></input> */}
+
                 <textarea className={style.discussEntry} type="text" placeholder="Your Answer" 
                 name="discussAnswerOne"
                 value={discussFormEntry.discussAnswerOne}

@@ -12,7 +12,7 @@ const DiscussPage = () => {
     // AXIOS FETCH QUESTIONS ======================================================================
     const [discuss, setDiscuss] = useState(null);
     const [entry, setEntry] = useState(null);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(true);    
     
     useEffect(() => {
         const fetchData = async () => {
@@ -24,6 +24,9 @@ const DiscussPage = () => {
         const discussEntry = await Axios(`http://localhost:8080/api/${username}/discuss`);
         setEntry(discussEntry.data);
         console.log(discussEntry.data);
+
+        const quest = discussData.data.discussQuestion;
+        console.log(quest);
     };
 
     // FETCH USER CHECK ===========================================================================
@@ -50,6 +53,7 @@ const DiscussPage = () => {
 
 }, [discuss, entry]);
 
+
     return (
         <div className={style.discussPage}>
             <section className={style.discussSection}>
@@ -72,7 +76,7 @@ const DiscussPage = () => {
                     <ul className={style.discussLinks}>
                         {entry.map((singleEntry) => {
                             return (
-                                <li className={style.discussEntryList}><Link key={singleEntry.discussId} className={style.discussBtn} to={`/api/discuss/${singleEntry.discussId}`}>Entry: {singleEntry.discussDate}</Link></li>
+                                <li key={singleEntry.discussId} className={style.discussEntryList}><Link className={style.discussBtn} to={`/api/discuss/${singleEntry.discussId}`}>Entry: {singleEntry.discussDate}</Link></li>
                             );
                         })}
                     </ul>
