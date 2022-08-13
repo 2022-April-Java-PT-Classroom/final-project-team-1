@@ -4,7 +4,7 @@ import style from './style.module.scss';
 import { Link } from "react-router-dom";
 import UserSubmitted from './FormSubmission';
 
-const DatePage = ({dateNight}) => {
+const DatePage = ({dateNights}) => {
 
 
     const [dateNight, setDateNight] = useState(null);
@@ -49,9 +49,10 @@ const DatePage = ({dateNight}) => {
                         <UserSubmitted/>
                     </div>
                     <div>
-                        {dateNight.map(userSubmission => (
-                            <div>
-                                <p>Date: {userSubmission.</p>
+                        {dateNights.map(dateNight => (
+                            <div key={dateNight.dateNightId}>
+                                <p>Date: {dateNight.dateDate}</p>
+                                <p>Date Notes: {dateNight.dateNotes}</p>
                             </div>
                         ))}
                     </div>

@@ -2,14 +2,15 @@ import React, {useState} from "react";
 import axios from 'axios';
 import style from './style.module.scss';
 
-const UserSubmitted = ({userSubmitted}) => {
+const UserSubmitted = ({userSubmitted, userName}) => {
 
     const [userExpState, setUserExpState] = useState({
         dateDate: "",
         dateNotes: "",
-        dateIdea: "enrfifndjcnr",
-        dateType: "Active",
-        dateLevel: "hard",
+        dateIdea: "",
+        dateType: "",
+        dateLevel: "",
+        userName: userName
     });
 
     const handleChange = (e) => {
@@ -28,11 +29,11 @@ const UserSubmitted = ({userSubmitted}) => {
             dateNotes: userExpState.dateNotes,
             dateIdea: userExpState.dateIdea,
             dateType: userExpState.dateType,
-            dateLevel: userExpState.dateLevel
-
+            dateLevel: userExpState.dateLevel,
+            userName: userExpState.userName
         };
 
-        axios.post('http://localhost:8080/dateNight/new-dateNight', userDateData).then((response) => {
+        axios.post('http://localhost:8080/api/${userName}/dateNight/new-dateNight', userDateData).then((response) => {
             console.log(response.status);
             console.log('DATA', response.data);
             setUserExpState(response.data);
@@ -46,9 +47,15 @@ const UserSubmitted = ({userSubmitted}) => {
                 <form className={style.dateForm} onSubmit={handleSubmit}>
 
                     <input className={style.dateInput} type="date" name="dateDate" value={userExpState.dateDate} onChange={handleChange} />
+                    <textarea name="dateIdea" value={userExpState.dateIdea} onChange={handleChange} placeholder='Enter date idea you and your partner did'></textarea>
                     <textarea className={style.userExperience} name="dateNotes" value={userExpState.dateNotes} onChange={handleChange} placeholder='Enter your experience'></textarea>
+                    <input name="dateType" value={userExpState.dateType} onChange={handleChange} placeholder='Enter Type'></input>
+                    <input name="dateLevel" value={userExpState.dateLevel} onChange={handleChange} placeholder='Enter Level'></input>
                     <button className={style.dateBtn}>Submit</button>
                 </form>
+                <section>
+                   {} 
+                </section>   
         </div>
     )
 }

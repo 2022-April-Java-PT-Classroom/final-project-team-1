@@ -1,8 +1,6 @@
 package org.wecancodeit.serverside.model;
 
 import javax.persistence.*;
-import java.util.Collection;
-import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -18,6 +16,9 @@ public class DateNight {
     private String dateLevel;
     @Lob
     private String dateNotes;
+
+    @ManyToOne
+    private User user;
 
     // Stretch Variables
     // private Collection<Photos> datePhotos;
@@ -48,6 +49,10 @@ public class DateNight {
         return dateNotes;
     }
 
+    public User getUser(){
+        return user;
+    }
+
     // Constructors =================================================
     public DateNight() {
     }
@@ -64,6 +69,15 @@ public class DateNight {
         this.dateType = dateType;
         this.dateLevel = dateLevel;
         this.dateNotes = dateNotes;
+    }
+
+    public DateNight(String dateDate, String dateIdea, String dateType, String dateLevel, String dateNotes, User user){
+        this.dateDate = dateDate;
+        this.dateIdea = dateIdea;
+        this.dateType = dateType;
+        this.dateLevel = dateLevel;
+        this.dateNotes = dateNotes;
+        this.user = user;
     }
 
     // Methods ======================================================
