@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import Axios from "axios";
 import style from './style.module.scss';
 import { Link } from "react-router-dom";
-import UserSubmmited from './FormSubmission';
+import UserSubmitted from './FormSubmission';
 
-const DatePage = () => {
+const DatePage = ({dateNight}) => {
 
 
     const [dateNight, setDateNight] = useState(null);
@@ -46,7 +46,14 @@ const DatePage = () => {
                     </>}
 
                     <div>
-                        <UserSubmmited/>
+                        <UserSubmitted/>
+                    </div>
+                    <div>
+                        {dateNight.map(userSubmission => (
+                            <div>
+                                <p>Date: {userSubmission.</p>
+                            </div>
+                        ))}
                     </div>
 
                 </div>
