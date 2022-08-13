@@ -107,7 +107,7 @@ const Journals = ({ userName, journals, setJournals }) => {
                         <div className={style.journalBtn}
                             //onChange={handleJournalEntryChange}
                         >{journal.journalEntry}</div>
-                        <Link to={`/Journal-Page/${journal.id}`}>Edit entry</Link>
+                        <Link className={style.journalBtn} to={`/Journal-Page/${journal.id}`}>Edit/Update entry</Link>
                         <div className={style.journalSpacer}></div>
                     </div>
                 ))}

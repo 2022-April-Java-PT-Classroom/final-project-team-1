@@ -5,7 +5,7 @@ import { getUsername } from '../../utils/common';
 import style from './style.module.scss';
 import { useParams } from 'react-router-dom';
 
-const SingleJournalEntryPage = () => {
+const SingleJournalEntryPage = (props) => {
 
   const userName = getUsername();
 
@@ -39,6 +39,8 @@ const SingleJournalEntryPage = () => {
     Axios.put(`http://localhost:8080/api/${userName}/journals/${id}/edit-journal-entry`, userEdit).then((response) => {
       console.log('Edit successful');
       console.log('DATA', response.data);
+      //setJournal(response.data);
+      props.history.push('/Journal-Page');
     });
   };
 
@@ -55,8 +57,8 @@ const SingleJournalEntryPage = () => {
 
 
   return (
-    <div className={style.page}>
-      <h1>This is the single journal entry page</h1>
+    <div className={style.journalPage}>
+      <h1>Edit your entry below</h1>
       <form className={style.journalForm} onSubmit={handleEditEntryUpdate}>
         <textarea className={style.journalEntry}
           type="text"
@@ -64,9 +66,13 @@ const SingleJournalEntryPage = () => {
           defaultValue={journal && journal.journalEntry}
           onChange={(e) => handleJournalEntryChange(e)}
         />
-        <button className={style.journalSubmit} type="submit">Edit</button>
+        <button className={style.journalSubmit} type="submit">Update</button>
+        <div className={style.journalSpacer}></div>
       </form>
+      <div className={style.journalSpacer}></div>
+      <div className={style.journalSpacer}></div>
     </div>
+    
   )
 
 }
