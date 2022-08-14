@@ -95,7 +95,7 @@ const Journals = ({ userName, journals, setJournals }) => {
                     onChange={handleJournalEntryChange}
                     //placeholder='Your Thoughts'
                     onFocus={(e) => e.target.placeholder = ""} 
-                    onBlur={(e) => e.target.placeholder = "Your Thoughts"}
+                    onBlur={(e) => e.target.placeholder = "What's on your mind?"}
                 />
                 <button className={style.journalSubmit} type="submit">Submit</button>
             </form>

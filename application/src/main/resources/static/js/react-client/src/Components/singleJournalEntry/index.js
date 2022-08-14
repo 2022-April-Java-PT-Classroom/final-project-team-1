@@ -1,25 +1,27 @@
 import React, { useEffect, useState } from 'react';
+import { getOriginalJournalEntry, getUsername, setOriginalJournalEntrySession } from '../../utils/common';
 
 import Axios from 'axios';
-import { getUsername } from '../../utils/common';
 import style from './style.module.scss';
 import { useParams } from 'react-router-dom';
 
 const SingleJournalEntryPage = (props) => {
 
   const userName = getUsername();
-
+  
   const [journal, setJournal] = useState(null);
   const [journalEntry, setJournalEntry] = useState("");
-
+  
   const { id } = useParams();
-
+  
+  const originalJournalEntry = getOriginalJournalEntry();
 
 
   useEffect(() => {
     const fetchData = async () => {
       const result = await Axios(`http://localhost:8080/api/${userName}/journals/${id}`);
       setJournal(result.data);
+      setOriginalJournalEntrySession(result.data.originalJournalEntry);
     }
 
     fetchData();
@@ -54,6 +56,7 @@ const SingleJournalEntryPage = (props) => {
 
   console.log('Journal Entry', journalEntry);
   console.log(id);
+  console.log(getOriginalJournalEntry());
 
 
   return (
@@ -65,6 +68,8 @@ const SingleJournalEntryPage = (props) => {
           name="journalEntry"
           defaultValue={journal && journal.journalEntry}
           onChange={(e) => handleJournalEntryChange(e)}
+          onBlur={(e) => e.target.placeholder = [originalJournalEntry]}
+          onFocus={(e) => e.target.placeholder = ""}
         />
         <button className={style.journalSubmit} type="submit">Update</button>
         <div className={style.journalSpacer}></div>
