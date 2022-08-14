@@ -29,9 +29,9 @@ const PromptPage =()=>{
 
     return(
     <div className={style.container}>
-        <div classname={style.wrapper} >
+        <div className={style.wrapper} >
             <h1 className={style.promptTitle}>prompts.</h1>
-            <section classNAme={style.promptMain}>
+            <section className={style.promptMain}>
             {loading ? <h3>Loading...</h3> : <h3 className={style.prompt}>Today's Prompt:{prompt.promptQuestion}</h3>}
             </section> 
             <section className={style.userEntry}>
