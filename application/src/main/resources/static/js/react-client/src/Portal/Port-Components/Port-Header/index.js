@@ -8,11 +8,11 @@ const logout = () => {
     window.location.href='/login';
 }
 
-// const username = getUsername();
+const username = getUsername();
 
 const PortHeader = () => {
 
-    // const isAdmin = username.includes('admin');
+    const isAdmin = username.includes('admin');
 
     return (
         <div>
@@ -28,29 +28,23 @@ const PortHeader = () => {
 
             <section className={style.portSec}>
             <div className={style.portSide}>
-                <ul>
-                <h4 className={style.portH4}><Link to={'/portal'}>Dashboard</Link></h4>
-                <h4 className={style.portH4}><Link to={'/portal/profile'}>Profile</Link></h4>
-                <NavLink to={'/portal/entry'}>Entries</NavLink>
-                <h4 className={style.portH4}>Prompts</h4>
-                <h4 className={style.portH4}>Dates</h4>
-                <NavLink to={'/portal/discuss'}>Discuss</NavLink>
-                <div></div>
-                <NavLink to={'/portal/journal'}>Journal</NavLink>
-                {/* {!isAdmin && username ?
+                <nav className={style.portNav}>
+                <Link to={'/portal'}>Dashboard</Link>
+                <Link to={'/portal/profile'}>Profile</Link>
+                <Link to={'/portal/entry'}>Entries</Link>
+                <Link to={'/'}>Prompts</Link>
+                <Link to={'/'}>Dates</Link>
+                <Link to={'/portal/discuss'}>Discuss</Link>
+                <Link to={'/portal/journal'}>Journal</Link>
+                {!isAdmin && username ?
                 <div></div>
                 :
                 <div>
-                    <br></br>
-                    <br></br>
-                    <NavLink to={'/#'}>Admin Collection</NavLink>
-                    <br></br>
-                    <br></br>
-                    <br></br>
+                <Link to={'/#'}>Admin Collection</Link>
                 </div>
-                } */}
-                <h4 className={style.portH4}><a href="/">Home</a></h4>
-                </ul>
+                }
+                <a href="/">Home</a>
+                </nav>
             </div>
             </section>
         </div>
