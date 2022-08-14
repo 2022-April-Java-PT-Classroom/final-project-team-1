@@ -50,9 +50,10 @@ public class DateController {
         return (Collection<DateNight>) dateRepo.findAll();
     }
 
-    @GetMapping("/{userName}/dateNight")
-    public Collection<DateNight> getUser(@PathVariable String userName) {
+    @GetMapping("/{userName}/dateNight/{dateNightId}")
+    public Collection<DateNight> getUser(@PathVariable String userName, @PathVariable Long dateNightId) {
         Optional<User> user = userRepo.findByUsernameIgnoreCase(userName);
+        dateRepo.findById(dateNightId);
         return user.get().getDateNight();
     }
 

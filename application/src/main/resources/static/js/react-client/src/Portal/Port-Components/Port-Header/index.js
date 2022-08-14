@@ -1,6 +1,7 @@
-import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import { getUsername, removeUsernameSession } from "../../../utils/common";
+
+import React from "react";
 import style from './style.module.scss';
 
 const logout = () => {

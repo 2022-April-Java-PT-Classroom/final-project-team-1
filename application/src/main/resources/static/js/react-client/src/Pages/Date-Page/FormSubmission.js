@@ -1,8 +1,9 @@
 import React, {useState} from "react";
+
 import axios from 'axios';
 import style from './style.module.scss';
 
-const UserSubmitted = ({userSubmitted, userName}) => {
+const UserSubmitted = ({userSubmitted, userName, setUserExp}) => {
 
     const [userExpState, setUserExpState] = useState({
         dateDate: "",
@@ -33,10 +34,10 @@ const UserSubmitted = ({userSubmitted, userName}) => {
             userName: userExpState.userName
         };
 
-        axios.post('http://localhost:8080/${userName}/dateNight/new-dateNight', userDateData).then((response) => {
+        axios.post(`http://localhost:8080/${userName}/dateNight/new-dateNight`, userDateData).then((response) => {
             console.log(response.status);
             console.log('DATA', response.data);
-            setUserExpState(response.data);
+            setUserExp(response.data);
         });
     };
 

@@ -1,22 +1,24 @@
 import React, { useEffect, useState } from 'react';
+
 import Axios from "axios";
-import style from './style.module.scss';
 import { Link } from "react-router-dom";
 import UserSubmitted from './FormSubmission';
+import { getUsername } from '../../utils/common';
+import style from './style.module.scss';
 
-const DatePage = ({dateNights}) => {
+const DatePage = () => {
 
-
+  const userName = getUsername();  
     const [dateNight, setDateNight] = useState(null);
     const [loadingDate, setLoadingDate] = useState(true);
 
-    const randomDate = Math.floor((Math.random() * 27) + 9);
+    const randDateNightId = Math.floor((Math.random() * 27) + 9);
 
 
     useEffect(() => {
         const fetchData = async () => {
             
-            const result = await Axios(`http://localhost:8080/dateNight/${randomDate}`);
+            const result = await Axios(`http://localhost:8080/${userName}/dateNight/${randDateNightId}`);
 
             setDateNight(result.data);
             console.log(result.data);
@@ -30,7 +32,7 @@ const DatePage = ({dateNights}) => {
             !dateNight && fetchData();
         }, 1000);
         return () => clearTimeout(timer);
-    }, [dateNight]);
+    }, [userName, dateNight, randDateNightId]);
 
 
     return (
@@ -46,7 +48,7 @@ const DatePage = ({dateNights}) => {
                     </>}
 
                     <div>
-                        <UserSubmitted/>
+                        <UserSubmitted userSubmitted={dateNight} userName={userName} setUserExp={setDateNight} />
                     </div>
 
                 </div>
