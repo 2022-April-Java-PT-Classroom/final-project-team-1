@@ -48,14 +48,6 @@ const DatePage = ({dateNights}) => {
                     <div>
                         <UserSubmitted/>
                     </div>
-                    <div>
-                        {dateNights.map(dateNight => (
-                            <div key={dateNight.dateNightId}>
-                                <p>Date: {dateNight.dateDate}</p>
-                                <p>Date Notes: {dateNight.dateNotes}</p>
-                            </div>
-                        ))}
-                    </div>
 
                 </div>
             </section>

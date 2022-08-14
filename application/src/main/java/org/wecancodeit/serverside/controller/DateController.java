@@ -4,7 +4,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.web.bind.annotation.*;
 import org.wecancodeit.serverside.model.DateNight;
+import org.wecancodeit.serverside.model.User;
 import org.wecancodeit.serverside.repository.DateRepository;
+import org.wecancodeit.serverside.repository.UserRepository;
 
 import javax.annotation.Resource;
 import java.util.Collection;
@@ -16,6 +18,9 @@ public class DateController {
 
     @Resource
     private DateRepository dateRepo;
+
+    @Resource
+    private UserRepository userRepo;
 
     @GetMapping("/dateNight")
     public Collection<DateNight> getAllDateNight() {
@@ -43,5 +48,26 @@ public class DateController {
             dateRepo.save(dateNightIdea);
         }
         return (Collection<DateNight>) dateRepo.findAll();
+    }
+
+    @GetMapping("/{userName}/dateNight")
+    public Collection<DateNight> getUser(@PathVariable String userName) {
+        Optional<User> user = userRepo.findByUsernameIgnoreCase(userName);
+        return user.get().getDateNight();
+    }
+
+    @PostMapping("/{userName}/dateNight/new-dateNight")
+    public Collection<DateNight> addDateNightFromUser(@PathVariable String userName, @RequestBody String body) {
+        JSONObject newDateNight = new JSONObject(body);
+        String dateDate = newDateNight.getString("dateDate");
+        String dateIdea = newDateNight.getString("dateIdea");
+        String dateType = newDateNight.getString("dateType");
+        String dateLevel = newDateNight.getString("dateLevel");
+        String dateNotes = newDateNight.getString("dateNotes");
+        User user = userRepo.findByUsernameIgnoreCase(userName).get();
+
+        DateNight dateNightToAdd = new DateNight(dateDate, dateIdea, dateType, dateLevel, dateNotes, user);
+        dateRepo.save(dateNightToAdd);
+        return user.getDateNight();
     }
 }
