@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { getUsername, removeUsernameSession } from "../../../utils/common";
 import style from './style.module.scss';
@@ -8,11 +8,11 @@ const logout = () => {
     window.location.href='/login';
 }
 
-const username = getUsername();
+// const username = getUsername();
 
 const PortHeader = () => {
 
-    const isAdmin = username.includes('admin');
+    // const isAdmin = username.includes('admin');
 
     return (
         <div>
@@ -37,7 +37,7 @@ const PortHeader = () => {
                 <NavLink to={'/portal/discuss'}>Discuss</NavLink>
                 <div></div>
                 <NavLink to={'/portal/journal'}>Journal</NavLink>
-                {!isAdmin ?
+                {/* {!isAdmin && username ?
                 <div></div>
                 :
                 <div>
@@ -48,7 +48,7 @@ const PortHeader = () => {
                     <br></br>
                     <br></br>
                 </div>
-                }
+                } */}
                 <h4 className={style.portH4}><a href="/">Home</a></h4>
                 </ul>
             </div>

@@ -3,7 +3,7 @@ import React from "react";
 const QuizQuestions = [
 
 	{
-		questionText: '1 yyyy How long have you and your partner been together?',
+		questionText: 'How long have you and your partner been together?',
 		answerOptions: [
 			{ answerText: 'Less than 1 year', resultID: 1, pointvalue: 1, },
 			{ answerText: 'Between 1-2 years', resultID: 2, pointvalue: 1, },
@@ -12,16 +12,16 @@ const QuizQuestions = [
 		],
 	},
 	{
-		questionText: '2 jjj Describe your personality?',
+		questionText: 'Describe your personality?',
 		answerOptions: [
-			{ answerText: '1 Answer cool', resultID: 1, pointvalue: 3, },
-			{ answerText: '1 Answer two', resultID: 2, pointvalue: 3, },
+			{ answerText: 'Adventurous', resultID: 1, pointvalue: 3, },
+			{ answerText: 'Romantic', resultID: 2, pointvalue: 3, },
 			{ answerText: '1 Answer three', resultID: 3, pointvalue: 3, },
 			{ answerText: '1 Answer four', resultID: 4, pointvalue: 3, },
 		],
 	},
 	{
-		questionText: '3 fdsa Describe your personality )))',
+		questionText: 'Describe your partner\'s personality',
 		answerOptions: [
 			{ answerText: '2 Answer cool', resultID: 1, pointvalue: 2, },
 			{ answerText: '2 Answer two', resultID: 2, pointvalue: 2, },

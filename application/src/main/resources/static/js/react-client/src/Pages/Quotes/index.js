@@ -1,28 +1,24 @@
-
-
-
-
-import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { React, useEffect, useState } from 'react';
+import Axios from 'axios';
 import style from './style.module.scss'
-
 
 
 const Quotes = () => {
 
-        const base_url = 'https://type.fit/api/quotes'
-        const [myQuotes, setMyQuotes] = useState([])
-        const [loading, setLoading] = useState(true)
+        const base_url = 'http://localhost:8080/api/quotes'
+        const [myQuotes, setMyQuotes] = useState(null);
+        const [loading, setLoading] = useState(true);
 
 
         
-            useEffect(() => {
-            const fetchData = () => {axios.get(base_url).then(response => {
-                const randQuote = Math.floor(Math.random()*1643)
-                console.log(response.data)
-                console.log(response.data[randQuote])
-                setMyQuotes(response.data[randQuote])
-            })}
+        useEffect(() => {
+            const fetchData = async () => {
+                const randQuote = [Math.floor(Math.random() * 2) + 62];
+                const response = await Axios(`http://localhost:8080/api/quotes/${randQuote}`);
+                console.log(response.data);
+                setMyQuotes(response.data);
+            }
+
             if(myQuotes){
                 setLoading(false)
             }
@@ -34,27 +30,21 @@ const Quotes = () => {
     
 
 
-        },[myQuotes])
-
-   
-    
+        }, [myQuotes]);
     
     return (
 
-        
-        
-
     <div className={style.quotes_page}>
-        <h1 className={style.header}>Inspirational Quotes</h1>
+        <h1 className={style.quoteHeader}>Inspirational Quotes</h1>
     
         {loading ? <h3> Loading.. </h3> :
         <>
-        <p> {myQuotes.text}  <span>{myQuotes.author}</span></p>
-
+        <p> {myQuotes.quote}  <span className={style.quoteSpan}>{myQuotes.author}</span></p>
+        <img className={style.quoteImg} src={myQuotes.imgUrl} />
         </>}
          
         
-        <button onClick={() => setMyQuotes(!myQuotes)}>Get Quotes</button>
+        <button onClick={() => setMyQuotes(!myQuotes)} className={style.quoteButton}>Get Quotes</button>
     
    
     
