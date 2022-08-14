@@ -5,13 +5,14 @@ import org.springframework.stereotype.Repository;
 import org.wecancodeit.serverside.model.Prompt;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface PromptRepository extends CrudRepository<Prompt, Long> {
 
-    List<Prompt> findByID(long id);
-    List<Prompt> findByPromptDate(String promptDate);
-    List<Prompt> findByPromptQuestion(String promptQuestion);
-    List<Prompt> findByPromptAnswer(String promptAnswer);
+    Optional<Prompt> findByID(long id);
+    Optional<Prompt> findByPromptDate(String promptDate);
+    Optional<Prompt> findByPromptQuestion(String promptQuestion);
+    Optional<Prompt> findByPromptAnswer(String promptAnswer);
 
 }

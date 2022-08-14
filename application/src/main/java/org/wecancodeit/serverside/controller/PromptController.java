@@ -4,10 +4,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.wecancodeit.serverside.model.Discuss;
 import org.wecancodeit.serverside.model.Prompt;
 import org.wecancodeit.serverside.repository.PromptRepository;
-import org.wecancodeit.serverside.repository.UserRepository;
 
 import javax.annotation.Resource;
 import java.util.Collection;
@@ -23,35 +21,35 @@ public class PromptController {
     private PromptRepository promptRepo;
 
     @GetMapping("/api/prompt")
-    public List<Prompt> getAllPrompt(){
+    public Collection<Prompt> getAllPrompt(){
         return (List<Prompt>) promptRepo.findAll();
     }
 
     @PostMapping("/api/add-prompt")
-    public List<Prompt> addAPromptEntry(@RequestBody String body) throws JSONException{
+    public Collection<Prompt> addAPromptEntry(@RequestBody String body) throws JSONException{
         JSONObject newPrompt = new JSONObject(body);
         String promptDate = newPrompt.getString("promptDate");
         String promptQuestion = newPrompt.getString("promptQuestion");
         String promptAnswer = newPrompt.getString("promptAnswer");
-            return (List<Prompt>) promptRepo.findAll();
+        return (Collection<Prompt>) promptRepo.findAll();
     }
 
     @RequestMapping("/single-prompt/{id}")
-    public String displaySinglePrompts(@PathVariable Long id, Model model) {
-        model.addAttribute("singleBird", promptRepo.findById(id).get());
-        return ("single-prompt-template.html");
+    public Optional<Prompt> displaySinglePrompts(@PathVariable Long id, Model model) {
+        model.addAttribute("singlePrompt", promptRepo.findById(id).get());
+        return (Optional<Prompt>) promptRepo.findByID(id);
     }
 
     @RequestMapping("/promptQuestion")
-    public String displayPromptQuestion(@PathVariable String promptQuestion, Model model) {
+    public Optional<Prompt> displayPromptQuestion(@PathVariable String promptQuestion, Model model) {
         model.addAttribute("promptQuestion", promptRepo.findByPromptQuestion(promptQuestion));
-        return ("promptQuestion-template.html");
+        return (Optional<Prompt>) promptRepo.findByPromptQuestion(promptQuestion);
     }
 
     @RequestMapping("/promptAnswer")
-    public String displayPromptAnswer(@PathVariable String promptAnswer, Model model){
+    public Optional<Prompt> displayPromptAnswer(@PathVariable String promptAnswer, Model model){
         model.addAttribute("promptAnswer", promptRepo.findByPromptAnswer(promptAnswer));
-        return ("promptAnswer-template.html");
+        return (Optional<Prompt>) promptRepo.findByPromptAnswer(promptAnswer);
     }
 
     @DeleteMapping("{id}")
