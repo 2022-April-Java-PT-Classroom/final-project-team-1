@@ -26,6 +26,7 @@ public class DiscussController {
     @Resource
     private UserRepository userRepo;
 
+    // GLOBAL METHODS =============================================================================
     @GetMapping("/api/discuss")
     public Collection<Discuss> getAllDiscuss(){
         return (Collection<Discuss>) discussRepo.findAll();
@@ -60,7 +61,7 @@ public class DiscussController {
         return user.get().getDiscuss();
     }
 
-    @PatchMapping("/api/{userName}/add-discuss")
+    @PostMapping("/api/{userName}/add-discuss")
     public Collection<Discuss> addDiscussWithUser(@PathVariable String userName, @RequestBody String body) {
         JSONObject newDiscuss = new JSONObject(body);
         String discussDate = newDiscuss.getString("discussDate");
@@ -74,14 +75,4 @@ public class DiscussController {
         discussRepo.save(discussToAdd);
         return user.getDiscuss();
     }
-
-//    private String discussDate;
-//    @Lob
-//    private String discussQuestion;
-//    @Lob
-//    private String discussAnswerOne;
-//    @Lob
-//    private String discussAnswerTwo;
-//    @ManyToOne
-//    private User discussUser;
 }

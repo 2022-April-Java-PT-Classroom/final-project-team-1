@@ -1,6 +1,5 @@
 import React from "react";
 import style from "./style.module.scss";
-import rekindle from "../../assests/logo.png";
 import Paper from "@material-ui/core/Paper";
 import Tab from "@material-ui/core/Tab";
 import Tabs from "@material-ui/core/Tabs";
@@ -17,9 +16,9 @@ function TabPanel(props) {
 
     return(
         <div className={style.container}>
-            <img className={style.logo} src={rekindle} alt="logo"/>
+          <h1 className={style.rekindleH1}>rekindle.</h1>
             <div className={style.missionWrapper}>
-                 <h1 className={style.missionTitle}>Our Mission</h1>
+                 <h2 className={style.missionTitle}>mission.</h2>
                  <p className={style.mission}>
                     Helping couples reKindle their love by providing impactful and engaging resources to build strong relationships.
                  </p>   
@@ -27,13 +26,18 @@ function TabPanel(props) {
             <div className={style.aboutWrapper}>
                 <h2 className={style.aboutTitle}/>
                 <p className={style.about}>
-                    Dating sites abound, but what do you do <em>after</em> you have found that spark? that is where reKindle comes in. If your goal is to have a vibrant healthy relationship that will endure (you have found the right [place]). ReKindle was created to help couples stay connected or reconnect. The resources and tools are all designed to spark conversation or offer inspiration for creative date nights. No fire will keep burning without fuel and attention. Allow us to help you achieve your relationship goals; we will help you focus your efforts and by providing daily insights and conversation starters as well as weekly date night ideas. Don't let you flames of love be extinguished by negect, rekindle those flames and have a relationhip that others will envy. 
+                   There is an abundance of sites dedicated to Helping you fing that 'spark'. 
+                  ReKindle was created to nurture that spark into a flame; to help couples stay connected or reconnect. 
+                       No fire will keep burning without fuel and attention.
+                         Allow us to help you achieve your relationship goals; 
+                         We will help you focus your efforts and by providing daily insights and 
+                         conversation starters as well as weekly date night ideas.
+                          Don't let you flames of your love be extinguished by negect, rekindle those flames and have a relationhip that others will envy. 
+                          We have even included instructions for how to use this site.
                 </p> 
             </div>
-            <div className={style.Tabs} style={{
-        marginLeft: "20%", width:"800px"
-      }}>
-        <Paper >
+            <div className={style.Tabs} >
+        <Paper className={style.tabLabel} >
         <Tabs
           value={value}
           textColor="primary"
@@ -49,18 +53,24 @@ function TabPanel(props) {
         </Tabs>
 
         {/* <h3>TAB NO: {value} clicked!</h3> */}
+        <div className={style.panels}>
         <TabPanel value={value} index={0}>
-        prompt explanation
+        The prompt page is meant to be used for you personal reflection. Use this page to compose your thoughts and feelings as directed by the prompt. This page is for you; be honest with yourself as you write.
+        [ possible screenshot?]
       </TabPanel>
       <TabPanel value={value} index={1}>
-        date instructions
+       This is a fun page where datenight inspiration is offered to help keep your quality time fun. These ideas are generated based on your interests and answers to the questionaire. After your date you can write about the experience, what you liked about it and how it helped you connect as a couple.
+       [ possible screenshot?]
       </TabPanel>
       <TabPanel value={value} index={2}>
-       dicuss how to's
+       This page is for you to use as a couple. The questions are meant to spark a dialougue that will lead you deeper into the heart and mind of your partner. 
+       [ possible screenshot?]
       </TabPanel>
       <TabPanel value={value} index={3}>
-       penny for your thoughts
+      You are encouraged to keep a daily journal of your thoughts and feelings about your relationship. It can be a very useful tool to reflect on later to remind you of where you came from and where you want to go.
+      [ possible screenshot?]
       </TabPanel>
+      </div>
       </Paper>
     </div>
 

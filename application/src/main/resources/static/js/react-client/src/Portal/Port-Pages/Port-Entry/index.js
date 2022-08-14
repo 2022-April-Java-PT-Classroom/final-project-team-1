@@ -40,8 +40,8 @@ const PortalEntry = () => {
             <h1 className={style.portH1d}>This is the portal entry page</h1>
             {loading ? <h3>Loading...</h3> :
             <div>
-                {journals.map(journal => (<p>Journal Entry: {journal.journalDate}</p>))}
-                {discuss.map(discuss => (<p>Discuss Entry: {discuss.discussDate}</p>))}
+                {journals.map(journal => (<p key={journal.id}>Journal Entry: {journal.journalDate}</p>))}
+                {discuss.map(discuss => (<p key={discuss.discussId}>Discuss Entry: {discuss.discussDate}</p>))}
             </div>}
             </section>            
         </div>

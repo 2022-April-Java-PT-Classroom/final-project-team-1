@@ -47,10 +47,10 @@ public class Populator implements CommandLineRunner {
         journalRepository.save(joeJournal3);
 
         Journal noelleJournal01 = new Journal("July 27", "Hi",noelle);
-        journalRepository.save(noelleJournal01);
         Journal noelleJournal02 = new Journal("July 28", "How are you",noelle);
-        journalRepository.save(noelleJournal02);
         Journal noelleJournal03 = new Journal("July 28", "Good and you?",noelle);
+        journalRepository.save(noelleJournal01);
+        journalRepository.save(noelleJournal02);
         journalRepository.save(noelleJournal03);
 
         // DATE ============================================================================================================
@@ -192,6 +192,34 @@ public class Populator implements CommandLineRunner {
         Quotes quote2 = new Quotes("It always seems impossible until it is done",
                 "http://localhost:8080/images/quote2.png","Nelson Mandela");
         quotesRepo.save(quote2);
+        Quotes quote3 = new Quotes("You are never too old to set another goal or" +
+                " to dream a new dream","http://localhost:8080/images/quote3.png", "C.S Lewis");
+        quotesRepo.save(quote3);
+        Quotes quote4 = new Quotes("Don't be afraid. Be focused. Be Determined. Be Hopeful. Be empowered.",
+                "http://localhost:8080/images/quote4.webp","Michelle Obama");
+        quotesRepo.save(quote4);
+        Quotes quote5 = new Quotes("There is always light. If we are brave enough to see it. If only we are brave enough" +
+                " to be it.","http://localhost:8080/images/quote5.png","Amanda Gorman");
+        quotesRepo.save(quote5);
+        Quotes quote6 = new Quotes("If you are not fulfilled and happy, It is not success",
+                "http://localhost:8080/images/quote6.png","Quotling");
+        quotesRepo.save(quote6);
+        Quotes quote7 = new Quotes("The quickest way to double your money is to fold it and put it back in your pocket",
+                "http://localhost:8080/images/quote7.jpg","Will Rogers");
+        quotesRepo.save(quote7);
+        Quotes quote8 = new Quotes("Don't spend time beating on a wall, hoping to transform it into a door",
+                "http://localhost:8080/images/quote8.jpg","Coco Chanel");
+        quotesRepo.save(quote8);
+        Quotes quote9 = new Quotes("Failure is not the opposite of success. It is part of success.",
+                "http://localhost:8080/images/quote9.jpg","Brian Tracy");
+        quotesRepo.save(quote9);
+        Quotes quote10 = new Quotes("Nothing is impossible. The world itself says I am possible",
+                "http://localhost:8080/images/quote10.jpg", "Audrey Hepburm");
+        quotesRepo.save(quote10);
+
+
+
+
 
         // ADMIN ===========================================================================================================
         User admin = new User("admin", "admin");
@@ -204,5 +232,16 @@ public class Populator implements CommandLineRunner {
         journalRepository.save(adminJournal);
         discussRepo.save(adminDiscuss);
         dateRepo.save(adminDateNight);
+        Discuss adminDiscuss01 = new Discuss("01/02/03", "This is the discussion question 01", "This is answer one 01", "This is answer two 01", admin);
+        Discuss adminDiscuss02 = new Discuss("04/05/06", "This is the discussion question 02", "This is answer one 02", "This is answer two 02", admin);
+        Discuss adminDiscuss03 = new Discuss("07/08/09", "This is the discussion question 03", "This is answer one 03", "This is answer two 03", admin);
+
+
+        journalRepository.save(adminJournal);
+        discussRepo.save(adminDiscuss01);
+        discussRepo.save(adminDiscuss02);
+        discussRepo.save(adminDiscuss03);
+
+
     }
 }
