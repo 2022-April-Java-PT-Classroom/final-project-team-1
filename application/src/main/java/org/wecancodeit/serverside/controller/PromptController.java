@@ -2,6 +2,7 @@ package org.wecancodeit.serverside.controller;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.wecancodeit.serverside.model.Discuss;
 import org.wecancodeit.serverside.model.Prompt;
@@ -34,4 +35,34 @@ public class PromptController {
         String promptAnswer = newPrompt.getString("promptAnswer");
             return (List<Prompt>) promptRepo.findAll();
     }
+
+    @RequestMapping("/single-prompt/{id}")
+    public String displaySinglePrompts(@PathVariable Long id, Model model) {
+        model.addAttribute("singleBird", promptRepo.findById(id).get());
+        return ("single-prompt-template.html");
+    }
+
+    @RequestMapping("/promptQuestion")
+    public String displayPromptQuestion(@PathVariable String promptQuestion, Model model) {
+        model.addAttribute("promptQuestion", promptRepo.findByPromptQuestion(promptQuestion));
+        return ("promptQuestion-template.html");
+    }
+
+    @RequestMapping("/promptAnswer")
+    public String displayPromptAnswer(@PathVariable String promptAnswer, Model model){
+        model.addAttribute("promptAnswer", promptRepo.findByPromptAnswer(promptAnswer));
+        return ("promptAnswer-template.html");
+    }
+
+    @DeleteMapping("{id}")
+    public Collection<Prompt> deletePrompt(@PathVariable Long id, String body) throws JSONException {
+
+        Optional<Prompt> promptToBeDeleted = promptRepo.findById(id);
+        if(promptToBeDeleted.isPresent()){
+            promptRepo.delete(promptToBeDeleted.get());
+
+        }
+        return (Collection<Prompt>) promptRepo.findAll();
+    }
+
 }
