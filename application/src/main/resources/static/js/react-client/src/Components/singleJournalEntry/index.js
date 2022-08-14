@@ -42,7 +42,7 @@ const SingleJournalEntryPage = (props) => {
       console.log('Edit successful');
       console.log('DATA', response.data);
       //setJournal(response.data);
-      props.history.push('/Journal-Page');
+      props.history.push('/Portal/Journal');
     });
   };
 
