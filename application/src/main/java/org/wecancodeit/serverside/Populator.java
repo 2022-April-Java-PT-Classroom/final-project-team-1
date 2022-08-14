@@ -47,10 +47,10 @@ public class Populator implements CommandLineRunner {
         journalRepository.save(joeJournal3);
 
         Journal noelleJournal01 = new Journal("July 27", "Hi",noelle);
-        journalRepository.save(noelleJournal01);
         Journal noelleJournal02 = new Journal("July 28", "How are you",noelle);
-        journalRepository.save(noelleJournal02);
         Journal noelleJournal03 = new Journal("July 28", "Good and you?",noelle);
+        journalRepository.save(noelleJournal01);
+        journalRepository.save(noelleJournal02);
         journalRepository.save(noelleJournal03);
 
         // DATE ============================================================================================================
