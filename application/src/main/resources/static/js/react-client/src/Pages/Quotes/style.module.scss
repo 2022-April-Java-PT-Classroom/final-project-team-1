@@ -2,7 +2,7 @@
 
 .quotes_page {
     height: 90vh;
-    margin: 0px auto;
+    margin: 10px auto;
     padding-top: 100px;
     background-color: aqua;
     font-size: 1.6rem;
@@ -13,6 +13,7 @@
 }
 span {
     margin-left: 20px;
+    display: block;
 }
 img{
     display: block;
@@ -21,6 +22,23 @@ img{
     width: 200px;
     font-size: 1.2rem;
 }
+button{
+    margin: 20px auto 150px auto;
+    padding: 30px 60px;
+    border-radius: 50px;
+    border: none;
+    background-color: #1E4199;
+    font-size: 2rem;
+    color: white;
+    font-family: "Nunito", sans-serif;
+    font-weight: 900;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+    cursor: pointer;
+    
+}
+
 
 
     

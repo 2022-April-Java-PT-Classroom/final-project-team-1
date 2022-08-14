@@ -19,6 +19,9 @@ public class User {
     @OneToMany (mappedBy = "user")
     @JsonIgnore
     private Collection<Journal> journals;
+    @OneToMany (mappedBy = "discussUser")
+    @JsonIgnore
+    private Collection<Discuss> discuss;
 
     // Getters ======================================================
     public Long getId() {
@@ -37,6 +40,10 @@ public class User {
         return journals;
     }
 
+    public Collection<Discuss> getDiscuss() {
+        return discuss;
+    }
+
     // Constructors =================================================
     protected User() {
     }
@@ -45,6 +52,13 @@ public class User {
         this.username = username;
         this.password = password;
         this.journals = new HashSet<>(Arrays.asList(journals));
+    }
+
+    public User(String username, String password, Collection<Journal> journals, Collection<Discuss> discuss) {
+        this.username = username;
+        this.password = password;
+        this.journals = journals;
+        this.discuss = discuss;
     }
 
     // Methods ======================================================

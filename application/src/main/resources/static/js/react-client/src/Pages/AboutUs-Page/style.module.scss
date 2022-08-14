@@ -1,32 +1,43 @@
-.aboutWrapper{
-    display: flex;
-    justify-content: center;
-    width:800px;
-    height:auto;
-    background-image:linear-gradient(#1a70b6, #51ABF6) ;
-}
-
-.logo{
-    justify-content: center;
-    width: 500px;
-    height: auto;
-}
-
-.about{
-    font-size: xx-large;
-    width:500px;
-}
-
 .container{ 
     viewport-fit: initial;
     display: flex;
     flex-direction: column;
     justify-items: center;
-    margin-right: 800px;
+    margin-left: 100px;
     padding-top: 100px;
+    margin-bottom: 800px;
 }
-
+.rekindleH1{
+    font-size: 5rem;
+    font-weight:bolder;
+}
 .missionWrapper{
-    width:800px;
+    width:1200px;
     font-size: 2em;
 }
+.aboutWrapper{
+    display: flex;
+    justify-content: center;
+    width:1200px;
+    height:auto;
+    background-image:linear-gradient(#1a70b6, #51ABF6) ;
+}
+.about{
+    font-size: xx-large;
+    width:1000px;
+}
+.Tabs{
+    margin-left: 100px;
+    width: 1200px;    
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+.tabLabel{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+.panels{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: larger;
+}
+
+

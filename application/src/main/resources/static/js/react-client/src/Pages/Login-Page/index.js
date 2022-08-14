@@ -19,7 +19,7 @@ const Login = (props) => {
             const result = await Axios(`http://localhost:8080/api/user/${userName}`);
             console.log(result.data);
             setUsernameSession(result.data.username);
-             props.history.push('/Journal-Page');
+             props.history.push('/portal');
         }
 
         fetchData();
@@ -49,7 +49,7 @@ const Login = (props) => {
                         onFocus={(e) => e.target.placeholder = ""} 
                         onBlur={(e) => e.target.placeholder = "Password"}>
                     </input>
-                    <button className={style.loginSubmit} type="submit" >Login With Username</button>
+                    <button className={style.loginSubmit} onClick={() => (window.location.href='/portal')} type="submit">Login With Username</button>
                 </form>
 
                 <div className={style.loginLine}>OR</div>
@@ -59,7 +59,7 @@ const Login = (props) => {
 
             <section className={style.loginOne}>
                 <h1 className={style.loginH1}>Welcome Back {getUsername()} We're Glad You're Here.</h1>
-                <img className={style.loginImg} src={Girls}></img>
+                <img className={style.loginImg} src={Girls} alt="girls-with-drinks"></img>
             </section>
         </div>
     );
