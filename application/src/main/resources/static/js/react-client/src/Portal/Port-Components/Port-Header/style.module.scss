@@ -18,6 +18,14 @@
     z-index: 2;
 }
 
+.portNav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    margin: 20px 20px;
+}
+
 .portOut {
     display: flex;
     align-items: center;

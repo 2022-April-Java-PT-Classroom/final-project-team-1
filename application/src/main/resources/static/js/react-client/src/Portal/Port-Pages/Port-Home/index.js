@@ -38,7 +38,6 @@ const PortalHome = () => {
     return (
         <div className={style.portHomeMain}>
             <section className={style.portHome}>
-            <h1 className={style.portH1}>This is the portal homepage page</h1>
             <button onClick={() => {setShowQuiz(true)}}>Start Quiz</button>
             <h1 className={style.portH1}>This is the portal homepage page</h1>
             <h1 className={style.portH1}>This is the portal homepage page</h1>
@@ -49,6 +48,35 @@ const PortalHome = () => {
                 <div>
                     <h2>{journals.length}</h2>
                     <h2>{discuss.length}</h2>
+
+                    <table>
+                        <thead>
+                            <tr>
+                            <th>Date</th>
+                            <th>Entry</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {journals.map(journal =>
+                        <tr key={journal.id}>
+                            <td>{journal.journalDate}</td>
+                            <td>{(journal.journalEntry).slice(0,25)+'...'}</td>
+                            <td><button>Edit</button></td>
+                            <td><button>Delete</button></td>
+                        </tr>
+                        )}
+                        {discuss.map(diss =>
+                            <tr key={diss.discussId}>
+                                <td>{diss.discussDate}</td>
+                                <td>{(diss.discussQuestion).slice(0,25)+'...'}</td>
+                                <td><button>Edit</button></td>
+                                <td><button>Delete</button></td>
+                            </tr>
+                            )}
+                        </tbody>
+                    </table>
                 </div>
             }
             </section>
