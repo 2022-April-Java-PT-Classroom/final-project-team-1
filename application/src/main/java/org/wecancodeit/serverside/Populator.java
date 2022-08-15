@@ -39,6 +39,9 @@ public class Populator implements CommandLineRunner {
         User noelle = new User("noelleizkewl", "password");
         userRepository.save(noelle);
 
+        User admin = new User("admin", "admin");
+        userRepository.save(admin);
+
         Journal joeJournal = new Journal("July 27", "this is a test",joe);
         journalRepository.save(joeJournal);
         Journal joeJournal2 = new Journal("July 28", "this is a test2",joe);
@@ -222,8 +225,6 @@ public class Populator implements CommandLineRunner {
 
 
         // ADMIN ===========================================================================================================
-        User admin = new User("admin", "admin");
-        userRepository.save(admin);
 
         Journal adminJournal = new Journal("01/02/03", "This is my awesome journal entry", admin);
         Discuss adminDiscuss01 = new Discuss("01/02/03", "This is the discussion question 01", "This is answer one 01", "This is answer two 01", admin);
