@@ -195,8 +195,9 @@ public class Populator implements CommandLineRunner {
         Quotes quote2 = new Quotes("It always seems impossible until it is done",
                 "http://localhost:8080/images/quote2.png","Nelson Mandela");
         quotesRepo.save(quote2);
-        Quotes quote3 = new Quotes("You are never too old to set another goal or" +
-                " to dream a new dream","http://localhost:8080/images/quote3.png", "C.S Lewis");
+        Quotes quote3 = new Quotes("Keep your face always towards sunshine" +
+                " - and shadows will fall behind you","http://localhost:8080/images/quote3.jpg",
+                "WAlT WHITMAN");
         quotesRepo.save(quote3);
         Quotes quote4 = new Quotes("Don't be afraid. Be focused. Be Determined. Be Hopeful. Be empowered.",
                 "http://localhost:8080/images/quote4.webp","Michelle Obama");
