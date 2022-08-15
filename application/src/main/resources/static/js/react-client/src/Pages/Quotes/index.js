@@ -13,7 +13,7 @@ const Quotes = () => {
         
         useEffect(() => {
             const fetchData = async () => {
-                const randQuote = [Math.floor(Math.random() * 2) + 62];
+                const randQuote = [Math.floor(Math.random() * 10) + 62];
                 const response = await Axios(`http://localhost:8080/api/quotes/${randQuote}`);
                 console.log(response.data);
                 setMyQuotes(response.data);
