@@ -1,17 +1,18 @@
-import {Routes, Route, Switch} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
+import AboutUsPage from '../../Pages/AboutUs-Page';
+import Contact from '../../Pages/Contact';
 import DatePage from '../../Pages/Date-Page';
 import DiscussPage from '../../Pages/Discuss-Page';
 import DiscussSingle from '../../Pages/Discuss-Single';
 import HomePage from '../../Pages/Home-Page';
-import PromptPage from '../../Pages/Prompt-Page';
-import AboutUsPage from '../../Pages/AboutUs-Page';
-import Contact from '../../Pages/Contact';
 import JournalPage from '../../Pages/Journal-Page';
 import LoginPage from '../../Pages/Login-Page';
-import SignUpPage from '../../Pages/Signup-Page';
-import Resources from '../../Pages/Resources';
 import LoveLanguages from '../../Pages/Love';
+import PromptPage from '../../Pages/Prompt-Page';
 import Quotes from '../../Pages/Quotes';
+import Resources from '../../Pages/Resources';
+import SignUpPage from '../../Pages/Signup-Page';
+import SingleJournalEntryPage from '../singleJournalEntry';
 import FormSubmission from '../../Pages/Date-Page/FormSubmission';
 import { getUsername } from '../../utils/common';
 
@@ -30,6 +31,7 @@ const AppRouter = () => {
             <Route exact path={'/Login'} component={LoginPage} />
             <Route exact path={'/Signup'} component={SignUpPage} />
             <Route exact path={'/Resources'} component={Resources} />
+            <Route exact path={'/Journal-Page/:id'} component={SingleJournalEntryPage} />  
             <Route exact path={'/Love-page'} component={LoveLanguages}/>
             <Route exact path={'/Quotes'} component={Quotes} />
             <Route path={'/Date-Page'} component={DatePage} />

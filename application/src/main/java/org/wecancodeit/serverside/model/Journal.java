@@ -42,6 +42,11 @@ public class Journal {
         this.user = user;
     }
 
+    public String changeJournalEntry(String entryUpdate){
+        this.journalEntry = entryUpdate;
+        return this.journalEntry;
+    }
+
 
     // Methods ======================================================
 //    @Override
