@@ -25,7 +25,7 @@ public class PromptController {
         return (List<Prompt>) promptRepo.findAll();
     }
 
-    @PostMapping("/api/add-prompt")
+    @PostMapping("/api/prompt/add-prompt")
     public Collection<Prompt> addAPromptEntry(@RequestBody String body) throws JSONException{
         JSONObject newPrompt = new JSONObject(body);
         String promptDate = newPrompt.getString("promptDate");
@@ -34,25 +34,25 @@ public class PromptController {
         return (Collection<Prompt>) promptRepo.findAll();
     }
 
-    @RequestMapping("/single-prompt/{id}")
+    @RequestMapping("api/prompt/single-prompt/{id}")
     public Optional<Prompt> displaySinglePrompts(@PathVariable Long id, Model model) {
         model.addAttribute("singlePrompt", promptRepo.findById(id).get());
-        return (Optional<Prompt>) promptRepo.findByID(id);
+        return (Optional<Prompt>) promptRepo.findById(id);
     }
 
-    @RequestMapping("/promptQuestion")
+    @RequestMapping("api/prompt/promptQuestion")
     public Optional<Prompt> displayPromptQuestion(@PathVariable String promptQuestion, Model model) {
         model.addAttribute("promptQuestion", promptRepo.findByPromptQuestion(promptQuestion));
         return (Optional<Prompt>) promptRepo.findByPromptQuestion(promptQuestion);
     }
 
-    @RequestMapping("/promptAnswer")
+    @RequestMapping("api/prompt/promptAnswer")
     public Optional<Prompt> displayPromptAnswer(@PathVariable String promptAnswer, Model model){
         model.addAttribute("promptAnswer", promptRepo.findByPromptAnswer(promptAnswer));
         return (Optional<Prompt>) promptRepo.findByPromptAnswer(promptAnswer);
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("api/prompt/{id}")
     public Collection<Prompt> deletePrompt(@PathVariable Long id, String body) throws JSONException {
 
         Optional<Prompt> promptToBeDeleted = promptRepo.findById(id);

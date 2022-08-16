@@ -45,6 +45,24 @@
     font-family: "Montserrat", sans-serif;
 }
 
+.discussQuest {
+    margin: 10px 0px;
+    width: 100%;
+    height: 30px;
+    background-color: rgb(247, 247, 247);
+    border: 2px solid rgba(0,0,0,0.1);
+}
+
+.discussQuest[type="text"] {
+    padding: 10px 10px;
+    color: #7A7A7A;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+}
+
+
+
 .discussEntry {
     margin: 10px auto;
     width: 100%;

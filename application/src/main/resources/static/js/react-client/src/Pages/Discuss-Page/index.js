@@ -17,19 +17,16 @@ const DiscussPage = () => {
     useEffect(() => {
         const fetchData = async () => {
 
-        const randId = [Math.floor(Math.random() * 25) + 34];
-        const result = await Axios(`http://localhost:8080/api/discuss/${randId}`);
-        setDiscuss(result.data);
-        
+        const randId = [Math.floor(Math.random() * 25) + 34];        
         const discussData = await Axios(`http://localhost:8080/api/discuss/${randId}`);
         setDiscuss(discussData.data);
 
         const discussEntry = await Axios(`http://localhost:8080/api/${username}/discuss`);
         setEntry(discussEntry.data);
-        console.log(discussEntry.data);
+
+    // GRAB DISCUSSION QUESTION ====================================================================
 
         const quest = discussData.data.discussQuestion;
-        console.log(quest);
     };
 
     // FETCH USER CHECK ===========================================================================
@@ -64,7 +61,7 @@ const DiscussPage = () => {
                 {loading ? <h3>Loading...</h3> : <h3 className={style.discussH3}>Question: {discuss.discussQuestion}</h3>}
             </section>
 
-            <DiscussForm />
+            <DiscussForm quest={discuss && discuss.discussQuestion}/>
 
             <section className={style.discussEntryList}>
                 <h2 className={style.discussH2}>Past Entries</h2>

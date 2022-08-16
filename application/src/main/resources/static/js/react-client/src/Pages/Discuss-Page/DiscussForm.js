@@ -5,7 +5,7 @@ import { getUsername } from "../../utils/common";
 
 const username = getUsername();
 
-const DiscussForm = () => {
+const DiscussForm = ({ quest }) => {
 
     const [discussFormEntry, setdiscussFormEntry] = useState({
         discussDate: "",
@@ -27,7 +27,7 @@ const DiscussForm = () => {
 
         const userDiscussData = {
             discussDate: discussFormEntry.discussDate,
-            discussQuestion: discussFormEntry.discussQuestion,
+            discussQuestion: quest,
             discussAnswerOne: discussFormEntry.discussAnswerOne,
             discussAnswerTwo: discussFormEntry.discussAnswerTwo,
         };
@@ -47,10 +47,10 @@ const DiscussForm = () => {
                 value={discussFormEntry.discussDate}
                 onChange={handleChange}></input>
 
-                {/* <input className={style.discussDate} type="hidden"
+                <input className={style.discussQuest} type="text"
                 name="discussQuestion"
-                value={discussFormEntry.discussQuestion}
-                onChange={handleChange}></input> */}
+                value={quest}
+                onChange={handleChange}></input>
 
                 <textarea className={style.discussEntry} type="text" placeholder="Your Answer" 
                 name="discussAnswerOne"
