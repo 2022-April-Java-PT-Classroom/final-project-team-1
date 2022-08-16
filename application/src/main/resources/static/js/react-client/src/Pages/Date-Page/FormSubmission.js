@@ -1,7 +1,9 @@
 import React, {useState} from "react";
+
 import axios from 'axios';
 import style from './style.module.scss';
-const UserSubmitted = ({userSubmitted, userName, setUserExp}) => {
+
+const UserSubmitted = ({userSubmitted, userName, setUserExp, dateIdea, dateType, dateLevel}) => {
     const [userExpState, setUserExpState] = useState({
         dateDate: "",
         dateNotes: "",
@@ -22,9 +24,9 @@ const UserSubmitted = ({userSubmitted, userName, setUserExp}) => {
         const userDateData = {
             dateDate: userExpState.dateDate,
             dateNotes: userExpState.dateNotes,
-            dateIdea: userExpState.dateIdea,
-            dateType: userExpState.dateType,
-            dateLevel: userExpState.dateLevel,
+            dateIdea: dateIdea,
+            dateType: dateType,
+            dateLevel: dateLevel,
             userName: userExpState.userName
         };
         axios.post(`http://localhost:8080/${userName}/dateNight/new-dateNight`, userDateData).then((response) => {
@@ -37,8 +39,15 @@ const UserSubmitted = ({userSubmitted, userName, setUserExp}) => {
         <div>
             <h3 className={style.dateTitle}>Tell us your experience on this date</h3>
                 <form className={style.dateForm} onSubmit={handleSubmit}>
+                    {/* sets the calendar date by the user */}
                     <input className={style.dateInput} type="date" name="dateDate" value={userExpState.dateDate} onChange={handleChange} />
-                    <input name="dateIdea" value={userExpState.dateIdea} onChange={handleChange} placeholder='Enter date idea you and your partner did'></input>
+                    {/* intakes idea data from populator, randomized from the display page  */}
+                    <input className={style.dateIdea} type="text" name="dateIdea" value={dateIdea} onChange={handleChange}></input>
+                    {/* intakes type data from populator, same as above */}
+                    <input className={style.dateType} type="text" name="dateIdea" value={dateType} onChange={handleChange}></input>
+                    {/* intakes date level from populator, same as above */}
+                    <input className={style.dateLevel} type="text" name="dateLevel" value={dateLevel} onChange={handleChange}></input>
+                    {/* sets the user submission notes about the date from inside this component */}
                     <textarea className={style.userExperience} name="dateNotes" value={userExpState.dateNotes} onChange={handleChange} placeholder='Enter your experience'></textarea>
                     <button className={style.dateBtn}>Submit</button>
                 </form>
@@ -47,6 +56,8 @@ const UserSubmitted = ({userSubmitted, userName, setUserExp}) => {
                     <div key={dateNight.dateNightId}>
                         <p>{dateNight.dateDate}</p>
                         <p>{dateNight.dateIdea}</p>
+                        <p>{dateNight.dateType}</p>
+                        <p>{dateNight.dateLevel}</p>
                         <p>{dateNight.dateNotes}</p>
                     </div>
                    ))}

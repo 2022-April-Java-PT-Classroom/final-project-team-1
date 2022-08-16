@@ -10,22 +10,23 @@ const DatePage = () => {
 
     const userName = getUsername();  
     const [dateNight, setDateNight] = useState(null);
-    const [entry, setEntry] = useState(null);
+    const [userEntry, setUserEntry] = useState(null);
     const [loadingDate, setLoadingDate] = useState(true);
 
-    const randDateNightId = Math.floor((Math.random() * 27) + 9);
+    
 
 
     useEffect(() => {
         const fetchData = async () => {
             
-            const result = await Axios(`http://localhost:8080/${userName}/dateNight/${randDateNightId}`);
+            const dateNight = Math.floor((Math.random() * 27) + 9);
+            const result = await Axios(`http://localhost:8080/dateNight/${dateNight}`);
 
             setDateNight(result.data);
             console.log(result.data);
 
-            // const dateNightEntry = await Axios(`http://localhost:8080/${userName}/dateNight`);
-            // setEntry(dateNightEntry.data);
+            const userEntry = await Axios(`http://localhost:8080/${userName}/dateNight`);
+            setUserEntry(userEntry.data);
         };
 
         if(!userName) {
@@ -38,17 +39,17 @@ const DatePage = () => {
             }, 1000);
             return () => clearTimeout(timer);
         } else {
-            if (dateNight && entry) {
+            if (dateNight && userEntry) {
                 setLoadingDate(false);
             }
 
             const timer = setTimeout(() => {
-                !dateNight && !entry && fetchData();
+                !dateNight && !userEntry && fetchData();
             }, 1000);
             return () => clearTimeout(timer);
         }
         
-    }, [userName, dateNight, entry]);
+    }, [userName, dateNight, userEntry]);
 
 
     return (
@@ -58,9 +59,9 @@ const DatePage = () => {
                 <div>
                     {loadingDate ? <h3 className={style.dateLoad}>Creating date night idea just for you...</h3> :
                     <>
-                    {entry.map(dateNight => (
+                    {dateNight && dateNight.map(dateNight => (
                         <div key={dateNight.dateNightId}>
-                        <p>{dateNight.dateIdea}</p>
+                        <p>Idea: {dateNight.dateIdea}</p>
                         <p>Type: {dateNight.dateType}</p>
                         <p>Level: {dateNight.dateLevel}</p>
                         </div>
@@ -70,7 +71,7 @@ const DatePage = () => {
                     </>}
                     
                     <div>
-                        <UserSubmitted userSubmitted={dateNight} userName={userName} setUserExp={setDateNight} />
+                        <UserSubmitted userSubmitted={userEntry} userName={userName} setDateNight={setDateNight} dateNight={dateNight} />
                     </div>
 
                 </div>
