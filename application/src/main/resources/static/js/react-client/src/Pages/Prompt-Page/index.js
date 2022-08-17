@@ -1,22 +1,39 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 import Axios from "axios";
-import oJournal from '../../assests/orangejournal.png'
+import { Link } from "react-router-dom";
+import { getUsername } from "../../utils/common";
 import style from "./style.module.scss";
+
+const username = getUsername();
 
 const PromptPage =()=>{
 
+
     const [prompt, setPrompt]= useState(null);
+    const [entry, setEntry] = useState(null);
     const[loading, setLoading]= useState(true);
 
-    const randomPrompt=[Math.floor(Math.random()*13)+3];
-    
     useEffect(()=> {
-        const fetchData = async () => {
-            const result = await Axios(`http://localhost:8080/prompt/${randomPrompt}`)
 
-            setPrompt(result.data);
-            console.log(result.data);
+        
+        const fetchData = async () => {
+            
+            const randomId=[Math.floor(Math.random()*13)+3];
+            const promptData = await Axios(`http://localhost:8080/prompt/${randomId}`)
+            setPrompt(promptData.data);
+
+            console.log(promptData.data);
+
+            const promptEntry = await Axios(`http://localhost:8080/api/${username}/prompt`);
+            setEntry(promptEntry.data);
+               
+            const quest = promptData.data.promptQuestion;
+       
+       
+       
+       
         };
+        if (!username){
         if (prompt){
             setLoading(false);
         }
@@ -25,7 +42,16 @@ const PromptPage =()=>{
         }, 1000);
         return()=> clearTimeout(timer);
 
-    },[prompt]);
+    }else{
+        if (prompt && entry){
+            setLoading(false);
+        }
+        const timer =setTimeout(()=>{
+            !prompt && !entry && fetchData();
+        },1000);
+        return ()=> clearTimeout(timer);
+    }
+ } ,[prompt, entry]);
 
     return(
     <div className={style.container}>
