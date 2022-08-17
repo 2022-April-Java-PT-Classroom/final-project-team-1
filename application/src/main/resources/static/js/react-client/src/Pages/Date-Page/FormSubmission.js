@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import axios from 'axios';
 import style from './style.module.scss';
-const UserSubmitted = ({userSubmitted, userName, setUserExp}) => {
+
+const UserSubmitted = ({userSubmitted, userName, setUserExp, quest}) => {
     const [userExpState, setUserExpState] = useState({
         dateDate: "",
         dateNotes: "",
@@ -22,7 +23,7 @@ const UserSubmitted = ({userSubmitted, userName, setUserExp}) => {
         const userDateData = {
             dateDate: userExpState.dateDate,
             dateNotes: userExpState.dateNotes,
-            dateIdea: userExpState.dateIdea,
+            dateIdea: quest,
             dateType: userExpState.dateType,
             dateLevel: userExpState.dateLevel,
             userName: userExpState.userName
@@ -35,10 +36,10 @@ const UserSubmitted = ({userSubmitted, userName, setUserExp}) => {
     };
     return (
         <div>
-            <h3 className={style.dateTitle}>Tell us your experience on this date</h3>
+            <h1 className={style.dateTitle}>Tell us your experience on this date</h1>
                 <form className={style.dateForm} onSubmit={handleSubmit}>
                     <input className={style.dateInput} type="date" name="dateDate" value={userExpState.dateDate} onChange={handleChange} />
-                    <input name="dateIdea" value={userExpState.dateIdea} onChange={handleChange} placeholder='Enter date idea you and your partner did'></input>
+                    <input name="dateIdea" value={quest} onChange={handleChange}></input>
                     <textarea className={style.userExperience} name="dateNotes" value={userExpState.dateNotes} onChange={handleChange} placeholder='Enter your experience'></textarea>
                     <button className={style.dateBtn}>Submit</button>
                 </form>
