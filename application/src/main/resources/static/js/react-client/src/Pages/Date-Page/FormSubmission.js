@@ -53,9 +53,10 @@ const UserSubmitted = ({ userName, randomDateNight}) => {
                     <textarea className={style.userExperience} name="dateNotes" value={userExpState.dateNotes} onChange={handleChange} placeholder='Enter your experience'></textarea>
                     <button className={style.dateBtn}>Submit</button>
                 </form>
-                <section>
+                <h3 className={style.previousDates}>Here are your past dates: </h3> 
+                <section className={style.previousDateSection}>
                    {userExp && userExp.map(userExp => (
-                    <div key={userExp.dateNightId}>
+                    <div className={style.previousDateEntries} key={userExp.dateNightId}>
                         <p>{userExp.dateDate}</p>
                         <p>{userExp.dateIdea}</p>
                         <p>{userExp.dateType}</p>
