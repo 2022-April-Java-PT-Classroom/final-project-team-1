@@ -46,7 +46,7 @@ const PortalEntry = () => {
             <div>
                 {journals.map(journal => (<p key={journal.id}>Journal Entry: {journal.journalDate}</p>))}
                 {discuss.map(discuss => (<p key={discuss.discussId}>Discuss Entry: {discuss.discussDate}</p>))}
-                {dates.map(date => (<p key={date.datenightId}>Datenight Entr: y</p>))}
+                {dates.map(date => (<p key={date.datenightId}>Datenight Entry: {date.dateDate}</p>))}
             </div>}
             </section>            
         </div>
