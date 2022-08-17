@@ -237,6 +237,7 @@ public class Populator implements CommandLineRunner {
         discussRepo.save(adminDiscuss01);
         discussRepo.save(adminDiscuss02);
         discussRepo.save(adminDiscuss03);
+        dateRepo.save(adminDate01);
 
 
     }
