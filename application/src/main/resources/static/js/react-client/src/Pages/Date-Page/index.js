@@ -61,18 +61,18 @@ const DatePage = () => {
                 <div>
                     {loadingDate ? <h3 className={style.dateLoad}>Creating date night idea just for you...</h3> :
                     <ul className={style.randomDateNight}> 
-                        {randomDateNight && randomDateNight.map(randomIdea => (
-                        <div key={randomIdea.dateNightId}>
-                        <li>Idea: {randomIdea.dateIdea}</li>
-                        <li>Type: {randomIdea.dateType}</li>
-                        <li>Level: {randomIdea.dateLevel}</li>
-                        </div>
-                    ))}
+                       
+                        
+                        <li>Idea: {randomDateNight.dateIdea}</li>
+                        <li>Type: {randomDateNight.dateType}</li>
+                        <li>Level: {randomDateNight.dateLevel}</li>
+                        
+                    
                     </ul>
                     }
                     
                     <div>
-                        <UserSubmitted userSubmitted={userEntry && randomDateNight} userName={userName} setRandomDateNight={setRandomDateNight} setUserEntry={setUserEntry} />
+                        <UserSubmitted randomDateNight={randomDateNight && randomDateNight} userName={userName} userEntry={userEntry && userEntry} userSubmitted={setUserEntry} />
                     </div>
 
                 </div>
