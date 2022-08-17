@@ -189,7 +189,7 @@ public class Populator implements CommandLineRunner {
         discussRepo.save(discuss24);
         discussRepo.save(discuss25);
 
-        Quotes quote1 = new Quotes("Act as if what you do makes a diffrence. It does.",
+        Quotes quote1 = new Quotes("Act as if what you do makes a difference. It does.",
                 "http://localhost:8080/images/quote1.png", "William James");
         quotesRepo.save(quote1);
         Quotes quote2 = new Quotes("It always seems impossible until it is done",
@@ -218,7 +218,7 @@ public class Populator implements CommandLineRunner {
                 "http://localhost:8080/images/quote9.jpg","Brian Tracy");
         quotesRepo.save(quote9);
         Quotes quote10 = new Quotes("Nothing is impossible. The world itself says I am possible",
-                "http://localhost:8080/images/quote10.jpg", "Audrey Hepburm");
+                "http://localhost:8080/images/quote10.jpg", "Audrey Hepburn");
         quotesRepo.save(quote10);
 //        prompts================================================================================
         Prompt prompt1 = new Prompt("What do you admire most about your partner?");
@@ -258,12 +258,13 @@ public class Populator implements CommandLineRunner {
         Discuss adminDiscuss01 = new Discuss("01/02/03", "This is the discussion question 01", "This is answer one 01", "This is answer two 01", admin);
         Discuss adminDiscuss02 = new Discuss("04/05/06", "This is the discussion question 02", "This is answer one 02", "This is answer two 02", admin);
         Discuss adminDiscuss03 = new Discuss("07/08/09", "This is the discussion question 03", "This is answer one 03", "This is answer two 03", admin);
-
+        DateNight adminDate01 = new DateNight("08/17/22", "Explore a new state or place", "Active", "Medium", "it was fun", admin);
 
         journalRepository.save(adminJournal);
         discussRepo.save(adminDiscuss01);
         discussRepo.save(adminDiscuss02);
         discussRepo.save(adminDiscuss03);
+        dateRepo.save(adminDate01);
 
 
     }

@@ -1,9 +1,11 @@
 import {Route, Switch} from 'react-router-dom';
+
 import AboutUsPage from '../../Pages/AboutUs-Page';
 import Contact from '../../Pages/Contact';
 import DatePage from '../../Pages/Date-Page';
 import DiscussPage from '../../Pages/Discuss-Page';
 import DiscussSingle from '../../Pages/Discuss-Single';
+import FormSubmission from '../../Pages/Date-Page/FormSubmission';
 import HomePage from '../../Pages/Home-Page';
 import JournalPage from '../../Pages/Journal-Page';
 import LoginPage from '../../Pages/Login-Page';
@@ -13,10 +15,9 @@ import Quotes from '../../Pages/Quotes';
 import Resources from '../../Pages/Resources';
 import SignUpPage from '../../Pages/Signup-Page';
 import SingleJournalEntryPage from '../singleJournalEntry';
-import FormSubmission from '../../Pages/Date-Page/FormSubmission';
 import { getUsername } from '../../utils/common';
 
-const isUser = getUsername();
+//const isUser = getUsername();
 
 const AppRouter = () => {
 
