@@ -62,9 +62,9 @@ const DatePage = () => {
                     {loadingDate ? <h3 className={style.dateLoad}>Creating date night idea just for you...</h3> :
                     <>
                         <div>
-                        <p>{dateNight.dateIdea}</p>
-                        <p>Type: {dateNight.dateType}</p>
-                        <p>Level: {dateNight.dateLevel}</p>
+                        <p className={style.datePara}>{dateNight.dateIdea}</p>
+                        <p className={style.datePara}>Type: {dateNight.dateType}</p>
+                        <p className={style.datePara}>Level: {dateNight.dateLevel}</p>
                         </div>
                     </>}
 
