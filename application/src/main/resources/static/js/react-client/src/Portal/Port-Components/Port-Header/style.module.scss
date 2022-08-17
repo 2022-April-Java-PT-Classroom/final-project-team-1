@@ -7,7 +7,11 @@
     height: 50px;
     border-bottom: 1px solid rgb(238, 238, 238);
     z-index: 1;
+}
 
+.portLogo {
+    margin-left: 10px;
+    width: 8%;
 }
 
 .portSide {
@@ -18,29 +22,63 @@
     z-index: 2;
 }
 
-.portNav {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: left;
-    margin: 20px 20px;
-}
-
 .portOut {
     display: flex;
     align-items: center;
     margin: 0 10px;
 }
 
+.portWelcome {
+    font-family: "Poppins", sans-serif;
+}
+
 .portLog {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    width: 100px;
-    height: 30px;
-    margin: 0 20px;
+    height: 40px;
+    margin: 0px 20px;
+    padding: 10px 20px;
+    color: #FFF;
+    background-color: #46C0EA;
+    border: none;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 1rem;
+    font-family: "Montserrat", sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.2s ease;
+}
+
+.portLog:hover {
+    background-color: #0085b1;
 }
 
 .portH4Top {
     padding-top: 20px;
+}
+
+.portNav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    margin: 20px 20px;
+    font-size: 1.15rem;
+    font-family: "Poppins", sans-serif;
+}
+
+.portNav:active {
+    color: #161616;
+}
+
+.portLink {
+    color: #161616 !important;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    margin-right: 10px;
 }

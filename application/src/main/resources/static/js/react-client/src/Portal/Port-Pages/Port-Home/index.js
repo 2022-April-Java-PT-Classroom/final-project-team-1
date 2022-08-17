@@ -51,34 +51,38 @@ const PortalHome = () => {
                 <div>
                     <div className={style.dashDiv}>
                     <article className={style.dashCard1}>
-                        <div>
-                        <h2>{discuss.length}</h2>
-                        <i className="uil uil-edit" />
+                        <div className={style.dashCardIcon}>
+                        <h5>Prompt Entries</h5>
+                        <i className="uil uil-comment-question" />
                         </div>
+                    <h2 className={style.dashCardNum}>{discuss.length}</h2>
                     <h2>Prompts Answered</h2>
                     </article>
 
                     <article className={style.dashCard2}>
-                        <div>
-                        <h2>{discuss.length}</h2>
+                        <div className={style.dashCardIcon}>
+                        <h5>Date Entries</h5>
                         <i className="uil uil-crockery" />
                         </div>
+                    <h2 className={style.dashCardNum}>{discuss.length}</h2>
                     <h2>Dates Gone On</h2>
                     </article>
 
                     <article className={style.dashCard3}>
-                        <div>
-                        <h2>{discuss.length}</h2>
+                        <div className={style.dashCardIcon}>
+                        <h5>Discuss Entries</h5>
                         <i class="uil uil-comment-alt-heart" />
                         </div>
+                    <h2 className={style.dashCardNum}>{discuss.length}</h2>
                     <h2>Discussions Had</h2>
                     </article>
 
                     <article className={style.dashCard4}>
-                        <div>
-                        <h2>{journals.length}</h2>
-                        <i class="uil uil-notes" />
+                        <div className={style.dashCardIcon}>
+                        <h5>Journal Entries</h5>
+                        <i class="uil uil-edit" />
                         </div>
+                    <h2 className={style.dashCardNum}>{journals.length}</h2>
                     <h2>Thoughts Recorded</h2>
                     </article>
                     </div>

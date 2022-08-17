@@ -60,8 +60,29 @@
     margin: 30px auto;
 }
 
+.dashCardIcon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dashCardIcon h5 {
+    font-size: 1rem;
+}
+
+.dashCardIcon i {
+    font-size: 2rem;
+}
+
+.dashCardNum {
+    font-size: 4rem;
+    font-family: "Poppins", sans-serif;
+    margin: -20px auto;
+    padding: 0px auto;
+}
+
 .dashCard1 {
-    padding: 40px 20px;
+    padding: 20px 20px;
     border-radius: 3px;
     color: white;
     font-family: "Montserrat", sans-serif;
@@ -69,8 +90,13 @@
     background: linear-gradient(45deg, rgba(64,155,255,1) 0%, rgba(144,202,249,1) 100%);
 }
 
+.dashCard1:hover {
+    background: rgb(64,155,255);
+    background: linear-gradient(90deg, rgba(64,155,255,1) 0%, rgba(144,202,249,1) 100%);
+}
+
 .dashCard2 {
-    padding: 40px 20px;
+    padding: 20px 20px;
     border-radius: 3px;
     color: white;
     font-family: "Montserrat", sans-serif;
@@ -78,8 +104,13 @@
     background: linear-gradient(45deg, rgba(43,217,183,1) 0%, rgba(118,255,228,1) 100%);
 }
 
+.dashCard2:hover {
+    background: rgb(43,217,183);
+    background: linear-gradient(90deg, rgba(43,217,183,1) 0%, rgba(118,255,228,1) 100%);
+}
+
 .dashCard3 {
-    padding: 40px 20px;
+    padding: 20px 20px;
     border-radius: 3px;
     color: white;
     font-family: "Montserrat", sans-serif;
@@ -87,13 +118,23 @@
     background: linear-gradient(45deg, rgba(255,182,78,1) 0%, rgba(254,207,140,1) 100%);
 }
 
+.dashCard3:hover {
+    background: rgb(255,182,78);
+    background: linear-gradient(90deg, rgba(255,182,78,1) 0%, rgba(254,207,140,1) 100%);
+}
+
 .dashCard4 {
-    padding: 40px 20px;
+    padding: 20px 20px;
     border-radius: 3px;
     color: white;
     font-family: "Montserrat", sans-serif;
     background: rgb(255,83,114);
     background: linear-gradient(45deg, rgba(255,83,114,1) 0%, rgba(255,143,163,1) 100%);
+}
+
+.dashCard4:hover {
+    background: rgb(255,83,114);
+    background: linear-gradient(90deg, rgba(255,83,114,1) 0%, rgba(255,143,163,1) 100%);
 }
 
 .dashTable {
@@ -137,4 +178,8 @@
     text-transform: uppercase;
     transition: 0.2s ease;
     margin: 0px auto;
+}
+
+.dashTable button:hover {
+    background-color: #FEB134;
 }
