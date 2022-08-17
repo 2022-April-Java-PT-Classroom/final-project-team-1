@@ -23,8 +23,6 @@ const DiscussForm = ({ quest }) => {
     };
 
     const handleSubmit = (e) => {
-        e.preventDefault();
-
         const userDiscussData = {
             discussDate: discussFormEntry.discussDate,
             discussQuestion: quest,
@@ -47,7 +45,7 @@ const DiscussForm = ({ quest }) => {
                 value={discussFormEntry.discussDate}
                 onChange={handleChange}></input>
 
-                <input className={style.discussQuest} type="text"
+                <input className={style.discussQuest} type="hidden"
                 name="discussQuestion"
                 value={quest}
                 onChange={handleChange}></input>

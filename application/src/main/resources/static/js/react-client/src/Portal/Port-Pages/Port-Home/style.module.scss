@@ -1,3 +1,140 @@
 .portHome {
     position: relative;
+    width: 100%;
+    height: 100%;
+    margin-top: -40px;
+    display: flex;
+    background-image: url("../../../Assets/Images/dash-banner.svg");
+    background-size: cover;
+    background-position: 90% 100%;
+    border-radius: 5px;
+}
+
+.quizDiv {
+    margin: 20px 150px;
+    width: 45%;
+}
+
+.quizH4 {
+    padding-top: 25px;
+    margin-bottom: 5px;
+    font-size: 1.4rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    color: white;
+}
+
+.quizP {
+    text-align: left;
+    margin: 8px auto;
+    font-size: 1rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    color: white;
+}
+
+.quizBtn {
+    background-color: #FEC56B;
+    color: #FFF;
+    padding: 10px 20px;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 3px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: "Montserrat", sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.2s ease;
+    margin: 0px auto;
+}
+
+.quizBtn:hover {
+    background-color: #FEB134;
+}
+
+.dashDiv {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin: 30px auto;
+}
+
+.dashCard1 {
+    padding: 40px 20px;
+    border-radius: 3px;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    background: rgb(64,155,255);
+    background: linear-gradient(45deg, rgba(64,155,255,1) 0%, rgba(144,202,249,1) 100%);
+}
+
+.dashCard2 {
+    padding: 40px 20px;
+    border-radius: 3px;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    background: rgb(43,217,183);
+    background: linear-gradient(45deg, rgba(43,217,183,1) 0%, rgba(118,255,228,1) 100%);
+}
+
+.dashCard3 {
+    padding: 40px 20px;
+    border-radius: 3px;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    background: rgb(255,182,78);
+    background: linear-gradient(45deg, rgba(255,182,78,1) 0%, rgba(254,207,140,1) 100%);
+}
+
+.dashCard4 {
+    padding: 40px 20px;
+    border-radius: 3px;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    background: rgb(255,83,114);
+    background: linear-gradient(45deg, rgba(255,83,114,1) 0%, rgba(255,143,163,1) 100%);
+}
+
+.dashTable {
+    width: 100%;
+    background-color: #FFFFFF;
+    border-collapse: collapse;
+    border-width: 2px;
+    border-color: #90CAF9;
+    border-style: solid;
+    color: #161616;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.1rem;
+}
+
+.dashTable td, .dashTable th {
+    border-width: 1px;
+    border-color: #90CAF9;
+    border-style: solid;
+    padding: 10px;
+}
+
+.dashTable thead {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    background-color: #90CAF9;
+}
+
+.dashTable button {
+    background-color: #FEC56B;
+    color: #FFF;
+    margin: auto;
+    padding: 10px 20px;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    font-weight: 600;
+    border: none;
+    font-family: "Montserrat", sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.2s ease;
+    margin: 0px auto;
 }

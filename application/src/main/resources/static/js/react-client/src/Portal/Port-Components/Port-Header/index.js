@@ -36,7 +36,7 @@ const PortHeader = () => {
                 <Link to={'/'}>Dates</Link>
                 <Link to={'/portal/discuss'}>Discuss</Link>
                 <Link to={'/portal/journal'}>Journal</Link>
-                {!isAdmin && username ?
+                {!isAdmin  ?
                 <div></div>
                 :
                 <div>

@@ -25,7 +25,6 @@ const DiscussPage = () => {
         setEntry(discussEntry.data);
 
     // GRAB DISCUSSION QUESTION ====================================================================
-
         const quest = discussData.data.discussQuestion;
     };
 
@@ -54,6 +53,8 @@ const DiscussPage = () => {
 }, [discuss, entry]);
 
 
+
+
     return (
         <div className={style.discussPage}>
             <section className={style.discussSection}>
@@ -61,7 +62,7 @@ const DiscussPage = () => {
                 {loading ? <h3>Loading...</h3> : <h3 className={style.discussH3}>Question: {discuss.discussQuestion}</h3>}
             </section>
 
-            <DiscussForm quest={discuss && discuss.discussQuestion}/>
+            <DiscussForm quest={discuss && discuss.discussQuestion} />
 
             <section className={style.discussEntryList}>
                 <h2 className={style.discussH2}>Past Entries</h2>
