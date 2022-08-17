@@ -231,7 +231,7 @@ public class Populator implements CommandLineRunner {
         Discuss adminDiscuss01 = new Discuss("01/02/03", "This is the discussion question 01", "This is answer one 01", "This is answer two 01", admin);
         Discuss adminDiscuss02 = new Discuss("04/05/06", "This is the discussion question 02", "This is answer one 02", "This is answer two 02", admin);
         Discuss adminDiscuss03 = new Discuss("07/08/09", "This is the discussion question 03", "This is answer one 03", "This is answer two 03", admin);
-
+        DateNight adminDate01 = new DateNight("08/17/22", "Explore a new state or place", "Active", "Medium", "it was fun", admin);
 
         journalRepository.save(adminJournal);
         discussRepo.save(adminDiscuss01);

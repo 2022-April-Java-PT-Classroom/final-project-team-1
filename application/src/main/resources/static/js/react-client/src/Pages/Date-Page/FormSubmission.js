@@ -3,7 +3,7 @@ import React, {useState} from "react";
 import axios from 'axios';
 import style from './style.module.scss';
 
-const UserSubmitted = ({userSubmitted, userName, setUserExp, dateIdea, dateType, dateLevel}) => {
+const UserSubmitted = ({ userName, setUserExp, dateIdea, dateType, dateLevel, userExp}) => {
     const [userExpState, setUserExpState] = useState({
         dateDate: "",
         dateNotes: "",
@@ -52,13 +52,13 @@ const UserSubmitted = ({userSubmitted, userName, setUserExp, dateIdea, dateType,
                     <button className={style.dateBtn}>Submit</button>
                 </form>
                 <section>
-                   {userSubmitted && userSubmitted.map(dateNight => (
-                    <div key={dateNight.dateNightId}>
-                        <p>{dateNight.dateDate}</p>
-                        <p>{dateNight.dateIdea}</p>
-                        <p>{dateNight.dateType}</p>
-                        <p>{dateNight.dateLevel}</p>
-                        <p>{dateNight.dateNotes}</p>
+                   {userExp && userExp.map(userExp => (
+                    <div key={userExp.dateNightId}>
+                        <p>{userExp.dateDate}</p>
+                        <p>{userExp.dateIdea}</p>
+                        <p>{userExp.dateType}</p>
+                        <p>{userExp.dateLevel}</p>
+                        <p>{userExp.dateNotes}</p>
                     </div>
                    ))}
                 </section>
