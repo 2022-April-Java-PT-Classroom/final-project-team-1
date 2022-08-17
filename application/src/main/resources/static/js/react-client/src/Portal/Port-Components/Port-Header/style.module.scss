@@ -70,15 +70,57 @@
     font-family: "Poppins", sans-serif;
 }
 
-.portNav:active {
-    color: #161616;
-}
-
 .portLink {
-    color: #161616 !important;
-    text-decoration: none;
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
     margin-right: 10px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    transition: 0.2s ease;
+}
+
+.portLink:focus-within {
+    color: white !important;
+    background-color: #90CAF9;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+.portLink:hover {
+    color: white !important;
+    background-color: #90CAF9;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+.portLink a {
+    color: #51ABF6;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.portLink a:focus {
+    color: white;
+}
+
+.portLink a:hover {
+    color: white;
+}
+
+.portLinkHome {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    padding: 8px 10px;
+    border-radius: 3px;
+    transition: 0.2s ease;
+    color: white !important;
+    background-color: #90CAF9;
+}
+
+.portLinkHome a {
+    color: white;
+    text-decoration: none;
 }

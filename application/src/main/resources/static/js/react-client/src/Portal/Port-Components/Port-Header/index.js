@@ -32,27 +32,27 @@ const PortHeader = () => {
                 <nav className={style.portNav}>
                     <div className={style.portLink}>
                         <Link to={'/portal'}>Dashboard</Link>
-                        <i class="uil uil-edit" />
+                        <i class="uil uil-tachometer-fast-alt" />
                     </div>
                     <div className={style.portLink}>
                         <Link to={'/portal/profile'}>Profile</Link>
-                        <i class="uil uil-edit" />
+                        <i class="uil uil-user-circle" />
                     </div>
                     <div className={style.portLink}>
                         <Link to={'/portal/entry'}>Entries</Link>
-                        <i class="uil uil-edit" />
+                        <i class="uil uil-list-ul" />
                     </div>
                     <div className={style.portLink}>
                         <Link to={'/'}>Prompts</Link>
-                        <i class="uil uil-edit" />
+                        <i class="uil uil-comment-question" />
                     </div>
                     <div className={style.portLink}>
                         <Link to={'/'}>Dates</Link>
-                        <i class="uil uil-edit" />
+                        <i class="uil uil-crockery" />
                     </div>
                     <div className={style.portLink}>         
                         <Link to={'/portal/discuss'}>Discuss</Link>
-                        <i class="uil uil-edit" />
+                        <i class="uil uil-comment-alt-heart" />
                     </div>
                     <div className={style.portLink}>
                         <Link to={'/portal/journal'}>Journal</Link>
@@ -63,14 +63,14 @@ const PortHeader = () => {
                 <div className={style.portLink}></div>
                 :
                 <div className={style.portLink}>
-                    <Link to={'/#'}>Admin Collection</Link>
-                    <i class="uil uil-edit" />
+                    <Link to={'/#'}>Admin</Link>
+                    <i class="uil uil-unlock" />
                 </div>
                 }
 
-                <div className={style.portLink}>
+                <div className={style.portLinkHome}>
                     <a href="/">Home</a>
-                    <i class="uil uil-edit" />
+                    <i class="uil uil-house-user" />
                 </div>
                 </nav>
             </div>

@@ -3,7 +3,6 @@ import Axios from 'axios';
 import { getUsername } from "../../../utils/common";
 import Quiz from "../../../Components/Quiz";
 import style from './style.module.scss'
-import Xmas from '../../../Assets/Images/xmas-orange.svg'
 
 const PortalHome = () => {
 
@@ -123,9 +122,7 @@ const PortalHome = () => {
                             <tr key={date.dateNightId}>
                                 <td>{date.dateDate}</td>
                                 <td>{date.dateIdea}</td>
-                                <td>{date.dateType}</td>
-                                <td>{date.dateLevel}</td>
-                                <td>{date.dateNotes}</td>
+                                <td><button>View</button></td>
                                 <td><button>Edit</button></td>
                                 <td><button>Delete</button></td>
                             </tr>
