@@ -1,17 +1,9 @@
 import {React, useEffect, useState} from "react";
-<<<<<<< HEAD
 import Axios from 'axios';
 import { getUsername } from "../../../utils/common";
 import Quiz from "../../../Components/Quiz";
 import style from './style.module.scss'
 import Xmas from '../../../Assets/Images/xmas-orange.svg'
-=======
->>>>>>> main
-
-import Axios from 'axios';
-import Quiz from "../../../Components/Quiz";
-import { getUsername } from "../../../utils/common";
-import style from './style.module.scss'
 
 const PortalHome = () => {
 
