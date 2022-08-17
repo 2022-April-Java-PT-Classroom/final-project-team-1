@@ -72,7 +72,7 @@ const DatePage = () => {
                     }
                     
                     <div>
-                        <UserSubmitted randomDateNight={randomDateNight && randomDateNight} userName={userName} userEntry={userEntry && userEntry} userSubmitted={setUserEntry} />
+                        {randomDateNight && <UserSubmitted randomDateNight={randomDateNight} userName={userName} userEntry={userEntry && userEntry} userSubmitted={setUserEntry} />}
                     </div>
 
                 </div>
