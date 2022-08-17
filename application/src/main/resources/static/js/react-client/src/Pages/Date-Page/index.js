@@ -7,48 +7,51 @@ import { getUsername } from '../../utils/common';
 import style from './style.module.scss';
 
 const DatePage = () => {
-
     const userName = getUsername();  
-    const [dateNight, setDateNight] = useState(null);
-    const [entry, setEntry] = useState(null);
+
+    const [randomDateNight, setRandomDateNight] = useState(null);
+    const [userEntry, setUserEntry] = useState(null);
     const [loadingDate, setLoadingDate] = useState(true);
 
-    const randDateNightId = Math.floor((Math.random() * 27) + 9);
-
-
+    
     useEffect(() => {
         const fetchData = async () => {
             
-            const result = await Axios(`http://localhost:8080/${userName}/dateNight/${randDateNightId}`);
+            const randomDate = [Math.floor(Math.random() * 27) + 9];
+            const randomDateNight = await Axios(`http://localhost:8080/dateNight/${randomDate}`);
 
-            setDateNight(result.data);
-            console.log(result.data);
+            setRandomDateNight(randomDateNight.data);
+            console.log(randomDateNight.data);
 
-            // const dateNightEntry = await Axios(`http://localhost:8080/${userName}/dateNight`);
-            // setEntry(dateNightEntry.data);
+            const userEntry = await Axios(`http://localhost:8080/${userName}/dateNight`);
+            setUserEntry(userEntry.data);
+            console.log(userEntry.data);
         };
 
-        if(!userName) {
-            if (dateNight) {
+        
+        if(!userName){
+            if(randomDateNight) {
                 setLoadingDate(false);
             }
     
             const timer = setTimeout(() => {
-                !dateNight && fetchData();
+                !randomDateNight && fetchData();
             }, 1000);
+            
             return () => clearTimeout(timer);
+            
         } else {
-            if (dateNight && entry) {
+            if (randomDateNight && userEntry) {
                 setLoadingDate(false);
             }
 
             const timer = setTimeout(() => {
-                !dateNight && !entry && fetchData();
+                !randomDateNight && !userEntry && fetchData();
             }, 1000);
             return () => clearTimeout(timer);
         }
         
-    }, [userName, dateNight, entry]);
+    }, [randomDateNight, userEntry, userName]);
 
 
     return (
@@ -57,20 +60,19 @@ const DatePage = () => {
                 <h1 className={style.dateH1}>Date Night Ideas.</h1>
                 <div>
                     {loadingDate ? <h3 className={style.dateLoad}>Creating date night idea just for you...</h3> :
-                    <>
-                    {entry.map(dateNight => (
-                        <div key={dateNight.dateNightId}>
-                        <p>{dateNight.dateIdea}</p>
-                        <p>Type: {dateNight.dateType}</p>
-                        <p>Level: {dateNight.dateLevel}</p>
-                        </div>
-                    ))}
+                    <ul className={style.randomDateNight}> 
+                       
                         
+                        <li>Idea: {randomDateNight.dateIdea}</li>
+                        <li>Type: {randomDateNight.dateType}</li>
+                        <li>Level: {randomDateNight.dateLevel}</li>
                         
-                    </>}
+                    
+                    </ul>
+                    }
                     
                     <div>
-                        <UserSubmitted userSubmitted={dateNight} userName={userName} setUserExp={setDateNight} />
+                        {randomDateNight && <UserSubmitted randomDateNight={randomDateNight} userName={userName} userEntry={userEntry && userEntry} userSubmitted={setUserEntry} />}
                     </div>
 
                 </div>
