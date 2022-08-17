@@ -57,6 +57,13 @@ public class DateController {
         return user.get().getDateNight();
     }
 
+    @GetMapping("/{userName}/dateNight")
+    public Collection<DateNight> getDates(@PathVariable String userName) {
+        Optional<User> user = userRepo.findByUsernameIgnoreCase(userName);
+        dateRepo.findAll();
+        return user.get().getDateNight();
+    }
+
     @PostMapping("/{userName}/dateNight/new-dateNight")
     public Collection<DateNight> addDateNightFromUser(@PathVariable String userName, @RequestBody String body) {
         JSONObject newDateNight = new JSONObject(body);
