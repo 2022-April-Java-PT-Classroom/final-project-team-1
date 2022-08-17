@@ -189,7 +189,7 @@ public class Populator implements CommandLineRunner {
         discussRepo.save(discuss24);
         discussRepo.save(discuss25);
 
-        Quotes quote1 = new Quotes("Act as if what you do makes a diffrence. It does.",
+        Quotes quote1 = new Quotes("Act as if what you do makes a difference. It does.",
                 "http://localhost:8080/images/quote1.png", "William James");
         quotesRepo.save(quote1);
         Quotes quote2 = new Quotes("It always seems impossible until it is done",
@@ -218,7 +218,7 @@ public class Populator implements CommandLineRunner {
                 "http://localhost:8080/images/quote9.jpg","Brian Tracy");
         quotesRepo.save(quote9);
         Quotes quote10 = new Quotes("Nothing is impossible. The world itself says I am possible",
-                "http://localhost:8080/images/quote10.jpg", "Audrey Hepburm");
+                "http://localhost:8080/images/quote10.jpg", "Audrey Hepburn");
         quotesRepo.save(quote10);
 
 
