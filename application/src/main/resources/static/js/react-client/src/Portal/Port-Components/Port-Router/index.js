@@ -7,6 +7,7 @@ import JournalPage from '../../../Pages/Journal-Page';
 import PortEntry from '../../Port-Pages/Port-Entry';
 import PortHome from '../../Port-Pages/Port-Home';
 import PortProfile from '../../Port-Pages/Port-Profile';
+import PortDiscuss from '../../Port-Pages/Port-Discuss';
 import PortDiscussSingle from '../../Port-Pages/Port-Discuss/Port-Discuss-Single';
 import SingleJournalEntryPage from "../../../Components/singleJournalEntry";
 import style from './style.module.scss';
@@ -18,7 +19,7 @@ const PortRouter = () => {
             <Route exact path={'/Portal'} component={PortHome} />
             <Route exact path={'/Portal/Profile'} component={PortProfile} />
             <Route exact path={'/Portal/Entry'} component={PortEntry} />
-            <Route exact path={'/Portal/Discuss'} component={DiscussPage} />
+            <Route exact path={'/Portal/Discuss'} component={PortDiscuss} />
             <Route exact path={'/Portal/Journal'} component={JournalPage} />
             <Route exact path={'/Journal-Page/:id'} component={SingleJournalEntryPage} />  
             <Route path ={'/portal/api/discuss/:id'} component={PortDiscussSingle}/>
