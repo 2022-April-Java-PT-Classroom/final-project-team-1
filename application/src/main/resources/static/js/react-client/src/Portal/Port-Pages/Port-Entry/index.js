@@ -3,6 +3,7 @@ import {React, useEffect, useState} from "react";
 import Axios from 'axios';
 import { getUsername } from "../../../utils/common";
 import style from './style.module.scss';
+import { Link } from "react-router-dom";
 
 const PortalEntry = () => {
 
@@ -39,14 +40,37 @@ const PortalEntry = () => {
     return (
         <div className={style.portEntry}>
             <section className={style.portEntry}>
-            <h1 className={style.portH1d}>This is the portal entry page</h1>
-            <h1 className={style.portH1d}>This is the portal entry page</h1>
-            <h1 className={style.portH1d}>This is the portal entry page</h1>
+            <h1 className={style.portH1d}>View Your Entries</h1>
             {loading ? <h3>Loading...</h3> :
-            <div>
-                {journals.map(journal => (<p key={journal.id}>Journal Entry: {journal.journalDate}</p>))}
-                {discuss.map(discuss => (<p key={discuss.discussId}>Discuss Entry: {discuss.discussDate}</p>))}
-                {dates.map(date => (<p key={date.datenightId}>Datenight Entry: {date.dateDate}</p>))}
+            <div className={style.entryCards}>
+                {journals.map(journal => (
+                    <div key={journal.id}>
+                    <p>Posted: {journal.journalDate}</p>
+                    <p>By: {journal.user.username}</p>
+                    <p>Posted: {journal.journalEntry}</p>
+                    <Link to={`/portal/api/journal/${journal.id}`}>Read More</Link>
+                    </div>
+                ))}
+
+                {discuss.map(discuss => (
+                    <div key={discuss.discussId}>
+                    <p>Posted: {discuss.discussDate}</p>
+                    <p>By: {discuss.discussUser.username}</p>
+                    <p>{discuss.discussQuestion}</p>
+                    <p>{discuss.discussAnswerOne}</p>
+                    <Link to={`/portal/api/discuss/${discuss.discussId}`}>Read More</Link>
+                    </div>
+                ))}
+
+                {dates.map(date => (
+                    <div key={date.datenightId}>
+                    <p>Posted: {date.dateDate}</p>
+                    <p>By: {date.user.username}</p>
+                    <p>{date.dateIdea}</p>
+                    <p>{date.dateNotes}</p>
+                    <Link to={`/portal/dateNight/${date.datenightId}`}>Read More</Link>
+                </div>
+                ))}
             </div>}
             </section>            
         </div>
