@@ -55,7 +55,7 @@ const PortDiscuss = () => {
         <div className={style.portDiscussMain}>
 
             <section className={style.portDiscussSectionOne}>
-            <h1 className={style.porDiscussH1}>discuss.</h1>
+            <h1 className={style.portDiscussH1}>discuss.</h1>
             {loading ? <h3>Loading...</h3> : <h3 className={style.portDiscussH3}>Question: {discuss.discussQuestion}</h3>}
             <PortDiscussForm quest={discuss && discuss.discussQuestion} />
             </section>

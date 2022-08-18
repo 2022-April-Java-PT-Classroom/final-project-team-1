@@ -8,7 +8,7 @@ import PortEntry from '../../Port-Pages/Port-Entry';
 import PortHome from '../../Port-Pages/Port-Home';
 import PortProfile from '../../Port-Pages/Port-Profile';
 import PortDiscuss from '../../Port-Pages/Port-Discuss';
-import PortDiscussSingle from '../../Port-Pages/Port-Discuss/Port-Discuss-Single';
+import PortDiscussSingle from '../../Port-Pages/Port-Discuss-Single';
 import SingleJournalEntryPage from "../../../Components/singleJournalEntry";
 import style from './style.module.scss';
 
