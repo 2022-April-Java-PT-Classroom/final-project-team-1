@@ -15,8 +15,8 @@ const PromptPage =()=>{
     useEffect(()=> {
         const fetchData = async () => {
 
-            const randomPrompt= [Math.floor(Math.random() * 13) + 9];
-            const randomPromptQ = await Axios(`http://localhost:8080/prompt/${randomPrompt}`)
+            const randomPromptQuestion= [Math.floor(Math.random() * 13) -1];
+            const randomPromptQ = await Axios(`http://localhost:8080/prompt/${randomPromptQuestion}`)
 
             setRandomPromptQ(randomPromptQ.data);
 
@@ -58,12 +58,12 @@ const PromptPage =()=>{
 
                 <form className={style.entryForm}>
                     <label className={style.date}>
-                        Date:
-                        <input className={style.dateField} type='date'/>  
+                       
+                        <input className={style.dateField} type='date' placeholder = "Date"/>  
                     </label>
                     <label>
                         
-                         <textarea className={style.textfield} type='text'placeholder="Entry:"/>
+                         <textarea className={style.textfield} type='text'placeholder="Entry"/>
                     </label>
                     <div></div>
                     <div></div>

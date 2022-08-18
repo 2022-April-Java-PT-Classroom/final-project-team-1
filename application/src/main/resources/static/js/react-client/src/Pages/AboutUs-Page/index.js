@@ -4,7 +4,10 @@ import Paper from "@material-ui/core/Paper";
 import Tab from "@material-ui/core/Tab";
 import Tabs from "@material-ui/core/Tabs";
 import Box from "@material-ui/core/Box";
-
+import datenight from '../../Assets/Images/datenight_screen.png';
+import discuss from '../../Assets/Images/discuss_screen.png';
+import journal from '../../Assets/Images/journal_screen.png';
+import promptI from '../../Assets/Images/prompt_screen.png';
 
 const AboutUsPage =()=>{
 const [value, setValue] = React.useState(3);
@@ -56,19 +59,21 @@ function TabPanel(props) {
         <div className={style.panels}>
         <TabPanel value={value} index={0}>
         The prompt page is meant to be used for you personal reflection. Use this page to compose your thoughts and feelings as directed by the prompt. This page is for you; be honest with yourself as you write.
-        [ possible screenshot?]
+        <img src={promptI} alt={"promptI"} className={style.tabImage}></img>
+
       </TabPanel>
       <TabPanel value={value} index={1}>
        This is a fun page where datenight inspiration is offered to help keep your quality time fun. These ideas are generated based on your interests and answers to the questionaire. After your date you can write about the experience, what you liked about it and how it helped you connect as a couple.
-       [ possible screenshot?]
+       <img src={datenight} alt={"datenight"} className={style.tabImage}></img>
       </TabPanel>
       <TabPanel value={value} index={2}>
-       This page is for you to use as a couple. The questions are meant to spark a dialougue that will lead you deeper into the heart and mind of your partner. 
-       [ possible screenshot?]
+       
+       <div> This page is for you to use as a couple. The questions are meant to spark a dialougue that will lead you deeper into the heart and mind of your partner.   </div>
+       <img src={discuss} alt={"discuss"} className={style.tabImage}></img>
       </TabPanel>
       <TabPanel value={value} index={3}>
       You are encouraged to keep a daily journal of your thoughts and feelings about your relationship. It can be a very useful tool to reflect on later to remind you of where you came from and where you want to go.
-      [ possible screenshot?]
+      <img src={journal} alt={"journal"} className={style.tabImage}></img>
       </TabPanel>
       </div>
       </Paper>
