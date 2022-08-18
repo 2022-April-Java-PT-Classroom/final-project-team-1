@@ -2,20 +2,24 @@
 
 .resource{
     margin-top: 80px;
-    background-color: aliceblue;
+    background: url("https://th.bing.com/th/id/OIP.mdolDq6rMgsNshKzamz_5gHaEo?w=314&h=196&c=7&r=0&o=5&dpr=1.25&pid=1.7");
+    background-size: cover;
     text-align: center;
     margin-bottom: 150px;
     font-family: "Nunito" sans-serif;
 }
 .resourcePage{
-    text-align: center;
+    display: grid;
+    grid-template-columns: auto auto;
     justify-content: center;
+    text-align: center;
 }
 
 .table{
     background: linear-gradient(to bottom, #064a81,#51ABF6,white);
     margin: auto;
     text-align: center;
+    justify-content: center;
     margin-top: 0.5em;
     margin-bottom: .5em;
     border: #51ABF6;
