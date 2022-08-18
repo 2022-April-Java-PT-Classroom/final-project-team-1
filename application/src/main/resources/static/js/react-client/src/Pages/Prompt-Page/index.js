@@ -1,53 +1,76 @@
 import React, { useEffect, useState } from "react";
 import Axios from "axios";
-import oJournal from '../../assests/orangejournal.png'
+import { getUsername } from "../../utils/common";
 import style from "./style.module.scss";
+
 
 const PromptPage =()=>{
 
-    const [prompt, setPrompt]= useState(null);
+    const [randomPromptQ, setRandomPromptQ]= useState(null);
     const[loading, setLoading]= useState(true);
+    const[promptAnswer, setPromptAnswer] = useState(null)
+    const username = getUsername();
 
-    const randomPrompt=[Math.floor(Math.random()*13)+3];
     
     useEffect(()=> {
         const fetchData = async () => {
-            const result = await Axios(`http://localhost:8080/prompt/${randomPrompt}`)
 
-            setPrompt(result.data);
-            console.log(result.data);
+            const randomPrompt= [Math.floor(Math.random() * 13) + 9];
+            const randomPromptQ = await Axios(`http://localhost:8080/prompt/${randomPrompt}`)
+
+            setRandomPromptQ(randomPromptQ.data);
+
+            const promptAnswer =  await Axios(`http://localhost:8080/${username}/prompt`);
+            setPromptAnswer(promptAnswer.data);
         };
-        if (prompt){
+        if(!username){
+
+        if (randomPromptQ){
             setLoading(false);
         }
         const timer = setTimeout(() => {
-            !prompt && fetchData();
+            !randomPromptQ && fetchData();
         }, 1000);
         return()=> clearTimeout(timer);
-
-    },[prompt]);
+        } else{
+            if(randomPromptQ && promptAnswer  ){
+                setLoading(false);
+            }
+        const timer = setTimeout(() => {
+            !randomPromptQ && !promptAnswer && fetchData();
+        }, 1000);
+        return ()=> clearTimeout(timer);   
+    }
+}, [randomPromptQ, promptAnswer, username]);
 
     return(
     <div className={style.container}>
         <div className={style.wrapper} >
             <h1 className={style.promptTitle}>prompts.</h1>
             <section className={style.promptMain}>
-            {loading ? <h3>Loading...</h3> : <h3 className={style.prompt}>Today's Prompt:{prompt.promptQuestion}</h3>}
+            {loading ? <h3>Loading...</h3> : <h3 className={style.prompt}>Today's Prompt:{randomPromptQ.promptQuestion}</h3>
+            
+            
+            
+            }
             </section> 
-            <section className={style.userEntry}>
+            <section className={style.userEntry} >
+
                 <form className={style.entryForm}>
                     <label className={style.date}>
                         Date:
-                        <input className={style.dateField} type='date'/>  {/*value={this.state.value} onchange={this.handleChange}/> */}
+                        <input className={style.dateField} type='date'/>  
                     </label>
                     <label>
                         
-                         <textarea className={style.textfield} type='text'placeholder="Entry:"/> {/*value={this.state.value} onchange={this.handleChange}/> */}
+                         <textarea className={style.textfield} type='text'placeholder="Entry:"/>
                     </label>
+                    <div></div>
+                    <div></div>
                     <input className={style.submit} type='submit'    value='Submit'/>
                 </form>
             </section>
-                {/* <img className={style.filler} src={oJournal}alt='filler'></img> */}
+               
                 
         </div>
     </div>    

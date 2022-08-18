@@ -218,6 +218,35 @@ public class Populator implements CommandLineRunner {
                 "http://localhost:8080/images/quote10.jpg", "Audrey Hepburn");
         quotesRepo.save(quote10);
 
+//      prompts================================================================================
+        Prompt prompt1 = new Prompt("What do you admire most about your partner?");
+        Prompt prompt2 = new Prompt("What things make you feel loved?");
+        Prompt prompt3 = new Prompt("Why are you grateful for your partner?");
+        Prompt prompt4 = new Prompt("How does your partner inspire you?");
+        Prompt prompt5= new Prompt("What goals do you have for your relationship?");
+        Prompt prompt6 = new Prompt("What are you afraid of?");
+        Prompt prompt7 = new Prompt("What resentment are you holding onto?");
+        Prompt prompt8 = new Prompt("What one thing can you do today to show love to your partner?");
+        Prompt prompt9 = new Prompt("How does this relationship help you to be a better person?");
+        Prompt prompt10 = new Prompt("What is something your partner does that makes you feel special?");
+        Prompt prompt11 = new Prompt("What one thing about your relationship do you appreciate most?");
+        Prompt prompt12 = new Prompt("What one thing would you like to change about your relationship?");
+        Prompt prompt13 = new Prompt("What is your favorite memory with your partner?");
+
+        promptRepo.save(prompt1);
+        promptRepo.save(prompt2);
+        promptRepo.save(prompt3);
+        promptRepo.save(prompt4);
+        promptRepo.save(prompt5);
+        promptRepo.save(prompt6);
+        promptRepo.save(prompt7);
+        promptRepo.save(prompt8);
+        promptRepo.save(prompt9);
+        promptRepo.save(prompt10);
+        promptRepo.save(prompt11);
+        promptRepo.save(prompt12);
+        promptRepo.save(prompt13);
+        
         // ADMIN ===========================================================================================================
         User admin = new User("admin", "admin");
         userRepository.save(admin);
