@@ -57,7 +57,7 @@
     margin: 20px 30px;
 }
 
-.quizAns {
+.quizAnsCont {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -65,7 +65,12 @@
     margin: 5px auto;
 }
 
-.quizBtn {
+.quizAnsBtnCont {
+    width: 100%;
+    margin: 0px auto;
+}
+
+.quizAnsBtn {
     margin-bottom: 15px;
     width: 70%;
     padding: 10px;

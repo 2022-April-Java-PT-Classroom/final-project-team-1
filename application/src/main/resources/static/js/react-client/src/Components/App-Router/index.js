@@ -15,9 +15,6 @@ import Quotes from '../../Pages/Quotes';
 import Resources from '../../Pages/Resources';
 import SignUpPage from '../../Pages/Signup-Page';
 import SingleJournalEntryPage from '../singleJournalEntry';
-import { getUsername } from '../../utils/common';
-
-//const isUser = getUsername();
 
 const AppRouter = () => {
 

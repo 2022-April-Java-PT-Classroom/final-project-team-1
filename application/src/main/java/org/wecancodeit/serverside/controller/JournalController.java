@@ -23,6 +23,11 @@ public class JournalController {
     @Resource
     private UserRepository userRepository;
 
+    @GetMapping("/api/journals")
+    public Collection<Journal> getAllJournals() {
+        return (Collection<Journal>) journalRepository.findAll();
+    }
+
     @GetMapping("/api/journal/{id}")
     public Optional<Journal> getJournalById(@PathVariable Long id) {
         return journalRepository.findById(id);

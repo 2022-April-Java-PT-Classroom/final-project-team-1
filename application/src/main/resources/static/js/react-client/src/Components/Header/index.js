@@ -5,7 +5,6 @@ import logo from "../../Assets/Images/rek-new.svg";
 import { getUsername, removeUsernameSession } from "../../utils/common";
 
 const isUser = getUsername();
-const mybutton = document.getElementById("myBtn");
 
 function topFunction() {
   document.body.scrollTop = 0;
@@ -22,7 +21,7 @@ const Header = () => {
     return (
         <div className={style.header}>
             <div className={style.nav}>
-                <img src={logo} className={style.navImg} />
+                <img src={logo} className={style.navImg} alt="rekindle-logo"/>
                 <ul className={style.navList}>
                     <NavLink className={style.navLink} to={'/'}>Home</NavLink>
                     <NavLink className={style.navLink} to={'/AboutUs-Page'}>About</NavLink>

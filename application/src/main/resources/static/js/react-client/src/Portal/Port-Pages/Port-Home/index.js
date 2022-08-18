@@ -41,10 +41,10 @@ const PortalHome = () => {
     return (
         <div className={style.portHomeMain}>
             <section className={style.portHome}>
-                <div className={style.quizDiv}>
-                <h4 className={style.quizH4}>Customize Your Experience</h4>
-                <p className={style.quizP}>Answer the following questions about your relationship so we can tailor content to your unique preferences.</p>
-                <button className={style.quizBtn} onClick={() => {setShowQuiz(true)}}>Start The Quiz</button>
+                <div className={style.quizHomeDiv}>
+                <h4 className={style.quizHomeH4}>Customize Your Experience</h4>
+                <p className={style.quizHomeP}>Answer the following questions about your relationship so we can tailor content to your unique preferences.</p>
+                <button className={style.quizHomeBtn} onClick={() => {setShowQuiz(true)}}>Start The Quiz</button>
                 </div>
             </section>
 

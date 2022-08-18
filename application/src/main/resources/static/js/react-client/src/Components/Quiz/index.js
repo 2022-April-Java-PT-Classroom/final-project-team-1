@@ -44,12 +44,12 @@ function Quiz({ quizShown }) {
 				<h2 className={style.quizH2}>Customize Your Experience</h2>
 				<h4 className={style.quizH4}>Answer the following questions about your relationship so we can tailor content to your unique preferences.</h4>
 			</div>
-			<div className={style.quizAns}>
+			<div className={style.quizAnsCont}>
 				<h4 className={style.quizH4}>Questions {currentQuestion + 1} : {Question[currentQuestion].questionText}</h4>
-				<ul>
+				<ul className={style.quizAnsBtnCont}>
 					{Question[currentQuestion].answerOptions.map((index) => {
 						return (
-							<button key={index.resultID} onClick={() => indexClicked()} className={style.quizBtn}>{index.answerText}</button>
+							<button key={index.resultID} onClick={() => indexClicked()} className={style.quizAnsBtn}>{index.answerText}</button>
 						);
 					})}
 				</ul>

@@ -1,0 +1,124 @@
+.portPromptMain {
+    display: flex;
+}
+
+.portPromptSectionOne {
+    width: 75%;
+    padding-right: 20px;
+}
+
+.portPromptH1 {
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    padding: 10px 10px;
+    font-size: 3rem;
+    border-radius: 3px;
+    color: white;
+    background: #409BFF ;
+}
+
+.portPromptH2 {
+    margin: 10px auto;
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+}
+
+.portPromptH3 {
+    margin: 20px auto;
+    font-size: 1.2rem;
+    font-family: "Montserrat", sans-serif;
+}
+
+.portPromptSectionTwo {
+    width: 25%;
+    margin: 0 30px;
+    padding: 0px 30px;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+// ==================================================================
+
+.wrapper{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 120px;
+
+}
+.promptTitle{
+    padding-top: 50px;
+    font-size:5rem;
+}
+.dateField{
+    margin: 10px 0px;
+    width: 50%;
+    height: 30px;
+    background-color: rgb(247, 247, 247);
+    border: 2px solid rgba(0,0,0,0.1);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 100px;    padding: 10px 10px;
+    color: #7A7A7A;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+}
+
+.textfield{
+    padding: 10px 10px;
+    color: #7A7A7A;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    margin: 30px auto;
+    width:85%;
+    left: 50%;    
+    height: 300px;
+    background-color: rgb(247, 247, 247);
+    border: 2px solid rgba(0,0,0,0.1);
+   
+}
+
+  
+
+
+
+
+.entryForm{
+    min-height: 50px;
+    display: flex;
+    flex-direction:column;
+    border-radius: 2em;
+    padding: 10px;
+
+}
+.textfield{
+    border-radius: 10px;
+   
+}
+.prompt{
+    color:rgb(243, 149, 73);
+}
+
+.submit{
+    width: 40%;
+    margin: 20px auto;
+    background-color: #46C0EA;
+    color: #FFF;
+    font-family: 'Montserrat', serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding: 20px 50px;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    border: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.2s ease;
+}
+.submit:hover {
+    background-color: #0085b1;
+}

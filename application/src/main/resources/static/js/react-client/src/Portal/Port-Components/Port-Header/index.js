@@ -1,5 +1,5 @@
-import { React, useEffect, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 import { getUsername, removeUsernameSession } from "../../../utils/common";
 import Flame from "../../../Assets/Images/rek-new.svg";
 import style from './style.module.scss';
@@ -43,11 +43,11 @@ const PortHeader = () => {
                         <i className="uil uil-list-ul" />
                     </div>
                     <div className={style.portLink}>
-                        <Link to={'/'}>Prompts</Link>
+                        <Link to={'/portal/prompt'}>Prompts</Link>
                         <i className="uil uil-comment-question" />
                     </div>
                     <div className={style.portLink}>
-                        <Link to={'/'}>Dates</Link>
+                        <Link to={'/portal/dates'}>Dates</Link>
                         <i className="uil uil-crockery" />
                     </div>
                     <div className={style.portLink}>         
@@ -63,7 +63,7 @@ const PortHeader = () => {
                 <div className={style.portLink}></div>
                 :
                 <div className={style.portLink}>
-                    <Link to={'/#'}>Admin</Link>
+                    <Link to={'/portal/admin'}>Admin</Link>
                     <i className="uil uil-unlock" />
                 </div>
                 }

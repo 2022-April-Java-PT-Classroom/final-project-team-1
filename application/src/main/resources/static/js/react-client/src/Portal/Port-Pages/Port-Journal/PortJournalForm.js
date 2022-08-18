@@ -1,5 +1,4 @@
 import { React, useState } from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import style from './style.module.scss';
 
@@ -53,24 +52,6 @@ const PortalJournalForm = ({ userName, journals, setJournals }) => {
 
     };
     
-    // const handleEditEntryUpdate = (userName, journalId, journalDate, journalEntry) => {
-
-    //     const userEdit = {
-    //         journalDate: journalDate,
-    //         journalEntry: journalState.journalEntry,
-    //         userName: userName
-    //     };
-        
-    //     if((userEdit.journalDate === journalDate) && (userEdit.journalEntry !== journalEntry) && (userEdit.userName === userName) && (userEdit.journalId === journalId)){
-    //     axios.put(`http://localhost:8080/api/${userName}/journals/${journalId}/edit-journal-entry`, userEdit).then((response) => {
-    //         console.log('Edit successful');
-    //         console.log('DATA', response.data);
-    //         setJournals(response.data);
-    //     });
-    //     };
-    // }
-    
-
     return (
 
         <div className={style.journalPage}>
@@ -93,20 +74,6 @@ const PortalJournalForm = ({ userName, journals, setJournals }) => {
                 />
                 <button className={style.journalSubmit} type="submit">Submit</button>
             </form>
-
-            {/* <h3 className={style.journalH2}>View or Edit Previous Entries:</h3>
-            <section className={style.journalSection}>
-                {journals && journals.map(journal => (
-                    <div className={style.journalLinks} key={journal.id}>
-                        <p className={style.previousJournalDate}>{journal.journalDate}<button onClick={() => handleDelete(userName, journal.id)}>x</button></p>
-                        <div className={style.journalBtn}
-                            //onChange={handleJournalEntryChange}
-                        >{journal.journalEntry}</div>
-                        <Link className={style.journalBtn} to={`/Journal-Page/${journal.id}`}>Edit/Update entry</Link>
-                        <div className={style.journalSpacer}></div>
-                    </div>
-                ))}
-            </section> */}
         </div>
 
     );
