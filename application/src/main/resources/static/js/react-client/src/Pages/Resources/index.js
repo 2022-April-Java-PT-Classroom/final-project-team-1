@@ -1,6 +1,5 @@
 import React from "react";
 import style from "./resourcestyle.module.scss";
-import rekindle from "../../assests/logo.png";
 
 const Resources = () => {
     return (

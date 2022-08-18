@@ -56,22 +56,22 @@ const Journals = ({ userName, journals, setJournals }) => {
     };
     
     
-    // const handleEditEntryUpdate = (userName, journalId, journalDate, journalEntry) => {
+    const handleEditEntryUpdate = (userName, journalId, journalDate, journalEntry) => {
 
-    //     const userEdit = {
-    //         journalDate: journalDate,
-    //         journalEntry: journalState.journalEntry,
-    //         userName: userName
-    //     };
+        const userEdit = {
+            journalDate: journalDate,
+            journalEntry: journalState.journalEntry,
+            userName: userName
+        };
         
-    //     if((userEdit.journalDate === journalDate) && (userEdit.journalEntry !== journalEntry) && (userEdit.userName === userName) && (userEdit.journalId === journalId)){
-    //     axios.put(`http://localhost:8080/api/${userName}/journals/${journalId}/edit-journal-entry`, userEdit).then((response) => {
-    //         console.log('Edit successful');
-    //         console.log('DATA', response.data);
-    //         setJournals(response.data);
-    //     });
-    //     };
-    // }
+        if((userEdit.journalDate === journalDate) && (userEdit.journalEntry !== journalEntry) && (userEdit.userName === userName) && (userEdit.journalId === journalId)){
+        axios.put(`http://localhost:8080/api/${userName}/journals/${journalId}/edit-journal-entry`, userEdit).then((response) => {
+            console.log('Edit successful');
+            console.log('DATA', response.data);
+            setJournals(response.data);
+        });
+        };
+    }
     
 
     return (
