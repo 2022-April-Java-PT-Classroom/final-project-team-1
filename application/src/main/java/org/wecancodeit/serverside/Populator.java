@@ -246,7 +246,7 @@ public class Populator implements CommandLineRunner {
         promptRepo.save(prompt11);
         promptRepo.save(prompt12);
         promptRepo.save(prompt13);
-        
+
         // ADMIN ===========================================================================================================
         User admin = new User("admin", "admin");
         userRepository.save(admin);
