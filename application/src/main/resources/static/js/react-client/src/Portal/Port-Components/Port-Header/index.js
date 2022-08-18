@@ -32,31 +32,31 @@ const PortHeader = () => {
                 <nav className={style.portNav}>
                     <div className={style.portLink}>
                         <Link to={'/portal'}>Dashboard</Link>
-                        <i class="uil uil-tachometer-fast-alt" />
+                        <i className="uil uil-tachometer-fast-alt" />
                     </div>
                     <div className={style.portLink}>
                         <Link to={'/portal/profile'}>Profile</Link>
-                        <i class="uil uil-user-circle" />
+                        <i className="uil uil-user-circle" />
                     </div>
                     <div className={style.portLink}>
                         <Link to={'/portal/entry'}>Entries</Link>
-                        <i class="uil uil-list-ul" />
+                        <i className="uil uil-list-ul" />
                     </div>
                     <div className={style.portLink}>
                         <Link to={'/'}>Prompts</Link>
-                        <i class="uil uil-comment-question" />
+                        <i className="uil uil-comment-question" />
                     </div>
                     <div className={style.portLink}>
                         <Link to={'/'}>Dates</Link>
-                        <i class="uil uil-crockery" />
+                        <i className="uil uil-crockery" />
                     </div>
                     <div className={style.portLink}>         
                         <Link to={'/portal/discuss'}>Discuss</Link>
-                        <i class="uil uil-comment-alt-heart" />
+                        <i className="uil uil-comment-alt-heart" />
                     </div>
                     <div className={style.portLink}>
                         <Link to={'/portal/journal'}>Journal</Link>
-                        <i class="uil uil-edit" />
+                        <i className="uil uil-edit" />
                     </div>
 
                 {!isAdmin  ?
@@ -64,13 +64,13 @@ const PortHeader = () => {
                 :
                 <div className={style.portLink}>
                     <Link to={'/#'}>Admin</Link>
-                    <i class="uil uil-unlock" />
+                    <i className="uil uil-unlock" />
                 </div>
                 }
 
                 <div className={style.portLinkHome}>
                     <a href="/">Home</a>
-                    <i class="uil uil-house-user" />
+                    <i className="uil uil-house-user" />
                 </div>
                 </nav>
             </div>

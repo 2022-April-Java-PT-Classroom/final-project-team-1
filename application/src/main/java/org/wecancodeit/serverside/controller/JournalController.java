@@ -3,6 +3,7 @@ package org.wecancodeit.serverside.controller;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.web.bind.annotation.*;
+import org.wecancodeit.serverside.model.Discuss;
 import org.wecancodeit.serverside.model.Journal;
 import org.wecancodeit.serverside.model.User;
 import org.wecancodeit.serverside.repository.JournalRepository;
@@ -21,6 +22,11 @@ public class JournalController {
 
     @Resource
     private UserRepository userRepository;
+
+    @GetMapping("/api/journal/{id}")
+    public Optional<Journal> getJournalById(@PathVariable Long id) {
+        return journalRepository.findById(id);
+    }
 
     @GetMapping("/api/{userName}/journals")
     public Collection<Journal> getJournal(@PathVariable String userName){

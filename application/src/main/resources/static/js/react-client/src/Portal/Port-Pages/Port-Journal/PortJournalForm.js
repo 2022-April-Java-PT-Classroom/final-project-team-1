@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import style from './style.module.scss';
 
-const Journals = ({ userName, journals, setJournals }) => {
+const PortalJournalForm = ({ userName, journals, setJournals }) => {
 
 
     const [journalState, setJournalState] = useState({
@@ -76,9 +76,6 @@ const Journals = ({ userName, journals, setJournals }) => {
     return (
 
         <div className={style.journalPage}>
-            <section className={style.journalSection}>
-                <h1 className={style.journalH1}>journal.</h1>
-            </section>
 
             <form className={style.journalForm} onSubmit={handleSubmit}>
                 <input className={style.journalDate}
@@ -117,4 +114,4 @@ const Journals = ({ userName, journals, setJournals }) => {
 
 }
 
-export default Journals;
+export default PortalJournalForm;
