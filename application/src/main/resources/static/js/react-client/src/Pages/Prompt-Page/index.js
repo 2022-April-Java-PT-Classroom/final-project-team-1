@@ -58,12 +58,12 @@ const PromptPage =()=>{
 
                 <form className={style.entryForm}>
                     <label className={style.date}>
-                        Date:
-                        <input className={style.dateField} type='date'/>  
+                       
+                        <input className={style.dateField} type='date' placeholder = "Date"/>  
                     </label>
                     <label>
                         
-                         <textarea className={style.textfield} type='text'placeholder="Entry:"/>
+                         <textarea className={style.textfield} type='text'placeholder="Entry"/>
                     </label>
                     <div></div>
                     <div></div>
