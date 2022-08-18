@@ -21,3 +21,11 @@ export const getOriginalJournalEntry = () => {
 export const setOriginalJournalEntrySession = (originalJournalEntry) => {
     sessionStorage.setItem("originalJournalEntry", JSON.stringify(originalJournalEntry));
 }
+export const getNewPromptResponse = () => {
+    const newPromptResponseStr = sessionStorage.getItem("newPromptResponse");
+    if (newPromptResponseStr) return JSON.parse(newPromptResponseStr);
+    else return null;
+}
+export const setNewPromptResponseSession = (newPromptResponse) => {
+    sessionStorage.setItem("newPromptResponse", JSON.stringify(newPromptResponse));
+}
