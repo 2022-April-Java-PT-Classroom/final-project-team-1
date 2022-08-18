@@ -1,6 +1,6 @@
 import { React, useEffect, useState } from "react";
 import Axios from 'axios';
-import Journals from "./PortJournalForm";
+import PortalJournalForm from "./PortJournalForm";
 import { getUsername } from "../../../utils/common";
 import { Link } from "react-router-dom";
 import style from "./style.module.scss";
@@ -30,12 +30,20 @@ const PortJournalPage = () => {
 
     }, [journals]);
 
+    const handleDelete = (userName, journalId) => {
+        Axios.delete(`http://localhost:8080/api/${userName}/journals/${journalId}/delete-journal-entry`).then((response) => {
+            console.log('Delete Successful');
+            console.log('DATA', response.data);
+            setJournals(response.data);
+        });
+}
+
     return (
         <div>
             <div className={style.portJournalMain}>
                 <section className={style.portJournalSectionOne}>
                     <h1 className={style.portJournalH1}>journal.</h1>
-                    <Journals journals={journals} setJournals={setJournals} userName={userName} />
+                    <PortalJournalForm journals={journals} setJournals={setJournals} userName={userName} />
                 </section>
 
 
@@ -52,14 +60,17 @@ const PortJournalPage = () => {
                 <div>
                     {journals.map((journal) => {
                         return (
-                        <article key={journal.id} className={style.portJournalCards}>
-                            <Link className={style.discussBtn} to={`/portal/${userName}/api/journals/${journal.id}`}>
-                                <div className={style.portJournalLinks}>
-                                <p>From: {journal.journalDate}</p>
-                                <i class="uil uil-arrow-right" />
-                                </div>
-                            </Link>
-                         </article>
+                        <div key={journal.id} className={style.portJournalSingle}>
+                            <article className={style.portJournalCards}>
+                                <Link className={style.discussBtn} to={`/portal/${userName}/api/journals/${journal.id}`}>
+                                    <div className={style.portJournalLinks}>
+                                    <p>From: {journal.journalDate}</p>
+                                    <i className="uil uil-arrow-right" />
+                                    </div>
+                                </Link>
+                            </article>
+                            <button className={style.portJournalDel} onClick={() => handleDelete(userName, journal.id)}>X</button>
+                        </div>
                         )})}
                 </div>
                 }

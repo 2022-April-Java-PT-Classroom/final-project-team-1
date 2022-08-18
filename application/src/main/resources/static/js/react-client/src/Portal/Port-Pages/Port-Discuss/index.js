@@ -74,7 +74,8 @@ const PortDiscuss = () => {
                 <div>
                     {entry.map((singleEntry) => {
                         return (
-                        <article key={singleEntry.discussId} className={style.portDiscussCards}>
+                        <div key={singleEntry.discussId} className={style.portDiscussSingle}>
+                        <article className={style.portDiscussCards}>
                             <Link className={style.discussBtn} to={`/portal/api/discuss/${singleEntry.discussId}`}>
                                 <div className={style.portDiscussLinks}>
                                 <p>From: {singleEntry.discussDate}</p>
@@ -82,6 +83,8 @@ const PortDiscuss = () => {
                                 </div>
                             </Link>
                          </article>
+                         <button className={style.portDiscussDel}>X</button>
+                         </div>
                         )})}
                 </div>
                 }

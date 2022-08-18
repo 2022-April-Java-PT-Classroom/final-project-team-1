@@ -28,8 +28,6 @@ const PortalJournalForm = ({ userName, journals, setJournals }) => {
         });
     };
 
-    
-
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -52,8 +50,8 @@ const PortalJournalForm = ({ userName, journals, setJournals }) => {
             console.log('DATA', response.data);
             setJournals(response.data);
         });
+
     };
-    
     
     // const handleEditEntryUpdate = (userName, journalId, journalDate, journalEntry) => {
 
@@ -95,7 +93,8 @@ const PortalJournalForm = ({ userName, journals, setJournals }) => {
                 />
                 <button className={style.journalSubmit} type="submit">Submit</button>
             </form>
-            <h3 className={style.journalH2}>View or Edit Previous Entries:</h3>
+
+            {/* <h3 className={style.journalH2}>View or Edit Previous Entries:</h3>
             <section className={style.journalSection}>
                 {journals && journals.map(journal => (
                     <div className={style.journalLinks} key={journal.id}>
@@ -107,7 +106,7 @@ const PortalJournalForm = ({ userName, journals, setJournals }) => {
                         <div className={style.journalSpacer}></div>
                     </div>
                 ))}
-            </section>
+            </section> */}
         </div>
 
     );

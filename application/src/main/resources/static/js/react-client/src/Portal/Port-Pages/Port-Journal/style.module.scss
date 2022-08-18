@@ -100,8 +100,8 @@
 }
 
 .portJournalSectionTwo {
-    width: 20%;
-    margin: 0px 30px;
+    width: 25%;
+    margin: 0 30px;
     padding: 0px 30px;
     border-left: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -111,6 +111,20 @@
     font-size: 1.5rem;
     text-align: center;
     font-family: "Montserrat", sans-serif;
+}
+
+.portJournalSingle {
+    display: flex;
+    align-items: center;
+}
+
+.portJournalDel {
+    margin-right: 0px;
+    padding: 5px 10px;
+    color: white;
+    background-color: #FF637F;
+    border: none;
+    border-radius: 3px;
 }
 
 .portJournalCards {

@@ -28,8 +28,6 @@ const Journals = ({ userName, journals, setJournals }) => {
         });
     };
 
-    
-
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -53,6 +51,7 @@ const Journals = ({ userName, journals, setJournals }) => {
             setJournals(response.data);
         });
     };
+
     
     
     // const handleEditEntryUpdate = (userName, journalId, journalDate, journalEntry) => {
