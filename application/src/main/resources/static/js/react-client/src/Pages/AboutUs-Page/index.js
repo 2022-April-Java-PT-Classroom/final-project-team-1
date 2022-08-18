@@ -7,7 +7,7 @@ import Box from "@material-ui/core/Box";
 
 
 const AboutUsPage =()=>{
-const [value, setValue] = React.useState(4);
+const [value, setValue] = React.useState(3);
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
   return <div {...other}>{value === index && <Box p={3}>{children}</Box>}</div>;

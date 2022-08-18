@@ -1,39 +1,26 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import Axios from "axios";
-import { Link } from "react-router-dom";
+import Journals from "../../Components/journal-component";
 import { getUsername } from "../../utils/common";
+import oJournal from '../../assests/orangejournal.png'
 import style from "./style.module.scss";
-
-const username = getUsername();
 
 const PromptPage =()=>{
 
-
     const [prompt, setPrompt]= useState(null);
-    const [entry, setEntry] = useState(null);
     const[loading, setLoading]= useState(true);
+    const userName = getUsername();
 
+    const [journals, setJournals] = useState(null);
+    const randomPrompt=[Math.floor(Math.random()*13)+3];
+    
     useEffect(()=> {
-
-        
         const fetchData = async () => {
-            
-            const randomId=[Math.floor(Math.random()*13)+3];
-            const promptData = await Axios(`http://localhost:8080/prompt/${randomId}`)
-            setPrompt(promptData.data);
+            const result = await Axios(`http://localhost:8080/prompt/${randomPrompt}`)
 
-            console.log(promptData.data);
-
-            const promptEntry = await Axios(`http://localhost:8080/api/${username}/prompt`);
-            setEntry(promptEntry.data);
-               
-            const quest = promptData.data.promptQuestion;
-       
-       
-       
-       
+            setPrompt(result.data);
+            console.log(result.data);
         };
-        if (!username){
         if (prompt){
             setLoading(false);
         }
@@ -42,16 +29,7 @@ const PromptPage =()=>{
         }, 1000);
         return()=> clearTimeout(timer);
 
-    }else{
-        if (prompt && entry){
-            setLoading(false);
-        }
-        const timer =setTimeout(()=>{
-            !prompt && !entry && fetchData();
-        },1000);
-        return ()=> clearTimeout(timer);
-    }
- } ,[prompt, entry]);
+    },[prompt]);
 
     return(
     <div className={style.container}>
@@ -61,19 +39,22 @@ const PromptPage =()=>{
             {loading ? <h3>Loading...</h3> : <h3 className={style.prompt}>Today's Prompt:{prompt.promptQuestion}</h3>}
             </section> 
             <section className={style.userEntry}>
+
                 <form className={style.entryForm}>
                     <label className={style.date}>
                         Date:
-                        <input className={style.dateField} type='date'/>  {/*value={this.state.value} onchange={this.handleChange}/> */}
+                        <input className={style.dateField} type='date'/>  
                     </label>
                     <label>
                         
-                         <textarea className={style.textfield} type='text'placeholder="Entry:"/> {/*value={this.state.value} onchange={this.handleChange}/> */}
+                         <textarea className={style.textfield} type='text'placeholder="Entry:"/>
                     </label>
+                    <div></div>
+                    <div></div>
                     <input className={style.submit} type='submit'    value='Submit'/>
                 </form>
             </section>
-                {/* <img className={style.filler} src={oJournal}alt='filler'></img> */}
+               
                 
         </div>
     </div>    
