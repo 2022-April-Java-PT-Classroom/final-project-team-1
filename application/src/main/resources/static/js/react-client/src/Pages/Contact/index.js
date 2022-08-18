@@ -47,7 +47,7 @@ function Contact() {
                 <div className={style.card}>
                     <h2>Zaylet Feliciano</h2>
                     <div className={style.container}>
-                        <h1> <img classname={style.Img} src="https://media-exp1.licdn.com/dms/image/C4E03AQH0iHWQmxqFiQ/profile-displayphoto-shrink_400_400/0/1658684780805?e=1665014400&v=beta&t=Kb1qffqBbQ7Czhwr0UFz4UTcAJDPumf3hr_4ZFsOHEM" alt="zayletpic"></img>
+                        <h1> <img classname={style.Img} src="https://media-exp1.licdn.com/dms/image/C4E03AQH0iHWQmxqFiQ/profile-displayphoto-shrink_400_400/0/1658684780805?e=1666224000&v=beta&t=c-jywF6mN_71p4BjLj8-qw6RcrxFpoAFlOR6-f4u10g" alt="zayletpic" width={200} height={200}></img>
                         </h1>
                     </div>
                     <h4>Full Stack Developer</h4>
@@ -58,7 +58,7 @@ function Contact() {
                 <div className={style.card}>
                     <h2>Gail Cowley</h2>
                     <div className={style.container}>
-                        <h1> <img classname={style.Img} src="https://media-exp1.licdn.com/dms/image/C4D03AQGQczQs6yHrVQ/profile-displayphoto-shrink_400_400/0/1648436352349?e=1665014400&v=beta&t=7vcB9sgHwWyiVmpjHsIRc3o7E9a1AAKBOH8913NIxVk" alt="gailpic"></img>
+                        <h1> <img classname={style.Img} src="https://media-exp1.licdn.com/dms/image/C4D03AQGQczQs6yHrVQ/profile-displayphoto-shrink_400_400/0/1648436352349?e=1665014400&v=beta&t=7vcB9sgHwWyiVmpjHsIRc3o7E9a1AAKBOH8913NIxVk" alt="gailpic" width={200} height={200}></img>
                         </h1>
                     </div>
                     <h4>Full Stack Developer</h4>
@@ -69,7 +69,7 @@ function Contact() {
                 <div className={style.card}>
                     <h2>Joe Buckley</h2>
                     <div className={style.container}>
-                        <h1><img classname={style.Img} src="https://media-exp1.licdn.com/dms/image/C5603AQFskh9Jh_DaNg/profile-displayphoto-shrink_400_400/0/1658208866396?e=1665014400&v=beta&t=PlGFoZT5OhIMkNwduccNxouFdc9lQ7syh9GmXxjCgik" alt="joepic"></img>
+                        <h1><img classname={style.Img} src="https://media-exp1.licdn.com/dms/image/C5603AQFskh9Jh_DaNg/profile-displayphoto-shrink_400_400/0/1658208866396?e=1665014400&v=beta&t=PlGFoZT5OhIMkNwduccNxouFdc9lQ7syh9GmXxjCgik" alt="joepic" width={200} height={200}></img>
                         </h1>
                     </div>
                     <h4>Full Stack Developer</h4>
