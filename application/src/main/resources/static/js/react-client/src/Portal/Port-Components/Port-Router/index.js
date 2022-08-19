@@ -10,10 +10,8 @@ import PortDiscussSingle from '../../Port-Pages/Port-Discuss-Single';
 import PortJournal from '../../Port-Pages/Port-Journal';
 import PortJournalSingle from '../../Port-Pages/Port-Journal-Single';
 import PortPrompt from '../../Port-Pages/Port-Prompt';
+import PortPromptSingle from '../../Port-Pages/Port-Prompt-Single';
 import style from './style.module.scss';
-import { getUsername } from '../../../utils/common';
-
-const username = getUsername();
 
 const PortRouter = () => {
     return (
@@ -27,9 +25,10 @@ const PortRouter = () => {
             <Route exact path={'/Portal/Discuss'} component={PortDiscuss} />
             <Route exact path={'/Portal/Journal'} component={PortJournal} />
             <Route exact path={'/Portal/Admin'} component={PortAdmin} />
-            <Route exact path={`/portal/${username}/api/journals/:id`} component={PortJournalSingle} />  
-            <Route path={'/portal/api/discuss/:id'} component={PortDiscussSingle}/>
+            <Route exact path={'/portal/api/journal/:id'} component={PortJournalSingle} /> 
+            <Route path={'/portal/api/prompt/:id'} component={PortPromptSingle}/>
             <Route path={'/portal/api/date/:id'} component={PortDateSingle}/>
+            <Route path={'/portal/api/discuss/:id'} component={PortDiscussSingle}/>
         </Switch>
         </div>
     );

@@ -11,6 +11,7 @@ const PortalHome = () => {
     const [discuss, setDiscuss] = useState(null);
     const [journals, setJournals] = useState(null);
     const [dates, setDates] = useState(null);
+    const [prompts, setPrompts] = useState(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -18,6 +19,7 @@ const PortalHome = () => {
             const journalData = await Axios(`http://localhost:8080/api/${userName}/journals`);
             const discussData = await Axios(`http://localhost:8080/api/${userName}/discuss`);
             const dateData = await Axios(`http://localhost:8080/${userName}/dateNight`);
+            const promptData = await Axios(`http://localhost:8080/api/${userName}/prompt`);
 
             setJournals(journalData.data);
             console.log(journalData.data);
@@ -25,18 +27,20 @@ const PortalHome = () => {
             console.log(discussData.data);
             setDates(dateData.data);
             console.log(dateData.data);
+            setPrompts(promptData.data);
+            console.log(promptData.data);
         }
 
-        if (journals && discuss && dates) {
+        if (journals && discuss && dates && prompts) {
             setLoading(false);
         }
 
         const timer = setTimeout(() => {
-        !journals && !discuss && !dates && fetchData() ;
+        !journals && !discuss && !dates && !prompts && fetchData() ;
         }, 1000);
         return () => clearTimeout(timer);
 
-    }, [journals, discuss, dates]);
+    }, [journals, discuss, dates, prompts]);
 
     return (
         <div className={style.portHomeMain}>
@@ -57,7 +61,7 @@ const PortalHome = () => {
                         <h5>Prompt Entries</h5>
                         <i className="uil uil-comment-question" />
                         </div>
-                    <h2 className={style.dashCardNum}>{discuss.length}</h2>
+                    <h2 className={style.dashCardNum}>{prompts.length}</h2>
                     <h2>Prompts Answered</h2>
                     </article>
 
@@ -100,6 +104,15 @@ const PortalHome = () => {
                             </tr>
                         </thead>
                         <tbody>
+                        {prompts.map(prompt =>
+                        <tr key={prompt.id}>
+                            <td>{prompt.promptDate}</td>
+                            <td>{(prompt.promptAnswer).slice(0,75)+'...'}</td>
+                            <td><button>View</button></td>
+                            <td><button>Edit</button></td>
+                            <td><button>Delete</button></td>
+                        </tr>
+                        )}
                         {journals.map(journal =>
                         <tr key={journal.id}>
                             <td>{journal.journalDate}</td>

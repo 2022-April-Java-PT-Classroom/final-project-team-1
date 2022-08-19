@@ -77,7 +77,7 @@ const PortPromptPage = () => {
                         return (
                         <div key={singleEntry.id} className={style.portPromptSingle}>
                         <article className={style.portPromptCards}>
-                            <Link to={`/portal/api/discuss/${singleEntry.id}`}>
+                            <Link to={`/portal/api/prompt/${singleEntry.id}`}>
                                 <div className={style.portPromptLinks}>
                                 <p>From: {singleEntry.promptDate}</p>
                                 <i className="uil uil-arrow-right" />
