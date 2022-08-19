@@ -29,13 +29,13 @@ function TabPanel(props) {
             <div className={style.aboutWrapper}>
                 <h2 className={style.aboutTitle}/>
                 <p className={style.about}>
-                   There is an abundance of sites dedicated to Helping you fing that 'spark'. 
+                   There are an abundance of sites dedicated to Helping you find that 'spark'. 
                   ReKindle was created to nurture that spark into a flame; to help couples stay connected or reconnect. 
                        No fire will keep burning without fuel and attention.
                          Allow us to help you achieve your relationship goals; 
-                         We will help you focus your efforts and by providing daily insights and 
+                         We will help you focus your efforts by providing daily insights and 
                          conversation starters as well as weekly date night ideas.
-                          Don't let you flames of your love be extinguished by negect, rekindle those flames and have a relationhip that others will envy. 
+                          Don't let your flames of love be extinguished by neglect, rekindle those flames and have a relationship that others will envy. 
                           We have even included instructions for how to use this site.
                 </p> 
             </div>
@@ -58,7 +58,7 @@ function TabPanel(props) {
         {/* <h3>TAB NO: {value} clicked!</h3> */}
         <div className={style.panels}>
         <TabPanel value={value} index={0}>
-        The prompt page is meant to be used for you personal reflection. Use this page to compose your thoughts and feelings as directed by the prompt. This page is for you; be honest with yourself as you write.
+        The prompt page is meant to be used for your personal reflection. Use this page to compose your thoughts and feelings as directed by the prompt. This page is for you; be honest with yourself as you write.
         <img src={promptI} alt={"promptI"} className={style.tabImage}></img>
 
       </TabPanel>
