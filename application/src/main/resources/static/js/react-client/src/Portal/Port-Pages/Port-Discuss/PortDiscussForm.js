@@ -1,11 +1,11 @@
 import { React, useState } from "react";
 import axios from 'axios';
 import style from './style.module.scss';
-import { getUsername } from "../../utils/common";
+import { getUsername } from "../../../utils/common";
 
 const username = getUsername();
 
-const DiscussForm = ({ quest }) => {
+const PortDiscussForm = ({ quest }) => {
 
     const [discussFormEntry, setdiscussFormEntry] = useState({
         discussDate: "",
@@ -69,4 +69,4 @@ const DiscussForm = ({ quest }) => {
     )
 }
 
-export default DiscussForm;
+export default PortDiscussForm;

@@ -1,6 +1,7 @@
-import { React, useEffect, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 import { getUsername, removeUsernameSession } from "../../../utils/common";
+import Flame from "../../../Assets/Images/rek-new.svg";
 import style from './style.module.scss';
 
 const logout = () => {
@@ -18,10 +19,10 @@ const PortHeader = () => {
         <div>
             <section>
             <div className={style.portHead}>
-            <h1>Rekindle</h1>
+            <img className={style.portLogo} src={Flame} />
             <div className={style.portOut}>
-                <p>Welcome {getUsername()}</p>
-                <button className={style.portLog} onClick={() => logout()}><i className="uil uil-sign-out-alt"></i><p>Sign Out</p></button>
+                <p className={style.portWelcome}>Welcome {getUsername()}</p>
+                <button className={style.portLog} onClick={() => logout()}><i className="uil uil-sign-out-alt" /><p>Sign Out</p></button>
             </div>
             </div>
             </section>    
@@ -29,21 +30,48 @@ const PortHeader = () => {
             <section className={style.portSec}>
             <div className={style.portSide}>
                 <nav className={style.portNav}>
-                <Link to={'/portal'}>Dashboard</Link>
-                <Link to={'/portal/profile'}>Profile</Link>
-                <Link to={'/portal/entry'}>Entries</Link>
-                <Link to={'/'}>Prompts</Link>
-                <Link to={'/'}>Dates</Link>
-                <Link to={'/portal/discuss'}>Discuss</Link>
-                <Link to={'/portal/journal'}>Journal</Link>
-                {!isAdmin && username ?
-                <div></div>
+                    <div className={style.portLink}>
+                        <Link to={'/portal'}>Dashboard</Link>
+                        <i className="uil uil-tachometer-fast-alt" />
+                    </div>
+                    <div className={style.portLink}>
+                        <Link to={'/portal/profile'}>Profile</Link>
+                        <i className="uil uil-user-circle" />
+                    </div>
+                    <div className={style.portLink}>
+                        <Link to={'/portal/entry'}>Entries</Link>
+                        <i className="uil uil-list-ul" />
+                    </div>
+                    <div className={style.portLink}>
+                        <Link to={'/portal/prompt'}>Prompts</Link>
+                        <i className="uil uil-comment-question" />
+                    </div>
+                    <div className={style.portLink}>
+                        <Link to={'/portal/dates'}>Dates</Link>
+                        <i className="uil uil-crockery" />
+                    </div>
+                    <div className={style.portLink}>         
+                        <Link to={'/portal/discuss'}>Discuss</Link>
+                        <i className="uil uil-comment-alt-heart" />
+                    </div>
+                    <div className={style.portLink}>
+                        <Link to={'/portal/journal'}>Journal</Link>
+                        <i className="uil uil-edit" />
+                    </div>
+
+                {!isAdmin  ?
+                <div className={style.portLink}></div>
                 :
-                <div>
-                <Link to={'/#'}>Admin Collection</Link>
+                <div className={style.portLink}>
+                    <Link to={'/portal/admin'}>Admin</Link>
+                    <i className="uil uil-unlock" />
                 </div>
                 }
-                <a href="/">Home</a>
+
+                <div className={style.portLinkHome}>
+                    <a href="/">Home</a>
+                    <i className="uil uil-house-user" />
+                </div>
                 </nav>
             </div>
             </section>

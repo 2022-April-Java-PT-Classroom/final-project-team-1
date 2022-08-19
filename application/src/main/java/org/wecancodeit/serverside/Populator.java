@@ -39,9 +39,6 @@ public class Populator implements CommandLineRunner {
         User noelle = new User("noelleizkewl", "password");
         userRepository.save(noelle);
 
-        User admin = new User("admin", "admin");
-        userRepository.save(admin);
-
         Journal joeJournal = new Journal("July 27", "this is a test",joe);
         journalRepository.save(joeJournal);
         Journal joeJournal2 = new Journal("July 28", "this is a test2",joe);
@@ -220,7 +217,8 @@ public class Populator implements CommandLineRunner {
         Quotes quote10 = new Quotes("Nothing is impossible. The world itself says I am possible",
                 "http://localhost:8080/images/quote10.jpg", "Audrey Hepburn");
         quotesRepo.save(quote10);
-//        prompts================================================================================
+
+//      prompts================================================================================
         Prompt prompt1 = new Prompt("What do you admire most about your partner?");
         Prompt prompt2 = new Prompt("What things make you feel loved?");
         Prompt prompt3 = new Prompt("Why are you grateful for your partner?");
@@ -249,23 +247,20 @@ public class Populator implements CommandLineRunner {
         promptRepo.save(prompt12);
         promptRepo.save(prompt13);
 
-
-
-
         // ADMIN ===========================================================================================================
+        User admin = new User("admin", "admin");
+        userRepository.save(admin);
 
-        Journal adminJournal = new Journal("01/02/03", "This is my awesome journal entry", admin);
-        Discuss adminDiscuss01 = new Discuss("01/02/03", "This is the discussion question 01", "This is answer one 01", "This is answer two 01", admin);
-        Discuss adminDiscuss02 = new Discuss("04/05/06", "This is the discussion question 02", "This is answer one 02", "This is answer two 02", admin);
-        Discuss adminDiscuss03 = new Discuss("07/08/09", "This is the discussion question 03", "This is answer one 03", "This is answer two 03", admin);
-        DateNight adminDate01 = new DateNight("08/17/22", "Explore a new state or place", "Active", "Medium", "it was fun", admin);
+        Journal adminJournal = new Journal("2022-08-01", "Here are my thoughts today - If I could change one thing it would be - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", admin);
+        Discuss adminDiscuss01 = new Discuss("2022-08-03", "If you could change one thing about the way you were raised, what would it be and why?", "If I could change one thing it would be - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "If I could change one thing it would be - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", admin);
+        Discuss adminDiscuss02 = new Discuss("2022-08-04", "When do you feel the strongest physically or mentally?", "I feel strongest when - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "I feel strongest when - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", admin);
+        Discuss adminDiscuss03 = new Discuss("2022-08-05", "When we’re out with friends or family, do I make you feel like you’re still a priority?", "I feel like a priority when - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "I feel like a priority when - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", admin);
+        DateNight adminDate01 = new DateNight("2022-08-06", "Explore a new state or place", "Active", "Medium", "Our Experience - If I could change one thing it would be - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", admin);
 
         journalRepository.save(adminJournal);
         discussRepo.save(adminDiscuss01);
         discussRepo.save(adminDiscuss02);
         discussRepo.save(adminDiscuss03);
         dateRepo.save(adminDate01);
-
-
     }
 }

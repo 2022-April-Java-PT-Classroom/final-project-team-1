@@ -5,7 +5,6 @@ import logo from "../../Assets/Images/rek-new.svg";
 import { getUsername, removeUsernameSession } from "../../utils/common";
 
 const isUser = getUsername();
-const mybutton = document.getElementById("myBtn");
 
 function topFunction() {
   document.body.scrollTop = 0;
@@ -22,16 +21,18 @@ const Header = () => {
     return (
         <div className={style.header}>
             <div className={style.nav}>
-                <img src={logo} className={style.navImg} />
+                <img src={logo} className={style.navImg} alt="rekindle-logo"/>
                 <ul className={style.navList}>
                     <NavLink className={style.navLink} to={'/'}>Home</NavLink>
                     <NavLink className={style.navLink} to={'/AboutUs-Page'}>About</NavLink>
-                    <NavLink className={style.navLink} to={'/Prompt-Page'}>Prompt</NavLink>
+                    <NavLink className={style.navLink} to={'/Love-Page'}>Love Languages</NavLink>
+                    <NavLink className={style.navLink} to={'/Quotes'}>Quotes</NavLink>
+                    {/* <NavLink className={style.navLink} to={'/Prompt-Page'}>Prompt</NavLink>
                     <NavLink className={style.navLink} to={'/Date-Page'}>Date</NavLink>
                     <NavLink className={style.navLink} to={'/Discuss-Page'}>Discuss</NavLink>
-                    <NavLink className={style.navLink} to={'/Journal-Page'}>Journal</NavLink>
-                    <NavLink className={style.navLink} to={'/Contact'}>Contact</NavLink>
+                    <NavLink className={style.navLink} to={'/Journal-Page'}>Journal</NavLink> */}
                     <NavLink className={style.navLink} to={'/Resources'}>Resources</NavLink>
+                    <NavLink className={style.navLink} to={'/Contact'}>Contact</NavLink>
                     
                 </ul>
 

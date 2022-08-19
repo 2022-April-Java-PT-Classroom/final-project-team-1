@@ -1,30 +1,31 @@
-.discussPage {
-    width: 85%;
-    margin: 0px auto;
-    padding-top: 100px;
-    border-left: 1px solid rgba(0,0,0,0.1);
-    border-right: 1px solid rgba(0,0,0,0.1);
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+.portDiscussMain {
+    display: flex;
 }
 
-.discussSection {
-    margin: 0 100px;
+.portDiscussSectionOne {
+    width: 75%;
+    padding-right: 20px;
 }
 
-.discussH1 {
-    margin: 0 auto;
-    padding-top: 50px;
-    font-size: 5rem;
+.portDiscussH1 {
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    padding: 10px 10px;
+    font-size: 3rem;
+    border-radius: 3px;
+    color: white;
+    background: #FEC56B;
 }
 
-.discussH3 {
-    margin: 30px auto;
-    font-size: 1.5rem;
+.portDiscussH3 {
+    margin: 20px auto;
+    font-size: 1.2rem;
     font-family: "Montserrat", sans-serif;
 }
 
 .discussForm {
-    margin: 30px 100px;
+    margin: 20px 0px;
     display: flex;
     flex-direction: column;
 }
@@ -64,7 +65,7 @@
 .discussEntry {
     margin: 10px auto;
     width: 100%;
-    height: 300px;
+    height: 120px;
     background-color: rgb(247, 247, 247);
     border: 2px solid rgba(0,0,0,0.1);
 }
@@ -98,47 +99,65 @@
     background-color: #0085b1;
 }
 
-.discussH2 {
-    margin: 10px auto;
-    font-size: 3rem;
-    text-align: center;
+.portDiscussSectionTwo {
+    width: 25%;
+    margin: 0px 30px;
+    padding: 0px 30px;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.discussLinks {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    width: 100%;
-    height: 100%;
-    list-style: none;
+.portDiscussSingle {
+    display: flex;
+    align-items: center;
 }
 
-.discussEntryList {
-    margin: 50px auto !important;
-}
-
-.discussBtn {
-    margin: 20px auto;
-    background-color: #FFF;
-    color: #FEB134;
-    font-family: 'Montserrat', serif;
-    font-weight: 700;
-    font-size: 1.2rem;
-    padding: 20px 30px;
-    letter-spacing: 1px;
-    border: 2px solid #FEB134;
+.portDiscussDel {
+    margin-right: 0px;
+    padding: 5px 10px;
+    color: white;
+    background-color: #FEC56B;
+    border: none;
     border-radius: 3px;
-    text-decoration: none;
-    text-transform: uppercase;
+}
+
+.portDiscussH2 {
+    margin: 10px auto;
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+}
+
+.portDiscussCards {
+    margin: 10px auto;
+    border-radius: 3px;
+    border: 2px solid #FEC56B;
     transition: 0.2s ease;
 }
 
-.discussBtn:hover {
-    color: #FFF;
-    border: 2px solid #FEC56B;
+.portDiscussCards a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #FEC56B;
+    transition: 0.2s ease;
+}
+
+.portDiscussCards:hover {
     background-color: #FEC56B;
+    border: 2px solid white;
 }
 
-.discussSpacer {
-    margin: 300px auto;
+.portDiscussCards a:hover {
+    color: white;
 }
 
+.portDiscussLinks {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 20px;
+    text-decoration: none;
+}

@@ -1,0 +1,88 @@
+.portJournalH1 {
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    padding: 10px 10px;
+    font-size: 3rem;
+    border-radius: 3px;
+    color: white;
+    background: #ff8fa3;
+}
+
+.portJournalCont {
+    width: 70%;
+    margin: auto;
+    color: #161616;
+}
+
+.portJournalDate {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+}
+
+.portJournalCont span {
+    font-weight: 700;
+    color: #ff8fa3;
+}
+
+.portJournalQH4 {
+    text-align: justify;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.portJournalAH4 {
+    text-align: justify;
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.portJournalHR {
+    width: 70%;
+    margin: 50px auto;
+}
+
+.journalH3 {
+    margin: 10px auto;
+    font-size: 1.5rem;
+    font-family: "Montserrat", sans-serif;
+}
+
+.journalEntry {
+    margin: 10px auto;
+    width: 100%;
+    height: 300px;
+    background-color: rgb(247, 247, 247);
+    border: 2px solid rgba(0,0,0,0.1);
+}
+
+.journalEntry[type="text"] {
+    padding: 10px 10px;
+    color: #7A7A7A;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+}
+
+.journalSubmit {
+    width: 40%;
+    margin: 20px auto;
+    background-color: #46C0EA;
+    color: #FFF;
+    font-family: 'Montserrat', serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding: 20px 50px;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    border: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.2s ease;
+}
+
+.journalSubmit:hover {
+    background-color: #0085b1;
+}

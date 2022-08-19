@@ -5,11 +5,8 @@ import style from './style.module.scss'
 
 const Quotes = () => {
 
-        const base_url = 'http://localhost:8080/api/quotes'
         const [myQuotes, setMyQuotes] = useState(null);
         const [loading, setLoading] = useState(true);
-
-
         
         useEffect(() => {
             const fetchData = async () => {
@@ -40,7 +37,7 @@ const Quotes = () => {
         {loading ? <h3> Loading.. </h3> :
         <>
         <p> {myQuotes.quote}  <span className={style.quoteSpan}>{myQuotes.author}</span></p>
-        <img className={style.quoteImg} src={myQuotes.imgUrl} />
+        <img className={style.quoteImg} src={myQuotes.imgUrl} alt="quote-image"/>
         </>}
          
         

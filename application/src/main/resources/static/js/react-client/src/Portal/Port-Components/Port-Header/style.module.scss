@@ -7,7 +7,11 @@
     height: 50px;
     border-bottom: 1px solid rgb(238, 238, 238);
     z-index: 1;
+}
 
+.portLogo {
+    margin-left: 10px;
+    width: 8%;
 }
 
 .portSide {
@@ -18,29 +22,105 @@
     z-index: 2;
 }
 
-.portNav {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: left;
-    margin: 20px 20px;
-}
-
 .portOut {
     display: flex;
     align-items: center;
     margin: 0 10px;
 }
 
+.portWelcome {
+    font-family: "Poppins", sans-serif;
+}
+
 .portLog {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    width: 100px;
-    height: 30px;
-    margin: 0 20px;
+    height: 40px;
+    margin: 0px 20px;
+    padding: 10px 20px;
+    color: #FFF;
+    background-color: #46C0EA;
+    border: none;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 1rem;
+    font-family: "Montserrat", sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.2s ease;
+}
+
+.portLog:hover {
+    background-color: #0085b1;
 }
 
 .portH4Top {
     padding-top: 20px;
+}
+
+.portNav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    margin: 20px 20px;
+    font-size: 1.15rem;
+    font-family: "Poppins", sans-serif;
+}
+
+.portLink {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    transition: 0.2s ease;
+}
+
+.portLink:focus-within {
+    color: white !important;
+    background-color: #90CAF9;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+.portLink:hover {
+    color: white !important;
+    background-color: #90CAF9;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+.portLink a {
+    color: #51ABF6;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.portLink a:focus {
+    color: white;
+}
+
+.portLink a:hover {
+    color: white;
+}
+
+.portLinkHome {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    padding: 8px 10px;
+    border-radius: 3px;
+    transition: 0.2s ease;
+    color: white !important;
+    background-color: #FEC56B;
+}
+
+.portLinkHome a {
+    color: white;
+    text-decoration: none;
 }

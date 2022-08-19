@@ -4,7 +4,6 @@ import Footer from './Components/Footer';
 import Header from './Components/Header';
 import Portal from './Portal/Portal';
 import React from 'react';
-import style from './style.module.scss';
 
 const App = () => {
 

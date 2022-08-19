@@ -4,7 +4,7 @@ import { getUsername } from "../../../utils/common";
 import style from './style.module.scss';
 import { Link } from "react-router-dom";
 
-const PortalEntry = () => {
+const PortalAdmin = () => {
 
     const userName = getUsername();
     const [discuss, setDiscuss] = useState(null);
@@ -19,9 +19,12 @@ const PortalEntry = () => {
             const dateData = await Axios(`http://localhost:8080/${userName}/dateNight`);
 
             setJournals(journalData.data);
-            console.log(journalData.data);
             setDiscuss(discussData.data);
             setDates(dateData.data);
+
+            console.log(journalData.data);
+            console.log(discussData.data);
+            console.log(dateData.data);
         }
 
         if (journals && discuss && dates) {
@@ -39,7 +42,7 @@ const PortalEntry = () => {
     return (
         <div className={style.portEntry}>
             <section className={style.portEntry}>
-            <h1 className={style.entryH1}>View Your Entries</h1>
+            <h1 className={style.entryH1}>View All Submitted Entries</h1>
             {loading ? <h3>Loading...</h3> :
             <div className={style.entryCardsContain}>
                 {dates.map(date => (
@@ -77,4 +80,4 @@ const PortalEntry = () => {
     )
 }
 
-export default PortalEntry;
+export default PortalAdmin;

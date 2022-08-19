@@ -1,15 +1,14 @@
-import React, {useEffect, useState} from "react";
+import {React, useEffect, useState} from 'react';
 import Axios from "axios";
+import PortDiscussForm from './PortDiscussForm';
+import { getUsername } from '../../../utils/common';
 import { Link } from "react-router-dom";
-import { getUsername } from "../../utils/common";
-import style from "./style.module.scss";
-import DiscussForm from "./DiscussForm";
+import style from './style.module.scss';
 
 const username = getUsername();
 
-const DiscussPage = () => {
-            
-    // AXIOS FETCH QUESTIONS ======================================================================
+const PortDiscuss = () => {
+
     const [discuss, setDiscuss] = useState(null);
     const [entry, setEntry] = useState(null);
     const [loading, setLoading] = useState(true);    
@@ -52,20 +51,18 @@ const DiscussPage = () => {
 
 }, [discuss, entry]);
 
-
-
-
     return (
-        <div className={style.discussPage}>
-            <section className={style.discussSection}>
-                <h1 className={style.discussH1}>discuss.</h1>
-                {loading ? <h3>Loading...</h3> : <h3 className={style.discussH3}>Question: {discuss.discussQuestion}</h3>}
+        <div className={style.portDiscussMain}>
+
+            <section className={style.portDiscussSectionOne}>
+            <h1 className={style.portDiscussH1}>discuss.</h1>
+            {loading ? <h3>Loading...</h3> : <h3 className={style.portDiscussH3}>Question: {discuss.discussQuestion}</h3>}
+            <PortDiscussForm quest={discuss && discuss.discussQuestion} />
             </section>
 
-            <DiscussForm quest={discuss && discuss.discussQuestion} />
 
-            <section className={style.discussEntryList}>
-                <h2 className={style.discussH2}>Past Entries</h2>
+            <section className={style.portDiscussSectionTwo}>
+            <h2 className={style.portDiscussH2}>Previous Entries</h2>
                 <div>
                 { !username ? 
                 <div>
@@ -73,22 +70,30 @@ const DiscussPage = () => {
                 </div>
                 :
                 <div>
-                    {loading ? <h3>Loading...</h3> : 
-                    <ul className={style.discussLinks}>
-                        {entry.map((singleEntry) => {
-                            return (
-                                <li key={singleEntry.discussId} className={style.discussEntryList}><Link className={style.discussBtn} to={`/api/discuss/${singleEntry.discussId}`}>Entry: {singleEntry.discussDate}</Link></li>
-                            );
-                        })}
-                    </ul>
-                    }
+                {loading ? <h3>Loading...</h3> : 
+                <div>
+                    {entry.map((singleEntry) => {
+                        return (
+                        <div key={singleEntry.discussId} className={style.portDiscussSingle}>
+                        <article className={style.portDiscussCards}>
+                            <Link className={style.discussBtn} to={`/portal/api/discuss/${singleEntry.discussId}`}>
+                                <div className={style.portDiscussLinks}>
+                                <p>From: {singleEntry.discussDate}</p>
+                                <i class="uil uil-arrow-right" />
+                                </div>
+                            </Link>
+                         </article>
+                         <button className={style.portDiscussDel}>X</button>
+                         </div>
+                        )})}
                 </div>
                 }
-                <div className={style.discussSpacer}></div>
+                </div>
+                }
                 </div>
             </section>
         </div>
-    );
+    )
 }
 
-export default DiscussPage;
+export default PortDiscuss;
