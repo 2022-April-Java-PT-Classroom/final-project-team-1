@@ -58,7 +58,7 @@ function Contact() {
                 <div className={style.card}>
                     <h2>Gail Cowley</h2>
                     <div className={style.container}>
-                        <h1> <img classname={style.Img} src="https://media-exp1.licdn.com/dms/image/C4D03AQGQczQs6yHrVQ/profile-displayphoto-shrink_400_400/0/1648436352349?e=1665014400&v=beta&t=7vcB9sgHwWyiVmpjHsIRc3o7E9a1AAKBOH8913NIxVk" alt="gailpic" width={200} height={200}></img>
+                        <h1> <img classname={style.Img} src="https://media-exp1.licdn.com/dms/image/C4E03AQEC2HGg61d1Lw/profile-displayphoto-shrink_800_800/0/1660861810594?e=1666224000&v=beta&t=pAP5FL-xn3DqeyfY0MOZcf8k_xeyZixoHtm_oGhBz4M" alt="gailpic" width={200} height={200}></img>
                         </h1>
                     </div>
                     <h4>Full Stack Developer</h4>
