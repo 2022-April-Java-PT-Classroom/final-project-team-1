@@ -46,10 +46,10 @@ const PortHeader = () => {
                         <Link to={'/portal/prompt'}>Prompts</Link>
                         <i className="uil uil-comment-question" />
                     </div>
-                    {/* <div className={style.portLink}>
+                    <div className={style.portLink}>
                         <Link to={'/portal/dates'}>Dates</Link>
                         <i className="uil uil-crockery" />
-                    </div> */}
+                    </div>
                     <div className={style.portLink}>         
                         <Link to={'/portal/discuss'}>Discuss</Link>
                         <i className="uil uil-comment-alt-heart" />

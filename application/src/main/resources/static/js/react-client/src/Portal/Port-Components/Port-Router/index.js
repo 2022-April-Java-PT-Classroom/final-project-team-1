@@ -4,6 +4,7 @@ import PortEntry from '../../Port-Pages/Port-Entry';
 import PortHome from '../../Port-Pages/Port-Home';
 import PortProfile from '../../Port-Pages/Port-Profile';
 import PortDate from '../../Port-Pages/Port-Date';
+import PortDateSingle from '../../Port-Pages/Port-Date-Single';
 import PortDiscuss from '../../Port-Pages/Port-Discuss';
 import PortDiscussSingle from '../../Port-Pages/Port-Discuss-Single';
 import PortJournal from '../../Port-Pages/Port-Journal';
@@ -28,6 +29,7 @@ const PortRouter = () => {
             <Route exact path={'/Portal/Admin'} component={PortAdmin} />
             <Route exact path={`/portal/${username}/api/journals/:id`} component={PortJournalSingle} />  
             <Route path={'/portal/api/discuss/:id'} component={PortDiscussSingle}/>
+            <Route path={'/portal/api/date/:id'} component={PortDateSingle}/>
         </Switch>
         </div>
     );
