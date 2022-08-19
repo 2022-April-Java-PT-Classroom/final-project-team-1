@@ -67,3 +67,37 @@
     width: 700px;
     height: 100px;
 }
+
+.randomDateNight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: fit-content;
+    background-color: #90CAF9;
+    border-radius: 4px;
+    font-family: 'Montserrat',sans-serif;
+    margin: auto;
+    font-size: 200%;
+}
+
+.previousDates {
+    display: flex;
+    justify-content: center;
+    font-family: "Lato", sans-serif;
+    font-size: 3rem;
+}
+
+.previousDateEntries {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Montserrat',sans-serif;
+    width: 450px;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #FEC56B;
+    border-radius: 6px;
+}
+
+
