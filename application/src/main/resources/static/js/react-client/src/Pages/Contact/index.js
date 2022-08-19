@@ -29,9 +29,9 @@ function Contact() {
                         </h1>
                     </div>
                     <h4>Full Stack Developer</h4>
-                    <a href="https://github.com/noellegisewhite">Github</a>
+                    <a href="https://github.com/noellegisewhite"><img src="https://th.bing.com/th/id/OIP.kjCUP06WDUMR88i5wo2SqwHaHa?w=207&h=207&c=7&r=0&o=5&dpr=1.25&pid=1.7" height={50} width={50}></img></a>
                     <br></br>
-                    <a href="https://www.linkedin.com/in/noellegisewhite/">LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/noellegisewhite/"><img src="https://th.bing.com/th/id/OIP.mU5yxuiQFNKO4gLh-6SGhwHaD3?w=333&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7" height={50}></img></a>
                 </div>
                 <div className={style.card}>
                     <h2>Zibad Maldaye</h2>
@@ -40,9 +40,9 @@ function Contact() {
                         </h1>
                     </div>
                     <h4>Full Stack Developer</h4>
-                    <a href="https://github.com/zimmchad">Github</a>
+                    <a href="https://github.com/zimmchad"><img src="https://th.bing.com/th/id/OIP.kjCUP06WDUMR88i5wo2SqwHaHa?w=207&h=207&c=7&r=0&o=5&dpr=1.25&pid=1.7" height={50} width={50}></img></a>
                     <br></br>
-                    <a href="https://www.linkedin.com/in/zibad/">LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/zibad/"><img src="https://th.bing.com/th/id/OIP.mU5yxuiQFNKO4gLh-6SGhwHaD3?w=333&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7" height={50}></img></a>
                 </div>
                 <div className={style.card}>
                     <h2>Zaylet Feliciano</h2>
@@ -51,9 +51,9 @@ function Contact() {
                         </h1>
                     </div>
                     <h4>Full Stack Developer</h4>
-                    <a href="https://github.com/zaylet">Github</a>
+                    <a href="https://github.com/zaylet"><img src="https://th.bing.com/th/id/OIP.kjCUP06WDUMR88i5wo2SqwHaHa?w=207&h=207&c=7&r=0&o=5&dpr=1.25&pid=1.7" height={50} width={50}></img></a>
                     <br></br>
-                    <a href="https://www.linkedin.com/in/zayletfeliciano/">LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/zayletfeliciano/"><img src="https://th.bing.com/th/id/OIP.mU5yxuiQFNKO4gLh-6SGhwHaD3?w=333&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7" height={50}></img></a>
                 </div>
                 <div className={style.card}>
                     <h2>Gail Cowley</h2>
@@ -62,9 +62,9 @@ function Contact() {
                         </h1>
                     </div>
                     <h4>Full Stack Developer</h4>
-                    <a href="https://github.com/gailanne/">Github</a>
+                    <a href="https://github.com/gailanne/"><img src="https://th.bing.com/th/id/OIP.kjCUP06WDUMR88i5wo2SqwHaHa?w=207&h=207&c=7&r=0&o=5&dpr=1.25&pid=1.7" height={50} width={50}></img></a>
                     <br></br>
-                    <a href="https://www.linkedin.com/in/11gailanne/">LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/11gailanne/"><img src="https://th.bing.com/th/id/OIP.mU5yxuiQFNKO4gLh-6SGhwHaD3?w=333&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7" height={50}></img></a>
                 </div>
                 <div className={style.card}>
                     <h2>Joe Buckley</h2>
@@ -73,9 +73,9 @@ function Contact() {
                         </h1>
                     </div>
                     <h4>Full Stack Developer</h4>
-                    <a href="https://github.com/joebuck125">Github</a>
+                    <a href="https://github.com/joebuck125"><img src="https://th.bing.com/th/id/OIP.kjCUP06WDUMR88i5wo2SqwHaHa?w=207&h=207&c=7&r=0&o=5&dpr=1.25&pid=1.7" height={50} width={50}></img></a>
                     <br></br>
-                    <a href="https://www.linkedin.com/in/joe-buckley-4358561a2/">LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/joe-buckley-4358561a2/"><img src="https://th.bing.com/th/id/OIP.mU5yxuiQFNKO4gLh-6SGhwHaD3?w=333&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7" height={50}></img></a>
                 </div>
                 <div className={style.card}>
                     <h2>Chad Zimmerman</h2>
@@ -84,9 +84,9 @@ function Contact() {
                         </h1>
                     </div>
                     <h4>Full Stack Developer</h4>
-                    <a href="https://github.com/zimmchad">Github</a>
+                    <a href="https://github.com/zimmchad"><img src="https://th.bing.com/th/id/OIP.kjCUP06WDUMR88i5wo2SqwHaHa?w=207&h=207&c=7&r=0&o=5&dpr=1.25&pid=1.7" height={50} width={50}></img></a>
                     <br></br>
-                    <a href="https://www.linkedin.com/in/chad-zimmerman-4b4b35220/">LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/chad-zimmerman-4b4b35220/"><img src="https://th.bing.com/th/id/OIP.mU5yxuiQFNKO4gLh-6SGhwHaD3?w=333&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7" height={50}></img></a>
                 </div>
                 {/* <div className={style.contactForm}>
         <section className={style.contactFormSection}>
