@@ -44,24 +44,24 @@ const UserSubmitted = ({ userName, randomDateNight}) => {
                     {/* sets the calendar date by the user */}
                     <input className={style.dateInput} type="date" name="dateDate" value={userExpState.dateDate} onChange={handleChange} />
                     {/* intakes idea data from populator, randomized from the display page  */}
-                    <input className={style.dateIdea} type="text" name="dateIdea" value={randomDateNight.dateIdea} onChange={handleChange}></input>
+                    <input className={style.dateInput} type="text" name="dateIdea" value={randomDateNight.dateIdea} onChange={handleChange}></input>
                     {/* intakes type data from populator, same as above */}
-                    <input className={style.dateType} type="text" name="dateType" value={randomDateNight.dateType} onChange={handleChange}></input>
+                    <input className={style.dateInput} type="text" name="dateType" value={randomDateNight.dateType} onChange={handleChange}></input>
                     {/* intakes date level from populator, same as above */}
-                    <input className={style.dateLevel} type="text" name="dateLevel" value={randomDateNight.dateLevel} onChange={handleChange}></input>
+                    <input className={style.dateInput} type="text" name="dateLevel" value={randomDateNight.dateLevel} onChange={handleChange}></input>
                     {/* sets the user submission notes about the date from inside this component */}
                     <textarea className={style.userExperience} name="dateNotes" value={userExpState.dateNotes} onChange={handleChange} placeholder='Enter your experience'></textarea>
                     <button className={style.dateBtn}>Submit</button>
                 </form>
-                <h3 className={style.previousDates}>Here are your past dates: </h3> 
+                <h3 className={style.previousDates}>Here are your past dates </h3> 
                 <section className={style.previousDateSection}>
                    {userExp && userExp.map(userExp => (
                     <div className={style.previousDateEntries} key={userExp.dateNightId}>
-                        <p>{userExp.dateDate}</p>
-                        <p>{userExp.dateIdea}</p>
-                        <p>{userExp.dateType}</p>
-                        <p>{userExp.dateLevel}</p>
-                        <p>{userExp.dateNotes}</p>
+                        <p className={style.dateDateStyle}>{userExp.dateDate}</p>
+                        <p className={style.dateIdeaStyle}>{userExp.dateIdea}</p>
+                        <p className={style.dateTypeStyle}>Type: {userExp.dateType}</p>
+                        <p className={style.dateLevelStyle}>Level: {userExp.dateLevel}</p>
+                        <p className={style.dateNotesStyle}>{userExp.dateNotes}</p>
                     </div>
                    ))}
                 </section>

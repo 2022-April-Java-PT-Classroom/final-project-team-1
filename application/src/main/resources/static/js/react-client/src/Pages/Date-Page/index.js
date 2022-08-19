@@ -63,9 +63,9 @@ const DatePage = () => {
                     <ul className={style.randomDateNight}> 
                        
                         
-                        <li>Idea: {randomDateNight.dateIdea}</li>
-                        <li>Type: {randomDateNight.dateType}</li>
-                        <li>Level: {randomDateNight.dateLevel}</li>
+                        <ul className={style.dateIdea}>Idea: {randomDateNight.dateIdea}</ul>
+                        <ul>Type: {randomDateNight.dateType}</ul>
+                        <ul>Level: {randomDateNight.dateLevel}</ul>
                         
                     
                     </ul>
@@ -79,27 +79,6 @@ const DatePage = () => {
             </section>
             <div className={style.dateSpacer}></div>    
         </div>
-        
-
-
-        // <div className={style.datePage}>
-        //     <section className={style.dateAPI}>
-        //         <h1 className={style.dateH1}>Date Night Ideas.</h1>
-        //         <div> 
-        //             {loadingDate ? <h3 className={style.dateLoad}>Creating date night idea just for you...</h3> :       
-        //             <p className={style.datePara}>{dateNight.dateIdea}</p> }      
-        //         </div>
-
-             
-                // <h3 className={style.dateTitle}>Tell us your experience on this date</h3>
-                // <form className={style.dateForm}>
-                //     <input className={style.dateInput} type="date"></input>
-                //     <textarea className={style.userExperience} placeholder='Enter your experience'></textarea>
-                //     <button className={style.dateBtn}>Submit</button>
-                // </form>
-        //     </section>
-        //     <div className={style.dateSpacer}></div>
-        // </div>
     );
 }
 export default DatePage;
