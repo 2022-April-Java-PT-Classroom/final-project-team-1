@@ -1,9 +1,6 @@
 package org.wecancodeit.serverside.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Lob;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
@@ -17,6 +14,8 @@ public class Prompt {
     private String promptQuestion;
     @Lob
     private String promptAnswer;
+    @ManyToOne
+    private User user;
 
     // Getters ======================================================
     public Long getId() {
@@ -35,6 +34,10 @@ public class Prompt {
         return promptAnswer;
     }
 
+    public User getUser() {
+        return user;
+    }
+
     // Constructors =================================================
     public Prompt() {
     }
@@ -47,6 +50,13 @@ public class Prompt {
         this.promptDate = promptDate;
         this.promptQuestion = promptQuestion;
         this.promptAnswer = promptAnswer;
+    }
+
+    public Prompt(String promptDate, String promptQuestion, String promptAnswer, User user) {
+        this.promptDate = promptDate;
+        this.promptQuestion = promptQuestion;
+        this.promptAnswer = promptAnswer;
+        this.user = user;
     }
 
     // Methods ======================================================

@@ -38,6 +38,62 @@
     border-left: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.portPromptSingle {
+    display: flex;
+    align-items: center;
+}
+
+.portPromptDel {
+    margin-right: 0px;
+    padding: 5px 10px;
+    color: white;
+    background-color: #409BFF;
+    border: none;
+    border-radius: 3px;
+}
+
+.portPromptH2 {
+    margin: 10px auto;
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+}
+
+.portPromptCards {
+    margin: 10px auto;
+    border-radius: 3px;
+    border: 2px solid #409BFF;
+    transition: 0.2s ease;
+}
+
+.portPromptCards a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #409BFF;
+    transition: 0.2s ease;
+}
+
+.portPromptCards:hover {
+    background-color: #409BFF;
+    border: 2px solid white;
+}
+
+.portPromptCards a:hover {
+    color: white;
+}
+
+.portPromptLinks {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 20px;
+    text-decoration: none;
+}
+
 // ==================================================================
 
 .wrapper{
@@ -51,23 +107,24 @@
     padding-top: 50px;
     font-size:5rem;
 }
+
 .dateField{
-    margin: 10px 0px;
-    width: 50%;
+    margin: 10px 10px;
+    padding: 10px 10px;
     height: 30px;
     background-color: rgb(247, 247, 247);
     border: 2px solid rgba(0,0,0,0.1);
     border-top: none;
     border-left: none;
     border-right: none;
-    width: 100px;    padding: 10px 10px;
+    width: 100px;    
     color: #7A7A7A;
     font-weight: 700;
     text-transform: uppercase;
     font-family: "Montserrat", sans-serif;
 }
 
-.textfield{
+.textfield {
     padding: 10px 10px;
     color: #7A7A7A;
     font-weight: 700;
@@ -82,25 +139,10 @@
    
 }
 
-  
-
-
-
-
 .entryForm{
-    min-height: 50px;
+    margin: 20px 0px;
     display: flex;
-    flex-direction:column;
-    border-radius: 2em;
-    padding: 10px;
-
-}
-.textfield{
-    border-radius: 10px;
-   
-}
-.prompt{
-    color:rgb(243, 149, 73);
+    flex-direction: column;
 }
 
 .submit{
@@ -120,5 +162,82 @@
     transition: 0.2s ease;
 }
 .submit:hover {
+    background-color: #0085b1;
+}
+
+// ========================================================
+
+.promptForm {
+    margin: 20px 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.promptDate {
+    margin: 10px 0px;
+    width: 50%;
+    height: 30px;
+    background-color: rgb(247, 247, 247);
+    border: 2px solid rgba(0,0,0,0.1);
+}
+
+.promptDate[type="date"] {
+    padding: 10px 10px;
+    color: #7A7A7A;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+}
+
+.promptQuest {
+    margin: 10px 0px;
+    width: 100%;
+    height: 30px;
+    background-color: rgb(247, 247, 247);
+    border: 2px solid rgba(0,0,0,0.1);
+}
+
+.promptQuest[type="text"] {
+    padding: 10px 10px;
+    color: #7A7A7A;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+}
+
+.promptEntry {
+    margin: 10px auto;
+    width: 100%;
+    height: 200px;
+    background-color: rgb(247, 247, 247);
+    border: 2px solid rgba(0,0,0,0.1);
+}
+
+.promptEntry[type="text"] {
+    padding: 10px 10px;
+    color: #7A7A7A;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+}
+
+.promptSubmit {
+    width: 40%;
+    margin: 20px auto;
+    background-color: #46C0EA;
+    color: #FFF;
+    font-family: 'Montserrat', serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding: 20px 50px;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    border: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.2s ease;
+}
+
+.promptSubmit:hover {
     background-color: #0085b1;
 }
