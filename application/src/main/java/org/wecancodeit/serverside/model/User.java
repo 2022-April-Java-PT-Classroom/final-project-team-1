@@ -27,6 +27,10 @@ public class User {
     @JsonIgnore
     private Collection<DateNight> dateNight;
 
+    @OneToMany (mappedBy = "user")
+    @JsonIgnore
+    private Collection<Prompt> prompts;
+
     // Getters ======================================================
     public Long getId() {
         return id;
@@ -52,6 +56,10 @@ public class User {
         return dateNight;
     }
 
+    public Collection<Prompt> getPrompts() {
+        return prompts;
+    }
+
     // Constructors =================================================
     protected User() {
     }
@@ -68,6 +76,15 @@ public class User {
         this.journals = journals;
         this.discuss = discuss;
         this.dateNight = dateNight;
+    }
+
+    public User(String username, String password, Collection<Journal> journals, Collection<Discuss> discuss, Collection<DateNight> dateNight, Collection<Prompt> prompts) {
+        this.username = username;
+        this.password = password;
+        this.journals = journals;
+        this.discuss = discuss;
+        this.dateNight = dateNight;
+        this.prompts = prompts;
     }
 
     // Methods ======================================================

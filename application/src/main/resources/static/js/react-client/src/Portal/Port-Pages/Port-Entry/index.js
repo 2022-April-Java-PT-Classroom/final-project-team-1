@@ -1,8 +1,8 @@
 import {React, useEffect, useState} from "react";
 import Axios from 'axios';
 import { getUsername } from "../../../utils/common";
-import style from './style.module.scss';
 import { Link } from "react-router-dom";
+import style from './style.module.scss';
 
 const PortalEntry = () => {
 
@@ -10,6 +10,7 @@ const PortalEntry = () => {
     const [discuss, setDiscuss] = useState(null);
     const [journals, setJournals] = useState(null);
     const [dates, setDates] = useState(null);
+    const [prompts, setPrompts] = useState(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -17,23 +18,24 @@ const PortalEntry = () => {
             const journalData = await Axios(`http://localhost:8080/api/${userName}/journals`);
             const discussData = await Axios(`http://localhost:8080/api/${userName}/discuss`);
             const dateData = await Axios(`http://localhost:8080/${userName}/dateNight`);
+            const promptData = await Axios(`http://localhost:8080/api/${userName}/prompt`);
 
             setJournals(journalData.data);
-            console.log(journalData.data);
             setDiscuss(discussData.data);
             setDates(dateData.data);
+            setPrompts(promptData.data);
         }
 
-        if (journals && discuss && dates) {
+        if (journals && discuss && dates && prompts) {
             setLoading(false);
         }
 
         const timer = setTimeout(() => {
-        !journals && !discuss && !dates && fetchData() ;
+        !journals && !discuss && !dates && !prompts && fetchData() ;
         }, 1000);
         return () => clearTimeout(timer);
 
-    }, [journals, discuss, dates]);
+    }, [journals, discuss, dates, prompts]);
 
 
     return (
@@ -42,13 +44,23 @@ const PortalEntry = () => {
             <h1 className={style.entryH1}>View Your Entries</h1>
             {loading ? <h3>Loading...</h3> :
             <div className={style.entryCardsContain}>
+                {prompts.map(prompt => (
+                    <div key={prompt.id} className={style.entryCardPrompt}>
+                    <p>Posted: {prompt.promptDate}</p>
+                    <p>By: {prompt.user.username}</p>
+                    <p>Prompt Question: {prompt.promptQuestion}</p>
+                    <p>Answer: {prompt.promptAnswer.slice(0,75)+'...'}</p>
+                    <Link to={`/portal/api/prompt/${prompt.id}`}>Read More</Link>
+                </div>
+                ))}
+
                 {dates.map(date => (
                     <div key={date.datenightId} className={style.entryCardDates}>
                     <p>Posted: {date.dateDate}</p>
                     <p>By: {date.user.username}</p>
                     <p>Date Idea: {date.dateIdea}</p>
                     <p>{date.dateNotes.slice(0,200)+'...'}</p>
-                    <Link to={`/portal/dateNight/${date.datenightId}`}>Read More</Link>
+                    <Link to={`/portal/api/date/${date.dateNightId}`}>Read More</Link>
                 </div>
                 ))}
 

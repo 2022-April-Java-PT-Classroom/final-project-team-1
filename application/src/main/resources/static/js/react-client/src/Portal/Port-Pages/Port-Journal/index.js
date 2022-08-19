@@ -62,7 +62,7 @@ const PortJournalPage = () => {
                         return (
                         <div key={journal.id} className={style.portJournalSingle}>
                             <article className={style.portJournalCards}>
-                                <Link className={style.discussBtn} to={`/portal/${userName}/api/journals/${journal.id}`}>
+                                <Link className={style.discussBtn} to={`/portal/api/journal/${journal.id}`}>
                                     <div className={style.portJournalLinks}>
                                     <p>From: {journal.journalDate}</p>
                                     <i className="uil uil-arrow-right" />

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Axios from "axios";
 import { getUsername } from "../../../utils/common";
+import { Link } from "react-router-dom";
 import style from "./style.module.scss";
 
 
@@ -20,7 +21,7 @@ const PortPromptPage = () => {
             setPrompt(result.data);
             console.log(result.data);
 
-            const entryResult =  await Axios(`http://localhost:8080/${username}/prompt`);
+            const entryResult =  await Axios(`http://localhost:8080/api/${username}/prompt`);
             setEntry(entryResult.data);
         };
 
@@ -52,20 +53,46 @@ const PortPromptPage = () => {
             <section className={style.portPromptSectionOne}>
             <h1 className={style.portPromptH1}>prompts.</h1>
             {loading ? <h3>Loading...</h3> : 
-            <h3 className={style.portPromptH3}>Today's Prompt:{prompt.promptQuestion}</h3>
+            <h3 className={style.portPromptH3}>Today's Prompt: {prompt.promptQuestion}</h3>
             }
-                <form className={style.entryForm}>   
-                    <input className={style.dateField} type='date' placeholder='date'/>  
-                    <textarea className={style.textfield} type='text' placeholder="Entry"/>
-                    <input className={style.submit} type='submit' value='Submit'/>
+                <form className={style.promptForm}>   
+                    <input className={style.promptDate} type='date' placeholder='date'/>  
+                    <textarea className={style.promptEntry} type='text' placeholder="Entry"/>
+                    <input className={style.promptSubmit} type='submit' value='Submit'/>
                 </form>
             </section> 
 
             <section className={style.portPromptSectionTwo} >
                 <h2 className={style.portPromptH2}>Previous Entries</h2>
-                <h3>NO ENTRIES - PLEASE LOG IN</h3>
-            </section>
-
+                <div>
+                { !username ? 
+                <div>
+                    <h3>NO ENTRIES - PLEASE LOG IN</h3>
+                </div>
+                :
+                <div>
+                {loading ? <h3>Loading...</h3> : 
+                <div>
+                    {entry.map((singleEntry) => {
+                        return (
+                        <div key={singleEntry.id} className={style.portPromptSingle}>
+                        <article className={style.portPromptCards}>
+                            <Link to={`/portal/api/prompt/${singleEntry.id}`}>
+                                <div className={style.portPromptLinks}>
+                                <p>From: {singleEntry.promptDate}</p>
+                                <i className="uil uil-arrow-right" />
+                                </div>
+                            </Link>
+                         </article>
+                         <button className={style.portPromptDel}>X</button>
+                         </div>
+                        )})}
+                </div>
+                }
+                </div>
+                }
+                </div>
+                </section>
         </div>
     </div>    
     );

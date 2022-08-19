@@ -4,8 +4,11 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.wecancodeit.serverside.model.Discuss;
 import org.wecancodeit.serverside.model.Prompt;
+import org.wecancodeit.serverside.model.User;
 import org.wecancodeit.serverside.repository.PromptRepository;
+import org.wecancodeit.serverside.repository.UserRepository;
 
 import javax.annotation.Resource;
 import java.util.Collection;
@@ -20,6 +23,9 @@ public class PromptController {
     @Resource
     private PromptRepository promptRepo;
 
+    @Resource
+    private UserRepository userRepo;
+
     @GetMapping("/api/prompt")
     public Collection<Prompt> getAllPrompt(){
         return (Collection<Prompt>) promptRepo.findAll();
@@ -29,6 +35,17 @@ public class PromptController {
     public Optional<Prompt> displaySinglePrompts(@PathVariable Long id) {
         return promptRepo.findById(id);
     }
+
+    @GetMapping("/api/{userName}/prompt")
+    public Collection<Prompt> getUserDiscuss(@PathVariable String userName) {
+        Optional<User> user = userRepo.findByUsernameIgnoreCase(userName);
+        return user.get().getPrompts();
+    }
+
+
+
+
+
 
     @PostMapping("/api/prompt/add-prompt")
     public Collection<Prompt> addAPromptEntry(@RequestBody String body) throws JSONException{
