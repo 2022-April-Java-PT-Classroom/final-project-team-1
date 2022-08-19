@@ -11,7 +11,7 @@ import JournalPage from '../../Pages/Journal-Page';
 import LoginPage from '../../Pages/Login-Page';
 import LoveLanguages from '../../Pages/Love';
 import PromptPage from '../../Pages/Prompt-Page';
-import Quotes from '../../Pages/Quotes';
+import LoveQuotes from '../../Pages/LoveQuotes';
 import Resources from '../../Pages/Resources';
 import SignUpPage from '../../Pages/Signup-Page';
 import SingleJournalEntryPage from '../singleJournalEntry';
@@ -31,7 +31,7 @@ const AppRouter = () => {
             <Route exact path={'/Resources'} component={Resources} />
             <Route exact path={'/Journal-Page/:id'} component={SingleJournalEntryPage} />  
             <Route exact path={'/Love-page'} component={LoveLanguages}/>
-            <Route exact path={'/Quotes'} component={Quotes} />
+            <Route exact path={'/LoveQuotes'} component={LoveQuotes} />
             <Route path={'/Date-Page'} component={DatePage} />
             <Route path={'/add-DateNight'} component={FormSubmission} />
             <Route path={'/api/discuss/:id'} component={DiscussSingle} />

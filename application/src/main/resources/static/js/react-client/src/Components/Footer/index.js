@@ -34,7 +34,7 @@ const Footer = () => {
                     <h2>Features</h2>
 
                     
-                    <Link to={'/Quotes'} className={style.footerLinks}>Inspirational Quotes</Link>
+                    <Link to={'/LoveQuotes'} className={style.footerLinks}>Inspirational Quotes</Link>
                     <Link to={'/Prompt-Page'} className={style.footerLinks}>Prompts</Link>
                     <Link to={'/Date-Page'} className={style.footerLinks}>Dates</Link>
                     <Link to={'/Discuss-Page'} className={style.footerLinks}>Discussions</Link>

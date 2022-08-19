@@ -3,7 +3,7 @@ import Axios from 'axios';
 import style from './style.module.scss'
 
 
-const Quotes = () => {
+const LoveQuotes = () => {
 
         const [myQuotes, setMyQuotes] = useState(null);
         const [loading, setLoading] = useState(true);
@@ -37,7 +37,7 @@ const Quotes = () => {
         {loading ? <h3> Loading.. </h3> :
         <>
         <p> {myQuotes.quote}  <span className={style.quoteSpan}>{myQuotes.author}</span></p>
-        <img className={style.quoteImg} src={myQuotes.imgUrl} alt="quote-image"/>
+        <img className={style.quoteImg} src={myQuotes.imgUrl} alt="quote image" />
         </>}
          
         
@@ -52,4 +52,4 @@ const Quotes = () => {
 );
 }
 
-export default Quotes;
+export default LoveQuotes;
