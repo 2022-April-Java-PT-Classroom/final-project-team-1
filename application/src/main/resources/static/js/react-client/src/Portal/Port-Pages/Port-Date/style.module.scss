@@ -26,14 +26,180 @@
 }
 
 .portDateH3 {
-    margin: 20px auto;
+    margin: 10px auto;
     font-size: 1.2rem;
+    font-weight: 500;
     font-family: "Montserrat", sans-serif;
 }
 
 .portDateSectionTwo {
     width: 25%;
-    margin: 0 30px;
+    margin: 0px 30px;
     padding: 0px 30px;
     border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.portDateSingle {
+    display: flex;
+    align-items: center;
+}
+
+.portDateDel {
+    margin-right: 0px;
+    padding: 5px 10px;
+    color: white;
+    background-color: #2BD9B7;
+    border: none;
+    border-radius: 3px;
+}
+
+.portDateH2 {
+    margin: 10px auto;
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+}
+
+.portDateCards {
+    margin: 10px auto;
+    border-radius: 3px;
+    border: 2px solid #2BD9B7;
+    transition: 0.2s ease;
+}
+
+.portDateCards a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #2BD9B7;
+    transition: 0.2s ease;
+}
+
+.portDateCards:hover {
+    background-color: #2BD9B7;
+    border: 2px solid white;
+}
+
+.portDateCards a:hover {
+    color: white;
+}
+
+.portDateLinks {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 20px;
+    text-decoration: none;
+}
+
+// ==================================================================
+
+.datePage {
+    width: 100%;
+    height: 100%;
+    padding-top: 100px;
+}
+
+.dateSpacer {
+    margin: 300px auto;
+}
+
+.dateH1 {
+    display: flex;
+    justify-content: center;
+    font-family: 'Playfair Display';
+    font-size: 4rem;
+}
+
+.dateLoad {
+    display: flex;
+    justify-content: center;
+}
+
+.dateInput {
+    width: 40%;
+    border-radius: 10px;
+    font-family: sans-serif;
+    font-size: medium;
+    margin: 5px 0px;
+}
+
+.dateForm {
+    display: grid;
+    justify-content: center;
+}
+
+.dateTitle {
+    display: flex;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-family: 'Lato', sans-serif;
+}
+
+.dateBtn {
+    background-color: #FEB134;
+    border-radius: 50px;
+    border: none;
+    font-family: "Poppins", sans-serif;
+    font-size: medium;
+    color: #fff;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+    padding: 20px 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.dateBtn:hover {
+    background-color: #FEC56B;
+}
+
+.userExperience {
+    min-height: 8em;
+    min-width: 50%;
+    border-radius: 10px;
+    font-family: sans-serif;
+}
+
+.userExperience {
+    width: 700px;
+    height: 100px;
+}
+
+.randomDateNight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: fit-content;
+    background-color: #90CAF9;
+    border-radius: 4px;
+    font-family: 'Montserrat',sans-serif;
+    margin: auto;
+    font-size: 200%;
+}
+
+.previousDates {
+    display: flex;
+    justify-content: center;
+    font-family: "Lato", sans-serif;
+    font-size: 3rem;
+}
+
+.previousDateEntries {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Montserrat',sans-serif;
+    width: 450px;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #FEC56B;
+    border-radius: 6px;
 }

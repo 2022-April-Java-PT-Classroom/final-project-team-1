@@ -1,9 +1,9 @@
-import React, {useState} from "react";
-
+import {React, useState} from "react";
 import axios from 'axios';
 import style from './style.module.scss';
 
-const UserSubmitted = ({ userName, randomDateNight}) => {
+const PortUserSubmitted = ({ userName, randomDateNight}) => {
+
     const [userExpState, setUserExpState] = useState({
         dateDate: "",
         dateNotes: "",
@@ -12,6 +12,7 @@ const UserSubmitted = ({ userName, randomDateNight}) => {
         dateLevel: randomDateNight && randomDateNight.dateLevel,
         userName: userName
     });
+
     const [userExp, setUserExp] = useState([])
     
     const handleChange = (e) => {
@@ -21,6 +22,7 @@ const UserSubmitted = ({ userName, randomDateNight}) => {
             [e.target.name]: value
         });
     };
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const userDateData = {
@@ -37,6 +39,7 @@ const UserSubmitted = ({ userName, randomDateNight}) => {
             setUserExp(response.data);
         });
     };
+
     return (
         <div>
             <h3 className={style.dateTitle}>Tell us your experience on this date</h3>
@@ -53,7 +56,8 @@ const UserSubmitted = ({ userName, randomDateNight}) => {
                     <textarea className={style.userExperience} name="dateNotes" value={userExpState.dateNotes} onChange={handleChange} placeholder='Enter your experience'></textarea>
                     <button className={style.dateBtn}>Submit</button>
                 </form>
-                <h3 className={style.previousDates}>Here are your past dates </h3> 
+
+                {/* <h3 className={style.previousDates}>Here are your past dates </h3> 
                 <section className={style.previousDateSection}>
                    {userExp && userExp.map(userExp => (
                     <div className={style.previousDateEntries} key={userExp.dateNightId}>
@@ -64,9 +68,9 @@ const UserSubmitted = ({ userName, randomDateNight}) => {
                         <p className={style.dateNotesStyle}>{userExp.dateNotes}</p>
                     </div>
                    ))}
-                </section>
+                </section> */}
         </div>
     )
 }
 
-export default UserSubmitted;
+export default PortUserSubmitted;
