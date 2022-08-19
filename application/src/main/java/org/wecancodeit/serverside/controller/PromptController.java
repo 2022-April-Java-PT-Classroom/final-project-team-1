@@ -22,7 +22,12 @@ public class PromptController {
 
     @GetMapping("/api/prompt")
     public Collection<Prompt> getAllPrompt(){
-        return (List<Prompt>) promptRepo.findAll();
+        return (Collection<Prompt>) promptRepo.findAll();
+    }
+
+    @RequestMapping("api/prompt/single-prompt/{id}")
+    public Optional<Prompt> displaySinglePrompts(@PathVariable Long id) {
+        return promptRepo.findById(id);
     }
 
     @PostMapping("/api/prompt/add-prompt")
@@ -32,12 +37,6 @@ public class PromptController {
         String promptQuestion = newPrompt.getString("promptQuestion");
         String promptAnswer = newPrompt.getString("promptAnswer");
         return (Collection<Prompt>) promptRepo.findAll();
-    }
-
-    @RequestMapping("api/prompt/single-prompt/{id}")
-    public Optional<Prompt> displaySinglePrompts(@PathVariable Long id, Model model) {
-        model.addAttribute("singlePrompt", promptRepo.findById(id).get());
-        return (Optional<Prompt>) promptRepo.findById(id);
     }
 
     @RequestMapping("api/prompt/promptQuestion")
