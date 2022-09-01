@@ -87,7 +87,7 @@ Rekindle is a self-help tool aimed toward helping couples reconnect and engage w
 
 ## Contact & Contributors
 
-###LinkedIn:
+### LinkedIn:
 
 <br><a href="https://www.linkedin.com/in/zayletfeliciano/">Zaylet Feliciano</a>
 <br><a href="https://www.linkedin.com/in/11gailanne/">Gail Cowley</a>
