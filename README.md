@@ -58,6 +58,15 @@ Rekindle is a relationship application aimed toward helping couples engage with 
 
 <img src='application/src/main/resources/static/images/rek-ss-02.png' border='0' alt='project'/>
 
+<img src='application/src/main/resources/static/images/rek-ss-03.png' border='0' alt='project'/>
+
+<img src='application/src/main/resources/static/images/rek-ss-04.png' border='0' alt='project'/>
+
+<img src='application/src/main/resources/static/images/rek-ss-05.png' border='0' alt='project'/>
+
+<img src='application/src/main/resources/static/images/rek-ss-06.png' border='0' alt='project'/>
+
+
 <div id ="notes">
 
 ## Notes

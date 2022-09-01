@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4972afdf-e1e6-452e-b62e-c559b0876d72" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/application/src/main/resources/static/images/rek-ss-01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/src/main/resources/static/images/rek-ss-02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/src/main/resources/static/images/rek-ss-03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/src/main/resources/static/images/rek-ss-04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/src/main/resources/static/images/rek-ss-05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/src/main/resources/static/images/rek-ss-06.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/src/main/resources/static/js/react-client/src/Portal/Port-Components/Port-Header/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/application/src/main/resources/static/js/react-client/src/Portal/Port-Components/Port-Header/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +29,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../spa-team-3" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
