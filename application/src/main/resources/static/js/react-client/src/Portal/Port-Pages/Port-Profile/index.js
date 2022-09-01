@@ -33,7 +33,7 @@ const PortalProfile = () => {
                 <div className={style.profileDiv}>
                     <img src={Cliff} className={style.profileImg}></img>
                     <h2 className={style.profileH2}>Cliff Jenkins Jr.</h2>
-                    <p className={style.profileP}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p className={style.profileP}>Lead Senior Developer for Bread Financial and Part-Time Bootcamp Instructor at We Can Code IT. Loves fishing, BBQing, smoking meats in my spare time.</p>
                 </div>
             </section>
 
@@ -48,7 +48,7 @@ const PortalProfile = () => {
 
             <section className={style.profileSecTwo}>
                 <h2 className={style.profileH2}>About</h2>
-                <p className={style.profileP}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p className={style.profileP}>Experienced lead software engineer, certified professional Scrum master, and certified Scrum product owner with a demonstrated history of working in the information technology and services industry. Seasoned Java and JavaScript full stack bootcamp instructor.</p>
             </section>
             </div>
 
@@ -72,7 +72,7 @@ const PortalProfile = () => {
                 <div className={style.profileDiv}>
                     <img src={Woman} className={style.profileImg}></img>
                     <h2 className={style.profileH2}>Jane Doe</h2>
-                    <p className={style.profileP}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p className={style.profileP}>I'm Jane! I am a proud dog mom, an avid gym-goer, and, if you ask my friends, a bit quirky at times. My partner and I have been together for 6 years.</p>
                 </div>
             </section>
 
@@ -87,7 +87,7 @@ const PortalProfile = () => {
 
             <section className={style.profileSecTwo}>
                 <h2 className={style.profileH2}>About</h2>
-                <p className={style.profileP}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p className={style.profileP}>Jane Doe is a data analyst with a passion for studying relationships, personal growth, and health. In 2009, Jane earned a Bachelors of Science from the University of Ohio, where she studied business and finance and taught interpersonal communication.</p>
             </section>
             </div>
             }

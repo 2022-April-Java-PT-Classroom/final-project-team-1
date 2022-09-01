@@ -38,3 +38,37 @@
     border: 3px solid #FF5372;
     border-radius: 3px;
 }
+
+.entryText {
+    font-family: "Poppins", sans-serif;
+    font-size: 0.9rem;
+}
+
+.entryTextSpanPrompts {
+    font-weight: 600;
+    color: #409BFF;
+}
+
+.entryTextSpanDates {
+    font-weight: 600;
+    color: #2BD9B7;
+}
+
+.entryTextSpanDiscuss {
+    font-weight: 600;
+    color: #FFB64E;
+}
+
+.entryTextSpanJournal {
+    font-weight: 600;
+    color: #FF5372;
+}
+
+.entryBtn {
+    font-family: "Poppins", sans-serif;
+    text-decoration: none;
+    border: 1px solid;
+    border-radius: 3px;
+    padding: 5px 10px;
+    color: #409BFF;
+}

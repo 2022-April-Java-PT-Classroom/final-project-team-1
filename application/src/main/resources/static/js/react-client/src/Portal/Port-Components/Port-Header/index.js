@@ -39,24 +39,24 @@ const PortHeader = () => {
                         <i className="uil uil-user-circle" />
                     </div>
                     <div className={style.portLink}>
-                        <Link to={'/portal/entry'}>Entries</Link>
-                        <i className="uil uil-list-ul" />
-                    </div>
-                    <div className={style.portLink}>
-                        <Link to={'/portal/prompt'}>Prompts</Link>
-                        <i className="uil uil-comment-question" />
+                        <Link to={'/portal/journal'}>Journal</Link>
+                        <i className="uil uil-edit" />
                     </div>
                     <div className={style.portLink}>
                         <Link to={'/portal/dates'}>Dates</Link>
                         <i className="uil uil-crockery" />
+                    </div>
+                    <div className={style.portLink}>
+                        <Link to={'/portal/prompt'}>Prompts</Link>
+                        <i className="uil uil-comment-question" />
                     </div>
                     <div className={style.portLink}>         
                         <Link to={'/portal/discuss'}>Discuss</Link>
                         <i className="uil uil-comment-alt-heart" />
                     </div>
                     <div className={style.portLink}>
-                        <Link to={'/portal/journal'}>Journal</Link>
-                        <i className="uil uil-edit" />
+                        <Link to={'/portal/entry'}>Entries</Link>
+                        <i className="uil uil-list-ul" />
                     </div>
 
                 {!isAdmin  ?

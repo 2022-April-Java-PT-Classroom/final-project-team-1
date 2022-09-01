@@ -3,10 +3,8 @@ package org.wecancodeit.serverside.controller;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.web.bind.annotation.*;
-import org.wecancodeit.serverside.model.User;
-import org.wecancodeit.serverside.repository.DiscussRepository;
-import org.wecancodeit.serverside.repository.JournalRepository;
-import org.wecancodeit.serverside.repository.UserRepository;
+import org.wecancodeit.serverside.model.*;
+import org.wecancodeit.serverside.repository.*;
 
 import javax.annotation.Resource;
 import java.util.Collection;
@@ -24,6 +22,12 @@ public class UserController {
 
     @Resource
     private DiscussRepository discussRepository;
+
+    @Resource
+    private DateRepository dateRepository;
+
+    @Resource
+    private PromptRepository promptRepository;
 
     @GetMapping("/api/user/{userName}")
     public Optional<User> getUser(@PathVariable String userName) {
@@ -66,5 +70,25 @@ public class UserController {
         Optional<User> usernamesToRemoveOpt = userRepository.findByUsernameIgnoreCase(userName);
         usernamesToRemoveOpt.ifPresent(username -> userRepository.delete(username));
         return (Collection<User>) userRepository.findAll();
+    }
+
+    @GetMapping("api/collection/journals")
+    public Collection<Journal> getAllJournals() throws JSONException {
+        return (Collection<Journal>) journalRepository.findAll();
+    }
+
+    @GetMapping("api/collection/discuss")
+    public Collection<Discuss> getAllDiscuss() throws JSONException {
+        return (Collection<Discuss>) discussRepository.findAll();
+    }
+
+    @GetMapping("api/collection/dates")
+    public Collection<DateNight> getAllDates() throws JSONException {
+        return (Collection<DateNight>) dateRepository.findAll();
+    }
+
+    @GetMapping("api/collection/prompts")
+    public Collection<Prompt> getAllPrompts() throws JSONException {
+        return (Collection<Prompt>) promptRepository.findAll();
     }
 }

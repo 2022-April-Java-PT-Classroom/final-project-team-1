@@ -1,5 +1,4 @@
 import {Route, Switch} from 'react-router-dom';
-
 import AboutUsPage from '../../Pages/AboutUs-Page';
 import Contact from '../../Pages/Contact';
 import DatePage from '../../Pages/Date-Page';
